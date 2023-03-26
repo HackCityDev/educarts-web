@@ -34,23 +34,25 @@
   @include General.Flex();
   z-index: 100;
   background: #fff;
-  @media (max-width: 900px) {
-    justify-content: space-between;
-  }
-  height: 100px;
+  justify-content: space-between;
+  height: 80px;
   padding: 10px General.$leftRight;
   gap: 30px;
+  aside {
+    width: fit-content !important;
+    position: relative;
+  }
   .Weblinks,
   .CallToActionButtons {
     @include General.Flex();
-    gap: 10px;
+    gap: 8px;
     white-space: nowrap;
     font-weight: 500;
     a {
-      font-size: 16px;
+      font-size: clamp(14px, 15px, 18px);
       // line-height: 30px;
       color: #20466f;
-      padding: 10px;
+      padding: 4px;
     }
     button {
       border-radius: 48px;
@@ -83,7 +85,7 @@
     @include General.Flex();
     gap: 2rem;
     aside {
-      align-self: baseline;
+      // align-self: baseline;
       @include General.BOX();
       color: #6b7280;
     }
@@ -137,7 +139,7 @@
         color: #86898a;
         div {
           font-weight: 600;
-          font-size: 32px;
+          font-size: 23px;
           line-height: 52px;
           color: #dee3e4;
         }

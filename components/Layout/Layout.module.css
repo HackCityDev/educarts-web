@@ -83,14 +83,15 @@
   width: 100%;
   z-index: 100;
   background: #fff;
-  height: 100px;
+  justify-content: space-between;
+  height: 80px;
   padding: 10px 10%;
   gap: 30px;
 }
-@media (max-width: 900px) {
-  .Navbar {
-    justify-content: space-between;
-  }
+.Navbar aside {
+  width: -moz-fit-content !important;
+  width: fit-content !important;
+  position: relative;
 }
 .Navbar .Weblinks,
 .Navbar .CallToActionButtons {
@@ -98,15 +99,15 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  gap: 10px;
+  gap: 8px;
   white-space: nowrap;
   font-weight: 500;
 }
 .Navbar .Weblinks a,
 .Navbar .CallToActionButtons a {
-  font-size: 16px;
+  font-size: 15px;
   color: #20466f;
-  padding: 10px;
+  padding: 4px;
 }
 .Navbar .Weblinks button,
 .Navbar .CallToActionButtons button {
@@ -142,7 +143,6 @@
   gap: 2rem;
 }
 .Footer .Main aside {
-  align-self: baseline;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -201,7 +201,7 @@
 }
 .Footer .Main .Aside3 .DivText div {
   font-weight: 600;
-  font-size: 32px;
+  font-size: 23px;
   line-height: 52px;
   color: #dee3e4;
 }

@@ -69,7 +69,6 @@
 
 .Hero {
   position: relative;
-  min-height: 100vh;
   background: url("../../public/bg1.png") no-repeat center center;
   background-size: cover;
 }
