@@ -1,0 +1,235 @@
+.HighlightHeader {
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 61px;
+  color: #12273d;
+}
+
+.Headers {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 38px;
+  color: #17324f;
+}
+
+.Paragraphs {
+  font-weight: 400;
+  font-family: "Roboto" sans-serif;
+  font-size: 19px;
+  line-height: 28px;
+  letter-spacing: 0.03em;
+  color: #6a839f;
+}
+
+.Button {
+  all: unset;
+  font-weight: 600;
+  box-sizing: border-box;
+  font-size: 16px;
+  line-height: 14px;
+  padding: 15px 20px;
+  text-align: center;
+  transition: all 300ms ease-out;
+  color: #ffffff;
+  cursor: pointer;
+  background: #17324f;
+  box-shadow: 0px 4px 20px rgba(24, 30, 36, 0.1);
+  border-radius: 4px;
+  height: 100%;
+  position: relative;
+  display: block;
+}
+
+.OpposeButton {
+  background: #fafcfd;
+  box-shadow: 14px 22px 52px -12px rgba(127, 127, 127, 0.13);
+  border: 2px solid #17324f;
+  color: #17324f;
+}
+
+.Input {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  letter-spacing: 0.03em;
+  color: #3a3a3a;
+  width: min(100%, 300px);
+}
+.Input input {
+  all: unset;
+  box-sizing: border-box;
+  padding: 12px 10px;
+  border: 1px solid black;
+  cursor: text;
+  border-radius: 7px;
+}
+
+.Layout {
+  position: relative;
+  padding-top: 100px;
+}
+
+.Navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  z-index: 100;
+  background: #fff;
+  height: 100px;
+  padding: 10px 10%;
+  gap: 30px;
+}
+@media (max-width: 900px) {
+  .Navbar {
+    justify-content: space-between;
+  }
+}
+.Navbar .Weblinks,
+.Navbar .CallToActionButtons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 10px;
+  white-space: nowrap;
+  font-weight: 500;
+}
+.Navbar .Weblinks a,
+.Navbar .CallToActionButtons a {
+  font-size: 16px;
+  color: #20466f;
+  padding: 10px;
+}
+.Navbar .Weblinks button,
+.Navbar .CallToActionButtons button {
+  border-radius: 48px;
+  padding: 12px 30px;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: -0.02em;
+}
+.Navbar .Hamburger svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  cursor: pointer;
+}
+
+.Footer {
+  background: #0d1d2f;
+  padding: 0px 10%;
+}
+.Footer section {
+  padding: 20px;
+}
+.Footer section:nth-child(2) {
+  text-align: center;
+  color: #fff;
+  border-top: 1px solid;
+}
+.Footer .Main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 2rem;
+}
+.Footer .Main aside {
+  align-self: baseline;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+  gap: 30px;
+  align-items: flex-start;
+  color: #6b7280;
+}
+.Footer .Main .Aside1 .DivLogo div {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 24px;
+}
+.Footer .Main .Aside1 .DivSocials {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 200px;
+  justify-content: space-between;
+}
+.Footer .Main .Aside1 .DivSocials svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #fff;
+  opacity: 0.4;
+}
+.Footer .Main .Aside2 {
+  flex-direction: row;
+  gap: 30px;
+}
+.Footer .Main .Aside2 > div {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  line-height: 24px;
+}
+.Footer .Main .Aside2 > div h1 {
+  margin-bottom: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #8a8b8b;
+}
+.Footer .Main .Aside2 > div p {
+  white-space: nowrap;
+  font-size: 16px;
+  font-weight: 400;
+  color: #656568;
+}
+.Footer .Main .Aside3 .DivText {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #86898a;
+}
+.Footer .Main .Aside3 .DivText div {
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 52px;
+  color: #dee3e4;
+}
+.Footer .Main .Aside3 .DivInput {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 10px;
+}
+@media (max-width: 900px) {
+  .Footer .Main {
+    flex-direction: column !important;
+  }
+  .Footer .Main aside {
+    align-items: center !important;
+  }
+}
+@media (max-width: 550px) {
+  .Footer .Main .Aside2 {
+    flex-direction: column !important;
+  }
+  .Footer .Main .Aside2 div {
+    text-align: center;
+  }
+}
+@media (max-width: 420px) {
+  .Footer .Main .DivInput {
+    flex-direction: column;
+  }
+}/*# sourceMappingURL=Layout.module.css.map */

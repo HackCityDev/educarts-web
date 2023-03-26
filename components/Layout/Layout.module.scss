@@ -1,0 +1,152 @@
+@use "../General/General.module.scss" as General;
+@mixin Mobile() {
+  @media (max-width: 900px) {
+    flex-direction: column !important;
+    aside {
+      align-items: center !important;
+    }
+  }
+  @media (max-width: 550px) {
+    .Aside2 {
+      flex-direction: column !important;
+      div {
+        text-align: center;
+      }
+    }
+  }
+  @media (max-width: 420px) {
+    .DivInput {
+      flex-direction: column;
+    }
+  }
+}
+
+.Layout {
+  position: relative;
+  padding-top: 100px;
+}
+
+.Navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  @include General.Flex();
+  z-index: 100;
+  background: #fff;
+  @media (max-width: 900px) {
+    justify-content: space-between;
+  }
+  height: 100px;
+  padding: 10px General.$leftRight;
+  gap: 30px;
+  .Weblinks,
+  .CallToActionButtons {
+    @include General.Flex();
+    gap: 10px;
+    white-space: nowrap;
+    font-weight: 500;
+    a {
+      font-size: 16px;
+      // line-height: 30px;
+      color: #20466f;
+      padding: 10px;
+    }
+    button {
+      border-radius: 48px;
+      padding: 12px 30px;
+      font-size: 14px;
+      line-height: 16px;
+      letter-spacing: -0.02em;
+    }
+  }
+  .Hamburger {
+    svg {
+      width: 1.5rem;
+      height: 1.5rem;
+      cursor: pointer;
+    }
+  }
+}
+.Footer {
+  background: #0d1d2f;
+  padding: 0px General.$leftRight;
+  section {
+    padding: 20px;
+    &:nth-child(2) {
+      text-align: center;
+      color: #fff;
+      border-top: 1px solid;
+    }
+  }
+  .Main {
+    @include General.Flex();
+    gap: 2rem;
+    aside {
+      align-self: baseline;
+      @include General.BOX();
+      color: #6b7280;
+    }
+    .Aside1 {
+      .DivLogo {
+        div {
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 24px;
+        }
+      }
+      .DivSocials {
+        @include General.Flex();
+        max-width: 200px;
+        justify-content: space-between;
+        svg {
+          width: 1.5rem;
+          height: 1.5rem;
+          color: #fff;
+          opacity: 0.4;
+        }
+      }
+    }
+    .Aside2 {
+      flex-direction: row;
+      gap: 30px;
+      & > div {
+        display: flex;
+        gap: 10px;
+        flex-direction: column;
+        line-height: 24px;
+        h1 {
+          margin-bottom: 6px;
+          font-size: 16px;
+          font-weight: 600;
+          color: #8a8b8b;
+        }
+        p {
+          white-space: nowrap;
+          font-size: 16px;
+          font-weight: 400;
+          color: #656568;
+        }
+      }
+    }
+    .Aside3 {
+      .DivText {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+        color: #86898a;
+        div {
+          font-weight: 600;
+          font-size: 32px;
+          line-height: 52px;
+          color: #dee3e4;
+        }
+      }
+      .DivInput {
+        @include General.Flex();
+        gap: 10px;
+      }
+    }
+    @include Mobile();
+  }
+}

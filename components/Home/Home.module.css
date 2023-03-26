@@ -1,0 +1,443 @@
+.HighlightHeader {
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 61px;
+  color: #12273d;
+}
+
+.Headers {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 38px;
+  color: #17324f;
+}
+
+.Paragraphs {
+  font-weight: 400;
+  font-family: "Roboto" sans-serif;
+  font-size: 19px;
+  line-height: 28px;
+  letter-spacing: 0.03em;
+  color: #6a839f;
+}
+
+.Button {
+  all: unset;
+  font-weight: 600;
+  box-sizing: border-box;
+  font-size: 16px;
+  line-height: 14px;
+  padding: 15px 20px;
+  text-align: center;
+  transition: all 300ms ease-out;
+  color: #ffffff;
+  cursor: pointer;
+  background: #17324f;
+  box-shadow: 0px 4px 20px rgba(24, 30, 36, 0.1);
+  border-radius: 4px;
+  height: 100%;
+  position: relative;
+  display: block;
+}
+
+.OpposeButton {
+  background: #fafcfd;
+  box-shadow: 14px 22px 52px -12px rgba(127, 127, 127, 0.13);
+  border: 2px solid #17324f;
+  color: #17324f;
+}
+
+.Input {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  letter-spacing: 0.03em;
+  color: #3a3a3a;
+  width: min(100%, 300px);
+}
+.Input input {
+  all: unset;
+  box-sizing: border-box;
+  padding: 12px 10px;
+  border: 1px solid black;
+  cursor: text;
+  border-radius: 7px;
+}
+
+.Hero {
+  position: relative;
+  min-height: 100vh;
+  background: url("../../public/bg1.png") no-repeat center center;
+  background-size: cover;
+}
+.Hero .HeroMain {
+  background: linear-gradient(90deg, rgba(231, 227, 224, 0.99) 50.51%, rgba(231, 227, 224, 0.610689) 84%, rgba(231, 227, 224, 0.01) 101.57%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+  gap: 30px;
+  align-items: flex-start;
+  width: 50%;
+  min-height: 100vh;
+  padding: 10px 10%;
+}
+.Hero .HeroMain .dummy {
+  display: flex;
+  gap: 1rem;
+}
+.Hero .HeroMain .dummy span {
+  width: 20px;
+  height: 20px;
+  background: #e9edf1;
+  border: 1.13027px solid #98aabd;
+  border-radius: 50%;
+}
+.Hero .HeroMain .dummy span:nth-child(2) {
+  background: #6a839f;
+}
+.Hero .HeroMain .dummy span:nth-child(3) {
+  background: #17324f;
+}
+@media (max-width: 900px) {
+  .Hero .HeroMain {
+    width: 80%;
+  }
+}
+
+.Service {
+  padding: 30px 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+  gap: 30px;
+  align-items: flex-start;
+}
+.Service .ServiceHeader {
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+.Service .ServiceHeader .button {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.Service .ServiceHeader .button button {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  border-radius: 48px;
+}
+@media (max-width: 900px) {
+  .Service .ServiceHeader .button {
+    display: none;
+  }
+}
+.Service .Services {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 10px;
+}
+.Service .Services .service {
+  width: 33%;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
+.Service .Services .service p {
+  font-weight: 600;
+  text-align: center;
+  color: #1d4065;
+}
+.Service .Services .service .serviceImage {
+  overflow: hidden;
+  border-radius: 8px;
+  width: 100%;
+  position: relative;
+  padding-top: 80%;
+}
+@media (max-width: 900px) {
+  .Service .Services {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .Service .Services .service {
+    width: 100%;
+    max-width: 500px;
+  }
+}
+
+.Work {
+  padding: 1rem 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+  gap: 30px;
+  align-items: flex-start;
+}
+.Work .WorkHeader {
+  text-align: center;
+  position: relative;
+  width: 100%;
+}
+.Work .WorkHeader .line {
+  position: absolute;
+  width: 80%;
+  height: 2px;
+  background-color: #000;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.Work .WorkHeader div {
+  position: relative;
+  z-index: 1;
+  background-color: #fff;
+  margin: 0 auto;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0 10px;
+}
+.Work .WorkBody {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+  gap: 2rem;
+}
+.Work .WorkBody aside {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 1rem;
+}
+.Work .WorkBody aside:nth-child(even) {
+  flex-direction: row-reverse;
+}
+@media (min-width: 900px) {
+  .Work .WorkBody aside:nth-child(even) .WorkContent {
+    border-right: 1px solid rgb(152, 170, 189);
+    padding-right: 1rem;
+  }
+}
+.Work .WorkBody aside div {
+  width: 50%;
+}
+.Work .WorkBody aside div:nth-child(1) {
+  padding-top: 40%;
+}
+.Work .WorkBody aside div p {
+  margin: 1rem 0;
+}
+@media (max-width: 900px) {
+  .Work .WorkBody aside {
+    flex-direction: column !important;
+  }
+  .Work .WorkBody aside div {
+    width: 100%;
+  }
+  .Work .WorkBody aside div button {
+    margin: 0 auto;
+  }
+}
+
+.Testimony {
+  padding: 30px 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+  gap: 30px;
+  align-items: flex-start;
+  background: #12273d;
+  box-shadow: 0px 8px 20px rgba(23, 30, 37, 0.4);
+}
+.Testimony > div {
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  justify-content: unset;
+  gap: 3rem;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+}
+.Testimony > div::-webkit-scrollbar {
+  height: 5px;
+  display: block;
+}
+.Testimony > div::-webkit-scrollbar-track {
+  border-radius: 5px;
+  background-color: #000000;
+}
+.Testimony > div::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: transparent;
+}
+.Testimony > div:hover::-webkit-scrollbar-thumb {
+  background-color: #b8b8b8;
+}
+.Testimony .TestimonyBox {
+  background: #98aabd;
+  border: 2px solid #d0d0d0;
+  border-radius: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+  gap: 30px;
+  align-items: flex-start;
+  gap: 20px;
+  min-width: 400px;
+  padding: 40px;
+}
+.Testimony .TestimonyBox p {
+  color: #12273d;
+  font-size: 24px;
+  line-height: 38px;
+}
+.Testimony .TestimonyBox .Top,
+.Testimony .TestimonyBox .Bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.Testimony .TestimonyBox .Top {
+  justify-content: space-between;
+}
+.Testimony .TestimonyBox .Bottom {
+  gap: 10px;
+}
+.Testimony .TestimonyBox .Bottom .BottomInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.Testimony .TestimonyBox .Bottom .BottomInfo b {
+  color: #12273d;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 38px;
+}
+.Testimony .TestimonyBox .Bottom .BottomInfo span {
+  color: #17324f;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.Start {
+  padding: 30px 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+  gap: 30px;
+  align-items: flex-start;
+  align-items: center;
+  background-color: #f4f9fa;
+}
+.Start .Steps {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 1.5rem;
+}
+.Start .Steps .Step {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+  gap: 30px;
+  align-items: flex-start;
+  align-items: center;
+  text-align: center;
+  line-height: 38px;
+  align-self: baseline;
+}
+.Start .Steps .Step h1 {
+  font-weight: 700;
+  font-size: 20px;
+  font-feature-settings: "pnum" on, "lnum" on;
+  color: #4d6b8c;
+}
+.Start .Steps .Step p {
+  font-weight: 500;
+  font-size: 19px;
+  color: #12273d;
+}
+@media (max-width: 900px) {
+  .Start .Steps {
+    flex-direction: column !important;
+    max-width: 500px;
+  }
+}
+
+.Download {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 0 10%;
+  gap: 1rem;
+}
+.Download aside:nth-child(1) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+  gap: 30px;
+  align-items: flex-start;
+  align-items: center;
+  flex: 6;
+  text-align: left;
+  margin: 1rem 0;
+  align-self: baseline;
+}
+.Download aside:nth-child(1) div {
+  display: flex;
+  width: 100%;
+  gap: 10px;
+}
+.Download aside:nth-child(2) {
+  flex: 4;
+  display: flex;
+  align-self: flex-end;
+  height: 42%;
+  margin-top: 10px;
+}
+@media (min-width: 900px) {
+  .Download aside:nth-child(2) {
+    height: auto;
+    padding-top: 42% !important;
+  }
+}
+@media (max-width: 900px) {
+  .Download {
+    flex-direction: column !important;
+    max-width: -moz-max-content;
+    max-width: max-content;
+  }
+}/*# sourceMappingURL=Home.module.css.map */

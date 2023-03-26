@@ -1,0 +1,278 @@
+@use "../General/General.module.scss" as General;
+@mixin Mobile($width) {
+  @media (max-width: 900px) {
+    flex-direction: column !important;
+    max-width: $width;
+  }
+}
+.Hero {
+  position: relative;
+  min-height: 100vh;
+  background: url("../../public/bg1.png") no-repeat center center;
+  background-size: cover;
+  .HeroMain {
+    background: linear-gradient(
+      90deg,
+      rgba(231, 227, 224, 0.99) 50.51%,
+      rgba(231, 227, 224, 0.610689) 84%,
+      rgba(231, 227, 224, 0.01) 101.57%
+    );
+    @include General.BOX();
+    width: 50%;
+    min-height: 100vh;
+    padding: 10px General.$leftRight;
+    .dummy {
+      display: flex;
+      gap: 1rem;
+      span {
+        width: 20px;
+        height: 20px;
+        background: #e9edf1;
+        border: 1.13027px solid #98aabd;
+        border-radius: 50%;
+        &:nth-child(2) {
+          background: #6a839f;
+        }
+        &:nth-child(3) {
+          background: #17324f;
+        }
+      }
+    }
+    @media (max-width: 900px) {
+      width: 80%;
+    }
+  }
+}
+.Service {
+  padding: 30px General.$leftRight;
+  @include General.BOX();
+  .ServiceHeader {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    .button {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      button {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        border-radius: 48px;
+      }
+      @media (max-width: 900px) {
+        display: none;
+      }
+    }
+  }
+  .Services {
+    @include General.Flex();
+    gap: 10px;
+    .service {
+      width: 33%;
+      display: flex;
+      gap: 1rem;
+      flex-direction: column;
+      p {
+        font-weight: 600;
+        text-align: center;
+        color: #1d4065;
+      }
+      .serviceImage {
+        overflow: hidden;
+        border-radius: 8px;
+        width: 100%;
+        position: relative;
+        padding-top: 80%;
+      }
+    }
+    @media (max-width: 900px) {
+      flex-direction: column;
+      gap: 2rem;
+      .service {
+        width: 100%;
+        max-width: 500px;
+      }
+    }
+  }
+}
+.Work {
+  padding: 1rem General.$leftRight;
+  @include General.BOX();
+  .WorkHeader {
+    text-align: center;
+    position: relative;
+    width: 100%;
+    .line {
+      position: absolute;
+      width: 80%;
+      height: 2px;
+      background-color: #000;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+    div {
+      position: relative;
+      z-index: 1;
+      background-color: #fff;
+      margin: 0 auto;
+      width: fit-content;
+      padding: 0 10px;
+    }
+  }
+  .WorkBody {
+    @include General.Flex();
+    flex-direction: column;
+    gap: 2rem;
+    aside {
+      @include General.Flex();
+      gap: 1rem;
+      &:nth-child(even) {
+        flex-direction: row-reverse;
+        .WorkContent {
+          @media (min-width: 900px) {
+            border-right: 1px solid rgba(152, 170, 189, 1);
+            padding-right: 1rem;
+          }
+        }
+      }
+      div {
+        width: 50%;
+        &:nth-child(1) {
+          padding-top: 40%;
+        }
+        p {
+          margin: 1rem 0;
+        }
+      }
+      @media (max-width: 900px) {
+        flex-direction: column !important;
+        div {
+          width: 100%;
+          button {
+            margin: 0 auto;
+          }
+        }
+      }
+    }
+  }
+}
+.Testimony {
+  padding: 30px General.$leftRight;
+  @include General.BOX();
+  background: #12273d;
+  box-shadow: 0px 8px 20px rgba(23, 30, 37, 0.4);
+  & > div {
+    color: #fff;
+    @include General.Flex();
+    justify-content: unset;
+    gap: 3rem;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+    @include General.Webkit();
+  }
+  .TestimonyBox {
+    background: #98aabd;
+    border: 2px solid #d0d0d0;
+    border-radius: 40px;
+    @include General.BOX();
+    gap: 20px;
+    min-width: 400px;
+    padding: 40px;
+    p {
+      color: #12273d;
+      font-size: 24px;
+      line-height: 38px;
+    }
+    .Top,
+    .Bottom {
+      @include General.Flex();
+    }
+    .Top {
+      justify-content: space-between;
+    }
+    .Bottom {
+      gap: 10px;
+      .BottomInfo {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        b {
+          color: #12273d;
+          font-weight: 600;
+          font-size: 24px;
+          line-height: 38px;
+        }
+        span {
+          color: #17324f;
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 24px;
+        }
+      }
+    }
+  }
+}
+.Start {
+  padding: 30px General.$leftRight;
+  @include General.BOX();
+  align-items: center;
+  background-color: #f4f9fa;
+  .Steps {
+    @include General.Flex();
+    gap: 1.5rem;
+    .Step {
+      @include General.BOX();
+      align-items: center;
+      text-align: center;
+      line-height: 38px;
+      align-self: baseline;
+      h1 {
+        font-weight: 700;
+        font-size: 20px;
+        font-feature-settings: "pnum" on, "lnum" on;
+        color: #4d6b8c;
+      }
+      p {
+        font-weight: 500;
+        font-size: 19px;
+        color: #12273d;
+      }
+    }
+    @include Mobile(500px);
+  }
+}
+.Download {
+  @include General.Flex();
+  padding: 0 General.$leftRight;
+  gap: 1rem;
+  aside {
+    &:nth-child(1) {
+      @include General.BOX();
+      align-items: center;
+      flex: 6;
+      text-align: left;
+      margin: 1rem 0;
+      align-self: baseline;
+      div {
+        display: flex;
+        width: 100%;
+        gap: 10px;
+      }
+    }
+    &:nth-child(2) {
+      flex: 4;
+      display: flex;
+      align-self: flex-end;
+      height: 42%;
+      margin-top: 10px;
+      @media (min-width: 900px) {
+        height: auto;
+        padding-top: 42% !important;
+      }
+    }
+  }
+  @include Mobile(max-content);
+}
