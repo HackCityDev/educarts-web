@@ -162,6 +162,7 @@ $background-images: (
           width: 100%;
           button {
             margin: 0 auto;
+            width: min(100%, 335px);
           }
         }
       }
@@ -181,11 +182,29 @@ $background-images: (
     overflow: hidden;
     display: flex;
     opacity: 0.1;
+    img {
+      position: absolute;
+      &:nth-child(1) {
+        top: -110px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      &:nth-child(2) {
+        bottom: -100px;
+        left: -210px;
+      }
+      &:nth-child(3) {
+        bottom: -110px;
+        right: -200px;
+      }
+    }
   }
   .Main {
     padding: 30px General.$leftRight;
     z-index: 2;
-    & > div {
+    width: 100%;
+    .Testimonies {
+      margin-top: 20px;
       z-index: 3;
       color: #fff;
       @include General.Flex();
@@ -291,6 +310,7 @@ $background-images: (
       align-self: flex-end;
       height: 42%;
       margin-top: 10px;
+      margin-bottom: -12px;
       @media (min-width: 900px) {
         height: auto;
         padding-top: 42% !important;

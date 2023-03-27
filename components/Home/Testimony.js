@@ -1,5 +1,3 @@
-import Button from "../General/Button";
-import Headers from "../General/Headers";
 import HighlightHeader from "../General/HighlightHeader";
 import Paragraphs from "../General/Paragraphs";
 import TestimonyImage from "../../assets/testimony.png";
@@ -8,20 +6,25 @@ import Ghana from "../../assets/Ghana";
 import Naija from "../../assets/Naija";
 import Quotes from "../../assets/Quotes";
 import Image from "next/image";
-import Blob1 from "../../assets/blob1.png";
-import Blob2 from "../../assets/blob2.png";
-import Blob3 from "../../assets/blob3.png";
 export default function Testimony() {
   return (
     <div className={styles.Testimony}>
       <section className={styles.Blobs}>
-        <Image src={Blob1} width="500px" height="500px" />
-        <Image src={Blob2} width="500px" height="500px" />
-        <Image src={Blob3} width="500px" height="500px" />
+        <img src="/blobs/blob1.png" width="500px" height="500px" />
+        <img src="/blobs/blob2.png" width="500px" height="500px" />
+        <img src="/blobs/blob3.png" width="500px" height="500px" />
       </section>
       <section className={styles.Main}>
-        <HighlightHeader content="What people say about us" />
-        <div>
+        <HighlightHeader
+          content="What people say about us"
+          style={{
+            fontWeight: 600,
+            fontSize: "52px",
+            lineHeight: "61px",
+            color: "#DBEBEE",
+          }}
+        />
+        <div className={styles.Testimonies}>
           {Testimonies.map((testimony, i) => (
             <aside key={i} className={styles.TestimonyBox}>
               <div className={styles.Top}>

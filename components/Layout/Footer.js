@@ -9,6 +9,9 @@ import styles from "./Layout.module.css";
 export default function Footer() {
   return (
     <footer className={styles.Footer}>
+      <section className={styles.Blobs}>
+        <img src="/blobs/blob.png" />
+      </section>
       <section className={styles.Main}>
         <aside className={styles.Aside1}>
           <div className={styles.DivLogo}>

@@ -38,6 +38,7 @@
   height: 100%;
   position: relative;
   display: block;
+  border: 2px solid #17324f;
 }
 
 .OpposeButton {
@@ -57,6 +58,34 @@
   letter-spacing: 0.03em;
   color: #3a3a3a;
   width: min(100%, 300px);
+  position: relative;
+}
+.Input::after {
+  content: attr(data-after);
+  position: absolute;
+  left: 80px;
+  font-size: x-large;
+  color: red;
+}
+.Input span.before {
+  margin: 0 !important;
+  padding-top: 26px;
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  width: -moz-fit-content;
+  width: fit-content;
+  color: rgb(178, 180, 180);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  gap: 5px;
+}
+.Input span + input {
+  display: inline-block;
+  padding-left: 100px;
 }
 .Input input {
   all: unset;
@@ -65,6 +94,17 @@
   border: 1px solid black;
   cursor: text;
   border-radius: 7px;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.Span {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  color: #17324f;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
 }
 
 .Layout {
@@ -122,18 +162,55 @@
   height: 1.5rem;
   cursor: pointer;
 }
+@media (min-width: 900px) and (max-width: 1000px) {
+  .Navbar {
+    gap: 15px;
+  }
+  .Navbar .Weblinks,
+  .Navbar .CallToActionButtons {
+    gap: 5px !important;
+  }
+  .Navbar .Weblinks button,
+  .Navbar .CallToActionButtons button {
+    padding: 8px 20px;
+  }
+}
 
 .Footer {
   background: #0d1d2f;
   padding: 0px 10%;
+  position: relative;
+  overflow: hidden;
 }
 .Footer section {
   padding: 20px;
 }
-.Footer section:nth-child(2) {
+.Footer section:nth-child(3) {
   text-align: center;
   color: #fff;
   border-top: 1px solid;
+}
+.Footer .Blobs {
+  padding: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.Footer .Blobs img {
+  position: absolute;
+  top: 40%;
+  right: 20%;
+}
+@media (max-width: 1100px) {
+  .Footer .Blobs img {
+    top: 60%;
+  }
+}
+@media (max-width: 700px) {
+  .Footer .Blobs img {
+    top: 70%;
+  }
 }
 .Footer .Main {
   display: flex;
@@ -141,6 +218,12 @@
   align-items: center;
   width: 100%;
   gap: 2rem;
+  flex-wrap: wrap;
+}
+@media (min-width: 1150px) {
+  .Footer .Main {
+    flex-wrap: nowrap;
+  }
 }
 .Footer .Main aside {
   display: flex;
@@ -150,7 +233,10 @@
   flex-direction: column;
   gap: 30px;
   align-items: flex-start;
+  width: -moz-fit-content;
+  width: fit-content;
   color: #6b7280;
+  flex: 1 1 auto;
 }
 .Footer .Main .Aside1 .DivLogo div {
   font-weight: 400;

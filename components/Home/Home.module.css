@@ -293,6 +293,7 @@
   }
   .Work .WorkBody aside div button {
     margin: 0 auto;
+    width: min(100%, 335px);
   }
 }
 
@@ -317,11 +318,29 @@
   display: flex;
   opacity: 0.1;
 }
+.Testimony .Blobs img {
+  position: absolute;
+}
+.Testimony .Blobs img:nth-child(1) {
+  top: -110px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.Testimony .Blobs img:nth-child(2) {
+  bottom: -100px;
+  left: -210px;
+}
+.Testimony .Blobs img:nth-child(3) {
+  bottom: -110px;
+  right: -200px;
+}
 .Testimony .Main {
   padding: 30px 10%;
   z-index: 2;
+  width: 100%;
 }
-.Testimony .Main > div {
+.Testimony .Main .Testimonies {
+  margin-top: 20px;
   z-index: 3;
   color: #fff;
   display: flex;
@@ -333,19 +352,19 @@
   overflow-x: auto;
   padding-bottom: 1rem;
 }
-.Testimony .Main > div::-webkit-scrollbar {
+.Testimony .Main .Testimonies::-webkit-scrollbar {
   height: 5px;
   display: block;
 }
-.Testimony .Main > div::-webkit-scrollbar-track {
+.Testimony .Main .Testimonies::-webkit-scrollbar-track {
   border-radius: 5px;
   background-color: #000000;
 }
-.Testimony .Main > div::-webkit-scrollbar-thumb {
+.Testimony .Main .Testimonies::-webkit-scrollbar-thumb {
   border-radius: 5px;
   background-color: transparent;
 }
-.Testimony .Main > div:hover::-webkit-scrollbar-thumb {
+.Testimony .Main .Testimonies:hover::-webkit-scrollbar-thumb {
   background-color: #b8b8b8;
 }
 .Testimony .TestimonyBox {
@@ -482,6 +501,7 @@
   align-self: flex-end;
   height: 42%;
   margin-top: 10px;
+  margin-bottom: -12px;
 }
 @media (min-width: 900px) {
   .Download aside:nth-child(2) {

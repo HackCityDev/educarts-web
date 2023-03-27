@@ -2,7 +2,7 @@ import Image from "next/image";
 import AppStore from "../../assets/AppStore";
 import HighlightHeader from "../General/HighlightHeader";
 import Paragraphs from "../General/Paragraphs";
-import Phone from "../../assets/phone.png";
+import Phone from "../../assets/iPhone.png";
 import styles from "./Home.module.css";
 export default function Download() {
   return (
