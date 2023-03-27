@@ -12,7 +12,11 @@ export default function Navbar() {
   return (
     <nav className={styles.Navbar}>
       <aside className={styles.Logo}>
-        <Logo />
+        <Link href="/">
+          <a>
+            <Logo />
+          </a>
+        </Link>
       </aside>
       {isMobile ? (
         <aside className={styles.Hamburger}>
@@ -33,8 +37,8 @@ export default function Navbar() {
             ))}
           </aside>
           <aside className={styles.CallToActionButtons}>
-            <Button oppose={true} content="Log In" />
-            <Button content="Sign Up" />
+            <Button oppose={true} content="Log In" link="/signin" />
+            <Button content="Sign Up" link="/signup" />
           </aside>
         </>
       )}

@@ -8,33 +8,43 @@ import Ghana from "../../assets/Ghana";
 import Naija from "../../assets/Naija";
 import Quotes from "../../assets/Quotes";
 import Image from "next/image";
+import Blob1 from "../../assets/blob1.png";
+import Blob2 from "../../assets/blob2.png";
+import Blob3 from "../../assets/blob3.png";
 export default function Testimony() {
   return (
     <div className={styles.Testimony}>
-      <HighlightHeader content="What people say about us" />
-      <div>
-        {Testimonies.map((testimony, i) => (
-          <aside key={i} className={styles.TestimonyBox}>
-            <div className={styles.Top}>
-              <Quotes />
-              {testimony.country}
-            </div>
-            <Paragraphs content={testimony.text} />
-            <div className={styles.Bottom}>
-              <Image
-                src={testimony.photo}
-                width="200px"
-                height="200px"
-                style={{ borderRadius: "50%" }}
-              />
-              <div className={styles.BottomInfo}>
-                <b>{testimony.name}</b>
-                <span>{testimony.more}</span>
+      <section className={styles.Blobs}>
+        <Image src={Blob1} width="500px" height="500px" />
+        <Image src={Blob2} width="500px" height="500px" />
+        <Image src={Blob3} width="500px" height="500px" />
+      </section>
+      <section className={styles.Main}>
+        <HighlightHeader content="What people say about us" />
+        <div>
+          {Testimonies.map((testimony, i) => (
+            <aside key={i} className={styles.TestimonyBox}>
+              <div className={styles.Top}>
+                <Quotes />
+                {testimony.country}
               </div>
-            </div>
-          </aside>
-        ))}
-      </div>
+              <Paragraphs content={testimony.text} />
+              <div className={styles.Bottom}>
+                <Image
+                  src={testimony.photo}
+                  width="200px"
+                  height="200px"
+                  style={{ borderRadius: "50%" }}
+                />
+                <div className={styles.BottomInfo}>
+                  <b>{testimony.name}</b>
+                  <span>{testimony.more}</span>
+                </div>
+              </div>
+            </aside>
+          ))}
+        </div>
+      </section>
     </div>
   );
 }
