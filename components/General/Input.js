@@ -9,6 +9,8 @@ export default function Input({
   placeholder,
   name,
   value,
+  before,
+  after,
 }) {
   return (
     <label htmlFor={label} className={styles.Input} style={labelStyle}>
@@ -21,6 +23,16 @@ export default function Input({
         id={label}
         name={name}
         value={value}
+        data-before={before}
+        className={
+          before
+            ? styles.InputBefore
+            : after
+            ? styles.InputAfter
+            : before && after
+            ? styles.InputBeforeAfter
+            : styles.InputNone
+        }
       />
     </label>
   );

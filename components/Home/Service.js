@@ -23,7 +23,7 @@ export default function Service() {
       <aside className={styles.Services}>
         {" "}
         {Services.map((service) => (
-          <div className={styles.service}>
+          <div className={styles.service} key={service.header}>
             <div className={styles.serviceImage}>
               <Image src={service.image} objectFit="cover" layout="fill" />
             </div>

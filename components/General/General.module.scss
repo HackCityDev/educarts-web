@@ -75,22 +75,12 @@ $boxShadow: 4.5px 4.5px 3.1px rgba(0, 0, 0, 0.024),
   height: 100%;
   position: relative;
   display: block;
-  // &:hover {
-  //   color: rgba(21, 42, 71, 1);
-  //   background-color: #ffffff;
-  //   border: 1px solid rgba(21, 42, 71, 1);
-  // }
 }
 .OpposeButton {
   background: #fafcfd;
   box-shadow: 14px 22px 52px -12px rgba(127, 127, 127, 0.13);
   border: 2px solid #17324f;
   color: #17324f;
-  // &:hover {
-  //   color: #ffffff;
-  //   background-color: #152a47;
-  //   box-shadow: 0px 7px 22px -6px rgba(33, 123, 244, 0.34);
-  // }
 }
 
 @mixin BOX {
@@ -109,6 +99,7 @@ $boxShadow: 4.5px 4.5px 3.1px rgba(0, 0, 0, 0.024),
   letter-spacing: 0.03em;
   color: #3a3a3a;
   width: min(100%, 300px);
+  position: relative;
 }
 .Input {
   @include Label();
@@ -119,5 +110,27 @@ $boxShadow: 4.5px 4.5px 3.1px rgba(0, 0, 0, 0.024),
     border: 1px solid black;
     cursor: text;
     border-radius: 7px;
+    position: relative;
   }
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  input::after {
+    // content: attr(data-before);
+    content: "I want to remove the number incrementor indicator on my input element";
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #3a3a3a;
+  }
+}
+.Span {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  color: #17324f;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
 }
