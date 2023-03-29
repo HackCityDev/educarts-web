@@ -147,6 +147,9 @@ $background-images: (
           }
         }
       }
+      &:nth-child(odd) {
+        gap: 2rem;
+      }
       div {
         width: 50%;
         &:nth-child(1) {

@@ -19,9 +19,10 @@ export default function Testimony() {
           content="What people say about us"
           style={{
             fontWeight: 600,
-            fontSize: "52px",
+            fontSize: "40px",
             lineHeight: "61px",
             color: "#DBEBEE",
+            textAlign: "center",
           }}
         />
         <div className={styles.Testimonies}>

@@ -275,6 +275,9 @@
     padding-right: 1rem;
   }
 }
+.Work .WorkBody aside:nth-child(odd) {
+  gap: 2rem;
+}
 .Work .WorkBody aside div {
   width: 50%;
 }
