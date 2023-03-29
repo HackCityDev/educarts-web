@@ -10,7 +10,9 @@ $background-images: (
   "../../public/bg1.png",
   "../../public/bg1.png"
 );
-
+.Index {
+  position: relative;
+}
 .Hero {
   position: relative;
   // background: url("../../public/bg1.png") no-repeat center center;
@@ -59,21 +61,6 @@ $background-images: (
     position: relative;
     width: 100%;
     text-align: center;
-    .button {
-      position: absolute;
-      right: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      button {
-        display: flex;
-        gap: 1rem;
-        align-items: center;
-        border-radius: 48px;
-      }
-      @media (max-width: 900px) {
-        display: none;
-      }
-    }
   }
   .Services {
     @include General.Flex();

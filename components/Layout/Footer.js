@@ -8,7 +8,7 @@ import Paragraphs from "../General/Paragraphs";
 import styles from "./Layout.module.css";
 export default function Footer() {
   return (
-    <footer className={styles.Footer}>
+    <footer className={styles.Footer} id="footer">
       <section className={styles.Blobs}>
         <img src="/blobs/blob.png" />
       </section>

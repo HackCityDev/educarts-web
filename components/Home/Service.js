@@ -1,6 +1,4 @@
 import Image from "next/image";
-import Support from "../../assets/Support";
-import Button from "../General/Button";
 import Paragraphs from "../General/Paragraphs";
 import HighlightHeader from "../General/HighlightHeader";
 import styles from "./Home.module.css";
@@ -9,16 +7,6 @@ export default function Service() {
     <div className={styles.Service}>
       <aside className={styles.ServiceHeader}>
         <HighlightHeader content="Our Services Include" />
-        <div className={styles.button}>
-          <Button
-            content={
-              <>
-                <Support />
-                Help
-              </>
-            }
-          />
-        </div>
       </aside>
       <aside className={styles.Services}>
         {" "}

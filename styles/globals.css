@@ -61,3 +61,18 @@ input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
+.Support {
+  position: fixed;
+  bottom: 5%;
+  right: 10%;
+  z-index: 3;
+  display: flex;
+  cursor: pointer;
+  gap: 8px;
+  align-items: center;
+  padding: 10px;
+  background-color: #17324f;
+  color: #fff;
+  border-radius: 10px;
+}

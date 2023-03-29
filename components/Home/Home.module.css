@@ -107,6 +107,10 @@
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
 }
 
+.Index {
+  position: relative;
+}
+
 .Hero {
   position: relative;
   background-image: url("../../public/bg1.png");
@@ -164,23 +168,6 @@
   position: relative;
   width: 100%;
   text-align: center;
-}
-.Service .ServiceHeader .button {
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-}
-.Service .ServiceHeader .button button {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-  border-radius: 48px;
-}
-@media (max-width: 900px) {
-  .Service .ServiceHeader .button {
-    display: none;
-  }
 }
 .Service .Services {
   display: flex;
