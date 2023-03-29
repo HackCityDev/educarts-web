@@ -330,32 +330,37 @@
   width: 100%;
 }
 .Testimony .Main .Testimonies {
-  margin-top: 20px;
-  z-index: 3;
-  color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: 100%;
-  justify-content: unset;
-  gap: 3rem;
-  overflow-x: auto;
-  padding-bottom: 1rem;
 }
-.Testimony .Main .Testimonies::-webkit-scrollbar {
-  height: 5px;
-  display: block;
+.Testimony .Main .Testimonies > div:nth-child(2) {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  justify-items: stretch;
+  align-items: stretch;
 }
-.Testimony .Main .Testimonies::-webkit-scrollbar-track {
-  border-radius: 5px;
-  background-color: #000000;
+.Testimony .Main .Testimonies > div:nth-child(2) > div {
+  gap: 10px;
+  display: flex;
 }
-.Testimony .Main .Testimonies::-webkit-scrollbar-thumb {
-  border-radius: 5px;
-  background-color: transparent;
+.Testimony .Main .Testimonies .TestimonyBox {
+  width: min(300px, 100%);
+  padding: 20px;
 }
-.Testimony .Main .Testimonies:hover::-webkit-scrollbar-thumb {
-  background-color: #b8b8b8;
+.Testimony .Main .Testimonies .TestimonyBox .Top svg {
+  width: 50px;
+  height: 50px;
+}
+.Testimony .Main .Testimonies .TestimonyBox p {
+  font-size: 18px;
+  line-height: 23px;
+  margin: 10px 0;
+}
+.Testimony .Main .Testimonies .TestimonyBox .Bottom .BottomImage {
+  position: relative;
+  width: 150px;
+  padding-top: 40%;
 }
 .Testimony .TestimonyBox {
   background: #98aabd;
@@ -369,13 +374,12 @@
   gap: 30px;
   align-items: flex-start;
   gap: 20px;
-  min-width: 400px;
   padding: 40px;
 }
 .Testimony .TestimonyBox p {
   color: #12273d;
   font-size: 24px;
-  line-height: 38px;
+  line-height: 20px;
 }
 .Testimony .TestimonyBox .Top,
 .Testimony .TestimonyBox .Bottom {
@@ -398,14 +402,14 @@
 .Testimony .TestimonyBox .Bottom .BottomInfo b {
   color: #12273d;
   font-weight: 600;
-  font-size: 24px;
-  line-height: 38px;
+  font-size: 20px;
+  line-height: 20px;
 }
 .Testimony .TestimonyBox .Bottom .BottomInfo span {
   color: #17324f;
   font-weight: 500;
-  font-size: 16px;
-  line-height: 24px;
+  font-size: 14px;
+  line-height: 18px;
 }
 
 .Start {
