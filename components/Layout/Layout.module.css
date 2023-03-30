@@ -214,6 +214,7 @@
   }
 }
 .Footer .Main {
+  margin: 20px 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -276,9 +277,10 @@
 }
 .Footer .Main .Aside2 > div p {
   white-space: nowrap;
+  font-weight: 500;
   font-size: 16px;
-  font-weight: 400;
-  color: #656568;
+  line-height: 24px;
+  color: #86898a;
 }
 .Footer .Main .Aside3 .DivText {
   font-weight: 500;

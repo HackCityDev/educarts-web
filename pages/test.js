@@ -1,48 +1,73 @@
-import { useRef, useEffect, useState } from "react";
+import Image from "next/image";
+import { useEffect, useState } from "react";
+import Ghana from "../assets/Ghana";
+import Quotes from "../assets/Quotes";
+import Paragraphs from "../components/General/Paragraphs";
+import TestImage from "../assets/testimony.png";
+import styles from "../components/Home/Home.module.css";
 
-const MyComponent = () => {
-  const heroMain = useRef(null);
-  const [bgValue, setBgValue] = useState(1);
+let Testimonies = [
+  {
+    country: <Ghana />,
+    text: "I appreciate the customer supports they were very responsive and resolved them in time, Thank you Educart",
+    photo: TestImage,
+    name: "Esene Godwin",
+    more: "MBA. Industrial Design, Imperial College London, Accra Ghana",
+  },
+  {
+    country: <Ghana />,
+    text: "I appreciate the customer supports they were very responsive and resolved them in time, Thank you Educart",
+    photo: TestImage,
+    name: "Esene Godwin",
+    more: "MBA. Industrial Design, Imperial College London, Accra Ghana",
+  },
+];
+console.log(styles);
+export function Testimonials({ Test }) {
+  return (
+    <aside className={styles.TestBox}>
+      <div className={styles.Top}>
+        <Quotes />
+        {Test.country}
+      </div>
+      <Paragraphs content={Test.text} />
+      <div className={styles.Bottom}>
+        <div className={styles.BottomImage}>
+          <Image
+            src={Test.photo}
+            objectFit="contain"
+            layout="fill"
+            style={{ borderRadius: "50%" }}
+          />
+        </div>
+        <div className={styles.BottomInfo}>
+          <b>{Test.name}</b>
+          <span>{Test.more}</span>
+        </div>
+      </div>
+    </aside>
+  );
+}
+
+const Carousel = ({ testimonials, interval }) => {
+  const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0);
 
   useEffect(() => {
-    const intervalId = setInterval(() => {
-      setBgValue((bgValue) => (bgValue === 1 ? 2 : 1));
-    }, 1000);
-    return () => clearInterval(intervalId);
-  }, []);
+    const timer = setInterval(() => {
+      setCurrentTestimonialIndex(
+        (currentTestimonialIndex + 1) % testimonials.length
+      );
+    }, interval);
 
-  useEffect(() => {
-    if (heroMain.current) {
-      heroMain.current.classList.add("fade-in");
-      setTimeout(() => {
-        heroMain.current.classList.remove("fade-in");
-      }, 100);
-    }
-  }, [bgValue]);
-
-  const bg = `bg${bgValue}.png`;
-  const imageUrl = `url(${bg})`;
+    return () => clearInterval(timer);
+  }, [currentTestimonialIndex, interval]);
 
   return (
-    <div ref={heroMain}>
-      <h1>Welcome to my website!</h1>
-      <p>This background image is changing every 1 second.</p>
-      <style jsx>{`
-        div {
-          width: 100%;
-          height: 100vh;
-          background-image: ${imageUrl};
-          background-repeat: no-repeat;
-          background-position: center center;
-          background-size: cover;
-          transition: opacity 100ms ease-in-out;
-        }
-        .fade-in {
-          opacity: 0;
-        }
-      `}</style>
+    <div>
+      <Testimonials Test={testimonials[currentTestimonialIndex]} />
     </div>
   );
 };
-
-export default MyComponent;
+export default function Test() {
+  return <Carousel testimonials={Testimonies} interval={3000} />;
+}

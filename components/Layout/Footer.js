@@ -25,13 +25,13 @@ export default function Footer() {
         </aside>
         <aside className={styles.Aside2}>
           <div className={styles.Div1}>
-            <Headers content="Solution" />
+            <Headers content="Solution" style={{ color: "#dee3e4" }} />
             {solutions.map((solution) => (
               <Paragraphs content={solution} key={solution} />
             ))}
           </div>
           <div className={styles.Div2}>
-            <Headers content="Contact" />
+            <Headers content="Contact" style={{ color: "#dee3e4" }} />
             {contacts.map((solution) => (
               <Paragraphs content={solution} key={solution} />
             ))}

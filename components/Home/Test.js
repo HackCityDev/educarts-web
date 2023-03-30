@@ -1,34 +1,14 @@
 import HighlightHeader from "../General/HighlightHeader";
 import Paragraphs from "../General/Paragraphs";
-import TestimonyImage from "../../assets/testimony.png";
+import TestImage from "../../assets/testimony.png";
 import styles from "./Home.module.css";
 import Ghana from "../../assets/Ghana";
 import Naija from "../../assets/Naija";
 import Quotes from "../../assets/Quotes";
 import Image from "next/image";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import useMQ from "../../hooks/useMQ";
-export default function Testimony() {
-  const isMobile = useMQ("(max-width: 400px)");
-  const isTablet = useMQ("(max-width: 900px)");
-  const isPC = useMQ("(max-width: 1200px)");
-  const settings = {
-    dots: true,
-    infinite: true,
-    slidesToShow: isMobile ? 1 : 2,
-    slidesToScroll: 1,
-    autoplay: true,
-    speed: 3000,
-    autoplaySpeed: 2000,
-    cssEase: "linear",
-    nextArrow: <SampleArrow />,
-    prevArrow: <SampleArrow />,
-    pauseOnHover: true,
-  };
+export default function Test() {
   return (
-    <div className={styles.Testimony}>
+    <div className={styles.Test}>
       <section className={styles.Blobs}>
         <img src="/blobs/blob1.png" width="500px" height="500px" />
         <img src="/blobs/blob2.png" width="500px" height="500px" />
@@ -46,68 +26,48 @@ export default function Testimony() {
             margin: "20px 0",
           }}
         />
-        <Slider {...settings} className={styles.Testimonies}>
-          {Testimonies.map((testimony, i) => (
-            <aside key={i} className={styles.TestimonyBox}>
-              <div className={styles.Top}>
-                <Quotes />
-                {testimony.country}
-              </div>
-              <Paragraphs content={testimony.text} />
-              <div className={styles.Bottom}>
-                <div className={styles.BottomImage}>
-                  <Image
-                    src={testimony.photo}
-                    objectFit="contain"
-                    layout="fill"
-                    style={{ borderRadius: "50%" }}
-                  />
-                </div>
-                <div className={styles.BottomInfo}>
-                  <b>{testimony.name}</b>
-                  <span>{testimony.more}</span>
-                </div>
-              </div>
-            </aside>
+        <main className={styles.Testimonies}>
+          {Testimonies.map((Test, i) => (
+            <Testimonials key={i} Test={Test} />
           ))}
-        </Slider>
+        </main>
       </section>
     </div>
   );
 }
-let Testimonies = [
+export let Testimonies = [
   {
     country: <Ghana />,
     text: "I appreciate the customer supports they were very responsive and resolved them in time, Thank you Educart",
-    photo: TestimonyImage,
+    photo: TestImage,
     name: "Esene Godwin",
     more: "MBA. Industrial Design, Imperial College London, Accra Ghana",
   },
   {
     country: <Ghana />,
     text: "I appreciate the customer supports they were very responsive and resolved them in time, Thank you Educart",
-    photo: TestimonyImage,
+    photo: TestImage,
     name: "Esene Godwin",
     more: "MBA. Industrial Design, Imperial College London, Accra Ghana",
   },
   {
     country: <Ghana />,
     text: "I appreciate the customer supports they were very responsive and resolved them in time, Thank you Educart",
-    photo: TestimonyImage,
+    photo: TestImage,
     name: "Esene Godwin",
     more: "MBA. Industrial Design, Imperial College London, Accra Ghana",
   },
   {
     country: <Naija />,
     text: "I appreciate the customer supports they were very responsive and resolved them in time, Thank you Educart",
-    photo: TestimonyImage,
+    photo: TestImage,
     name: "Esene Godwin",
     more: "MBA. Industrial Design, Imperial College London, Accra Ghana",
   },
   {
     country: <Naija />,
     text: "I appreciate the customer supports they were very responsive and resolved them in time, Thank you Educart",
-    photo: TestimonyImage,
+    photo: TestImage,
     name: "Esene Godwin",
     more: "MBA. Industrial Design, Imperial College London, Accra Ghana",
   },
@@ -120,5 +80,30 @@ function SampleArrow(props) {
       style={{ ...style, display: "none", background: "green" }}
       onClick={onClick}
     />
+  );
+}
+export function Testimonials({ Test }) {
+  return (
+    <aside className={styles.TestBox}>
+      <div className={styles.Top}>
+        <Quotes />
+        {Test.country}
+      </div>
+      <Paragraphs content={Test.text} />
+      <div className={styles.Bottom}>
+        <div className={styles.BottomImage}>
+          <Image
+            src={Test.photo}
+            objectFit="contain"
+            layout="fill"
+            style={{ borderRadius: "50%" }}
+          />
+        </div>
+        <div className={styles.BottomInfo}>
+          <b>{Test.name}</b>
+          <span>{Test.more}</span>
+        </div>
+      </div>
+    </aside>
   );
 }

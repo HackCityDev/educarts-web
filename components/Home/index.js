@@ -6,13 +6,14 @@ import Hero from "./Hero";
 import styles from "./Home.module.css";
 import Service from "./Service";
 import Start from "./Start";
+import Test from "./Test";
+import Testimonials from "./Test2";
 import Testimony from "./Testimony";
 import Work from "./Work";
 export default function Index() {
   let bottom = useFooterInView();
   let supportRef = useRef(null);
   function removeFixedPosition() {
-    console.log(bottom);
     if (supportRef.current && bottom) {
       supportRef.current.style.position = "absolute";
       supportRef.current.style.bottom = "1%";
@@ -30,7 +31,9 @@ export default function Index() {
       <Hero />
       <Service />
       <Work />
-      <Testimony />
+      {/* <Testimony /> */}
+      {/* <Test /> */}
+      <Testimonials />
       <Start />
       <Download />
     </div>
