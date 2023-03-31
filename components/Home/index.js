@@ -31,9 +31,9 @@ export default function Index() {
       <Hero />
       <Service />
       <Work />
-      {/* <Testimony /> */}
+      <Testimony />
       {/* <Test /> */}
-      <Testimonials />
+      {/* <Testimonials /> */}
       <Start />
       <Download />
     </div>

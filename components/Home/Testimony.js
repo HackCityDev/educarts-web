@@ -4,29 +4,8 @@ import TestimonyImage from "../../assets/testimony.png";
 import styles from "./Home.module.css";
 import Ghana from "../../assets/Ghana";
 import Naija from "../../assets/Naija";
-import Quotes from "../../assets/Quotes";
-import Image from "next/image";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import useMQ from "../../hooks/useMQ";
+import Testimonials from "./Test2";
 export default function Testimony() {
-  const isMobile = useMQ("(max-width: 400px)");
-  const isTablet = useMQ("(max-width: 900px)");
-  const isPC = useMQ("(max-width: 1200px)");
-  const settings = {
-    dots: true,
-    infinite: true,
-    slidesToShow: isMobile ? 1 : 2,
-    slidesToScroll: 1,
-    autoplay: true,
-    speed: 3000,
-    autoplaySpeed: 2000,
-    cssEase: "linear",
-    nextArrow: <SampleArrow />,
-    prevArrow: <SampleArrow />,
-    pauseOnHover: true,
-  };
   return (
     <div className={styles.Testimony}>
       <section className={styles.Blobs}>
@@ -46,31 +25,7 @@ export default function Testimony() {
             margin: "20px 0",
           }}
         />
-        <Slider {...settings} className={styles.Testimonies}>
-          {Testimonies.map((testimony, i) => (
-            <aside key={i} className={styles.TestimonyBox}>
-              <div className={styles.Top}>
-                <Quotes />
-                {testimony.country}
-              </div>
-              <Paragraphs content={testimony.text} />
-              <div className={styles.Bottom}>
-                <div className={styles.BottomImage}>
-                  <Image
-                    src={testimony.photo}
-                    objectFit="contain"
-                    layout="fill"
-                    style={{ borderRadius: "50%" }}
-                  />
-                </div>
-                <div className={styles.BottomInfo}>
-                  <b>{testimony.name}</b>
-                  <span>{testimony.more}</span>
-                </div>
-              </div>
-            </aside>
-          ))}
-        </Slider>
+        <Testimonials />
       </section>
     </div>
   );
