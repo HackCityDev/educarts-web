@@ -1,9 +1,5 @@
 import HighlightHeader from "../General/HighlightHeader";
-import Paragraphs from "../General/Paragraphs";
-import TestimonyImage from "../../assets/testimony.png";
 import styles from "./Home.module.css";
-import Ghana from "../../assets/Ghana";
-import Naija from "../../assets/Naija";
 import Testimonials from "./Test2";
 export default function Testimony() {
   return (
@@ -30,39 +26,29 @@ export default function Testimony() {
     </div>
   );
 }
-let Testimonies = [
+export let Testimonies = [
   {
-    country: <Ghana />,
     text: "I appreciate the customer supports they were very responsive and resolved them in time, Thank you Educart",
-    photo: TestimonyImage,
     name: "Esene Godwin",
     more: "MBA. Industrial Design, Imperial College London, Accra Ghana",
   },
   {
-    country: <Ghana />,
     text: "I appreciate the customer supports they were very responsive and resolved them in time, Thank you Educart",
-    photo: TestimonyImage,
     name: "Esene Godwin",
     more: "MBA. Industrial Design, Imperial College London, Accra Ghana",
   },
   {
-    country: <Ghana />,
     text: "I appreciate the customer supports they were very responsive and resolved them in time, Thank you Educart",
-    photo: TestimonyImage,
     name: "Esene Godwin",
     more: "MBA. Industrial Design, Imperial College London, Accra Ghana",
   },
   {
-    country: <Naija />,
     text: "I appreciate the customer supports they were very responsive and resolved them in time, Thank you Educart",
-    photo: TestimonyImage,
     name: "Esene Godwin",
     more: "MBA. Industrial Design, Imperial College London, Accra Ghana",
   },
   {
-    country: <Naija />,
     text: "I appreciate the customer supports they were very responsive and resolved them in time, Thank you Educart",
-    photo: TestimonyImage,
     name: "Esene Godwin",
     more: "MBA. Industrial Design, Imperial College London, Accra Ghana",
   },

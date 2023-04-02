@@ -8,6 +8,7 @@ import Service from "./Service";
 import Start from "./Start";
 import Test from "./Test";
 import Testimonials from "./Test2";
+import About from "./Test3";
 import Testimony from "./Testimony";
 import Work from "./Work";
 export default function Index() {
@@ -31,9 +32,10 @@ export default function Index() {
       <Hero />
       <Service />
       <Work />
-      <Testimony />
+      {/* <Testimony /> */}
       {/* <Test /> */}
       {/* <Testimonials /> */}
+      <About />
       <Start />
       <Download />
     </div>
