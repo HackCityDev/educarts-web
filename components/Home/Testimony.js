@@ -14,8 +14,6 @@ export default function Testimony() {
           content="What people say about us"
           style={{
             fontWeight: 600,
-            fontSize: "40px",
-            lineHeight: "61px",
             color: "#DBEBEE",
             textAlign: "center",
             margin: "20px 0",

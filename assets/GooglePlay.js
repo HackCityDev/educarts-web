@@ -2,14 +2,14 @@ import * as React from "react";
 const GooglePlay = (props) => (
   <svg
     width={187}
-    height={55}
-    viewBox="0 0 187 55"
+    height={60}
+    viewBox="0 0 187 60"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     xmlnsXlink="http://www.w3.org/1999/xlink"
     {...props}
   >
-    <rect x={0.476562} width={186.441} height={55} fill="url(#pattern0)" />
+    <rect x={0.476562} width={186.441} height={60} fill="url(#pattern0)" />
     <defs>
       <pattern
         id="pattern0"

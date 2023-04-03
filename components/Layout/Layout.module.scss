@@ -24,6 +24,9 @@
 .Layout {
   position: relative;
   padding-top: 80px;
+  @media (min-width: General.$breakpoint-desktop) {
+    padding-top: 100px;
+  }
 }
 
 .Navbar {
@@ -39,6 +42,16 @@
   height: 80px;
   padding: 10px General.$leftRight;
   gap: 30px;
+  @media (min-width: General.$breakpoint-desktop) {
+    height: 100px;
+    .Logo {
+      svg {
+        width: 150px;
+        height: 100px;
+        display: block;
+      }
+    }
+  }
   aside {
     width: fit-content !important;
     position: relative;
@@ -50,10 +63,12 @@
     white-space: nowrap;
     font-weight: 500;
     a {
-      font-size: clamp(14px, 15px, 18px);
-      // line-height: 30px;
       color: #20466f;
       padding: 4px;
+      font-size: clamp(14px, 15px, 18px);
+      @media (min-width: General.$breakpoint-desktop) {
+        font-size: clamp(20px, 25px, 30px);
+      }
     }
     button {
       border-radius: 48px;
@@ -61,6 +76,10 @@
       font-size: 14px;
       line-height: 16px;
       letter-spacing: -0.02em;
+      @media (min-width: General.$breakpoint-desktop) {
+        font-size: 20px;
+        padding: 1rem 40px;
+      }
     }
   }
   .Hamburger {
@@ -185,7 +204,13 @@
       }
       .DivInput {
         @include General.Flex();
+        justify-content: flex-start;
         gap: 10px;
+        button {
+          font-size: clamp(0.875rem, 1rem, 1.25rem);
+          line-height: 0.875rem;
+          padding: 15px 20px;
+        }
       }
     }
     @include Mobile();

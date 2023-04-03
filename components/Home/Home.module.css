@@ -1,32 +1,50 @@
 .HighlightHeader {
   font-weight: 600;
-  font-size: 40px;
-  line-height: 60px;
+  font-size: 2.5rem;
+  line-height: 3.75rem;
   color: #12273d;
+}
+@media (min-width: 1500px) {
+  .HighlightHeader {
+    font-size: 4rem;
+    line-height: 4.4rem;
+  }
 }
 
 .Headers {
   font-weight: 700;
-  font-size: 32px;
-  line-height: 38px;
+  font-size: 2rem;
+  line-height: 2.375rem;
   color: #17324f;
+}
+@media (min-width: 1500px) {
+  .Headers {
+    font-size: 3.5rem;
+    line-height: 4rem;
+  }
 }
 
 .Paragraphs {
   font-weight: 400;
   font-family: "Roboto" sans-serif;
-  font-size: 19px;
-  line-height: 28px;
+  font-size: 1.1875rem;
+  line-height: 1.75rem;
   letter-spacing: 0.03em;
   color: #6a839f;
+}
+@media (min-width: 1500px) {
+  .Paragraphs {
+    font-size: 2rem;
+    line-height: 2.4rem;
+  }
 }
 
 .Button {
   all: unset;
   font-weight: 600;
   box-sizing: border-box;
-  font-size: 16px;
-  line-height: 14px;
+  font-size: 1rem;
+  line-height: 0.875rem;
   padding: 15px 20px;
   text-align: center;
   transition: all 300ms ease-out;
@@ -39,6 +57,12 @@
   position: relative;
   display: block;
   border: 2px solid #17324f;
+}
+@media (min-width: 1500px) {
+  .Button {
+    font-size: 1.8rem;
+    padding: 25px 30px;
+  }
 }
 
 .OpposeButton {
@@ -53,8 +77,8 @@
   flex-direction: column;
   gap: 5px;
   font-weight: 400;
-  font-size: 14px;
-  line-height: 21px;
+  font-size: 0.875rem;
+  line-height: 1.3125rem;
   letter-spacing: 0.03em;
   color: #3a3a3a;
   width: min(100%, 300px);
@@ -101,10 +125,15 @@
 
 .Span {
   font-weight: 500;
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 150%;
   color: #17324f;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+}
+@media (min-width: 1500px) {
+  .Span {
+    font-size: 1.5rem;
+  }
 }
 
 .Index {
@@ -129,7 +158,12 @@
   align-items: flex-start;
   width: 50%;
   min-height: 100vh;
-  padding: 10px 10%;
+  padding: 10px 0 0 10%;
+}
+@media (min-width: 1500px) {
+  .Hero .HeroMain {
+    gap: 60px;
+  }
 }
 .Hero .HeroMain .dummy {
   display: flex;
@@ -163,6 +197,19 @@
   flex-direction: column;
   gap: 30px;
   align-items: flex-start;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+@media (min-width: 1500px) {
+  .Service {
+    gap: 60px;
+  }
+}
+@media (min-width: 1500px) {
+  .Service {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
 }
 .Service .ServiceHeader {
   position: relative;
@@ -214,6 +261,19 @@
   flex-direction: column;
   gap: 30px;
   align-items: flex-start;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+@media (min-width: 1500px) {
+  .Work {
+    gap: 60px;
+  }
+}
+@media (min-width: 1500px) {
+  .Work {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
 }
 .Work .WorkHeader {
   text-align: center;
@@ -263,23 +323,24 @@
   }
 }
 @media (min-width: 1500px) {
+  .Work .WorkBody aside:nth-child(even) {
+    gap: 2rem;
+  }
   .Work .WorkBody aside:nth-child(even) .WorkContent {
-    gap: 2.5;
+    padding-right: 2rem;
   }
 }
 .Work .WorkBody aside:nth-child(odd) {
   gap: 2rem;
 }
-@media (min-width: 1200px) {
+@media (min-width: 1500px) {
   .Work .WorkBody aside:nth-child(odd) {
-    gap: 4;
-    padding-right: 0;
+    gap: 4rem;
   }
 }
 @media (min-width: 1500px) {
-  .Work .WorkBody aside:nth-child(odd) {
-    gap: 6;
-    padding-right: 0;
+  .Work .WorkBody aside {
+    gap: 4rem;
   }
 }
 .Work .WorkBody aside div {
@@ -289,7 +350,12 @@
   padding-top: 40%;
 }
 .Work .WorkBody aside div p {
-  margin: 1rem 0;
+  margin: 15px 0;
+}
+@media (min-width: 1500px) {
+  .Work .WorkBody aside div p {
+    margin: 30px 0;
+  }
 }
 @media (max-width: 900px) {
   .Work .WorkBody aside {
@@ -315,7 +381,11 @@
   position: relative;
   background: #12273d;
   box-shadow: 0px 8px 20px rgba(23, 30, 37, 0.4);
-  margin: 20px 0;
+}
+@media (min-width: 1500px) {
+  .Testimony {
+    gap: 60px;
+  }
 }
 .Testimony .Blobs {
   position: absolute;
@@ -346,51 +416,6 @@
   padding: 30px 10%;
   z-index: 2;
   width: 100%;
-}
-.Testimony .Main .Testimonies {
-  width: 100%;
-}
-.Testimony .Main .Testimonies > div:nth-child(2) {
-  display: grid;
-  width: 100%;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto;
-  justify-items: stretch;
-  align-items: stretch;
-}
-.Testimony .Main .Testimonies > div:nth-child(2) > div {
-  gap: 10px;
-  display: flex;
-}
-.Testimony .Main .Testimonies > div:nth-child(2) > div > div {
-  width: min(300px, 100%) !important;
-}
-.Testimony .Main .Testimonies > div:nth-child(2) > div > div > div {
-  display: flex;
-  justify-content: center;
-}
-.Testimony .Main .Testimonies .TestimonyBox {
-  width: min(300px, 100%) !important;
-  padding: 20px;
-}
-.Testimony .Main .Testimonies .TestimonyBox .Top svg {
-  width: 50px;
-  height: 50px;
-}
-.Testimony .Main .Testimonies .TestimonyBox p {
-  font-size: 18px;
-  line-height: 23px;
-  margin: 10px 0;
-}
-.Testimony .Main .Testimonies .TestimonyBox .Bottom .BottomImage {
-  position: relative;
-  width: 150px;
-  padding-top: 40%;
-}
-.Testimony .TestimonyBox {
-  background: #98aabd;
-  border: 2px solid #d0d0d0;
-  border-radius: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -398,43 +423,14 @@
   flex-direction: column;
   gap: 30px;
   align-items: flex-start;
-  gap: 20px;
-  padding: 40px;
 }
-.Testimony .TestimonyBox p {
-  color: #12273d;
-  font-size: 24px;
-  line-height: 20px;
+@media (min-width: 1500px) {
+  .Testimony .Main {
+    gap: 60px;
+  }
 }
-.Testimony .TestimonyBox .Top,
-.Testimony .TestimonyBox .Bottom {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.Testimony .Main > div:nth-child(1) {
   width: 100%;
-}
-.Testimony .TestimonyBox .Top {
-  justify-content: space-between;
-}
-.Testimony .TestimonyBox .Bottom {
-  gap: 10px;
-}
-.Testimony .TestimonyBox .Bottom .BottomInfo {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-.Testimony .TestimonyBox .Bottom .BottomInfo b {
-  color: #12273d;
-  font-weight: 600;
-  font-size: 20px;
-  line-height: 20px;
-}
-.Testimony .TestimonyBox .Bottom .BottomInfo span {
-  color: #17324f;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 18px;
 }
 
 .Start {
@@ -446,9 +442,21 @@
   flex-direction: column;
   gap: 30px;
   align-items: flex-start;
-  margin: 20px 0;
+  padding-top: 30px;
+  padding-bottom: 30px;
   align-items: center;
   background-color: #f4f9fa;
+}
+@media (min-width: 1500px) {
+  .Start {
+    gap: 60px;
+  }
+}
+@media (min-width: 1500px) {
+  .Start {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
 }
 .Start .Steps {
   display: flex;
@@ -468,17 +476,20 @@
   align-items: center;
   text-align: center;
   line-height: 38px;
-  align-self: baseline;
+  align-self: auto;
+}
+@media (min-width: 1500px) {
+  .Start .Steps .Step {
+    gap: 60px;
+  }
 }
 .Start .Steps .Step h1 {
   font-weight: 700;
-  font-size: 20px;
   font-feature-settings: "pnum" on, "lnum" on;
   color: #4d6b8c;
 }
 .Start .Steps .Step p {
   font-weight: 500;
-  font-size: 19px;
   color: #12273d;
 }
 @media (max-width: 900px) {
@@ -496,6 +507,11 @@
   padding: 0 10%;
   gap: 1rem;
 }
+@media (min-width: 1500px) {
+  .Download {
+    gap: 2rem;
+  }
+}
 .Download aside:nth-child(1) {
   display: flex;
   justify-content: center;
@@ -509,6 +525,11 @@
   text-align: left;
   margin: 1rem 0;
   align-self: baseline;
+}
+@media (min-width: 1500px) {
+  .Download aside:nth-child(1) {
+    gap: 60px;
+  }
 }
 .Download aside:nth-child(1) div {
   display: flex;

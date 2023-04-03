@@ -14,7 +14,7 @@ export default function Navbar() {
       <aside className={styles.Logo}>
         <Link href="/">
           <a>
-            <Logo />
+            <Logo width="150px" />
           </a>
         </Link>
       </aside>
