@@ -4,6 +4,7 @@ import HighlightHeader from "../General/HighlightHeader";
 import Paragraphs from "../General/Paragraphs";
 import Phone from "../../assets/iPhone.png";
 import styles from "./Home.module.css";
+import GooglePlay from "../../assets/GooglePlay";
 export default function Download() {
   return (
     <div className={styles.Download}>
@@ -15,7 +16,7 @@ export default function Download() {
             on apple store and android"
         />
         <div>
-          <AppStore /> <AppStore />
+          <AppStore /> <GooglePlay />
         </div>
       </aside>
       <aside className="Image">

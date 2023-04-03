@@ -1,5 +1,5 @@
 import * as React from "react";
-const SVGComponent = (props) => (
+const GooglePlay = (props) => (
   <svg
     width={187}
     height={55}
@@ -31,4 +31,4 @@ const SVGComponent = (props) => (
     </defs>
   </svg>
 );
-export default SVGComponent;
+export default GooglePlay;

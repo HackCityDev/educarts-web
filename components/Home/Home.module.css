@@ -1,7 +1,7 @@
 .HighlightHeader {
   font-weight: 600;
   font-size: 40px;
-  line-height: 61px;
+  line-height: 60px;
   color: #12273d;
 }
 
@@ -262,8 +262,25 @@
     padding-right: 1rem;
   }
 }
+@media (min-width: 1500px) {
+  .Work .WorkBody aside:nth-child(even) .WorkContent {
+    gap: 2.5;
+  }
+}
 .Work .WorkBody aside:nth-child(odd) {
   gap: 2rem;
+}
+@media (min-width: 1200px) {
+  .Work .WorkBody aside:nth-child(odd) {
+    gap: 4;
+    padding-right: 0;
+  }
+}
+@media (min-width: 1500px) {
+  .Work .WorkBody aside:nth-child(odd) {
+    gap: 6;
+    padding-right: 0;
+  }
 }
 .Work .WorkBody aside div {
   width: 50%;
@@ -518,125 +535,4 @@
     max-width: -moz-max-content;
     max-width: max-content;
   }
-}
-
-.Test {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  flex-direction: column;
-  gap: 30px;
-  align-items: flex-start;
-  position: relative;
-  background: #12273d;
-  box-shadow: 0px 8px 20px rgba(23, 30, 37, 0.4);
-  margin: 20px 0;
-}
-.Test .Blobs {
-  position: absolute;
-  z-index: 1;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  display: flex;
-  opacity: 0.1;
-}
-.Test .Blobs img {
-  position: absolute;
-}
-.Test .Blobs img:nth-child(1) {
-  top: -110px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-.Test .Blobs img:nth-child(2) {
-  bottom: -100px;
-  left: -210px;
-}
-.Test .Blobs img:nth-child(3) {
-  bottom: -110px;
-  right: -200px;
-}
-.Test .Main {
-  padding: 30px 10%;
-  z-index: 2;
-  width: 100%;
-  overflow: hidden;
-}
-.Test .Main .Testimonies {
-  width: 100%;
-  display: flex;
-  overflow-x: auto;
-  gap: 10px;
-}
-.Test .Main .Testimonies::-webkit-scrollbar {
-  display: none;
-}
-.Test .Main .Testimonies .TestBox {
-  width: min(350px, 100%) !important;
-  padding: 20px;
-}
-.Test .Main .Testimonies .TestBox .Top svg {
-  width: 50px;
-  height: 50px;
-}
-.Test .Main .Testimonies .TestBox p {
-  font-size: 18px;
-  line-height: 23px;
-  margin: 10px 0;
-}
-.Test .Main .Testimonies .TestBox .Bottom .BottomImage {
-  position: relative;
-  width: 150px;
-  padding-top: 40%;
-}
-.Test .TestBox {
-  background: #98aabd;
-  border: 2px solid #d0d0d0;
-  border-radius: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  flex-direction: column;
-  gap: 30px;
-  align-items: flex-start;
-  gap: 20px;
-  padding: 40px;
-}
-.Test .TestBox p {
-  color: #12273d;
-  font-size: 24px;
-  line-height: 20px;
-}
-.Test .TestBox .Top,
-.Test .TestBox .Bottom {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-.Test .TestBox .Top {
-  justify-content: space-between;
-}
-.Test .TestBox .Bottom {
-  gap: 10px;
-}
-.Test .TestBox .Bottom .BottomInfo {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-.Test .TestBox .Bottom .BottomInfo b {
-  color: #12273d;
-  font-weight: 600;
-  font-size: 20px;
-  line-height: 20px;
-}
-.Test .TestBox .Bottom .BottomInfo span {
-  color: #17324f;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 18px;
 }/*# sourceMappingURL=Home.module.css.map */

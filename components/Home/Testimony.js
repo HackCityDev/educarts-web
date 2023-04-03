@@ -1,6 +1,6 @@
 import HighlightHeader from "../General/HighlightHeader";
 import styles from "./Home.module.css";
-import Testimonials from "./Test2";
+import TestimoniesComponent from "./Testimonies";
 export default function Testimony() {
   return (
     <div className={styles.Testimony}>
@@ -21,7 +21,7 @@ export default function Testimony() {
             margin: "20px 0",
           }}
         />
-        <Testimonials />
+        <TestimoniesComponent />
       </section>
     </div>
   );
@@ -53,13 +53,3 @@ export let Testimonies = [
     more: "MBA. Industrial Design, Imperial College London, Accra Ghana",
   },
 ];
-function SampleArrow(props) {
-  const { className, style, onClick } = props;
-  return (
-    <div
-      className={className}
-      style={{ ...style, display: "none", background: "green" }}
-      onClick={onClick}
-    />
-  );
-}
