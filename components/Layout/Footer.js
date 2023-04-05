@@ -5,6 +5,7 @@ import HighlightHeader from "../General/HighlightHeader";
 import Input from "../General/Input";
 import Headers from "../General/Headers";
 import Paragraphs from "../General/Paragraphs";
+import Span from "../General/Span";
 import styles from "./Layout.module.css";
 export default function Footer() {
   return (
@@ -16,7 +17,7 @@ export default function Footer() {
         <aside className={styles.Aside1}>
           <div className={styles.DivLogo}>
             <Logo2 />
-            <div> Our stand is with the Students</div>
+            <Span content="Our stand is with the Students" />
           </div>
           <div className={styles.DivSocials}>
             {" "}
@@ -40,9 +41,7 @@ export default function Footer() {
         <aside className={styles.Aside3}>
           <div className={styles.DivText}>
             <HighlightHeader content="Sign Up To Our Newsletter" />
-            <span>
-              Be the first to get the latest Updates, tips and discounts
-            </span>
+            <Span content="Be the first to get the latest Updates, tips and discounts" />
           </div>
           <div className={styles.DivInput}>
             <Input

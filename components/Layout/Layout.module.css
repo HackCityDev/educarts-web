@@ -285,6 +285,7 @@
   }
 }
 .Footer .Main aside {
+  align-self: baseline;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -302,9 +303,18 @@
     gap: 60px;
   }
 }
-.Footer .Main .Aside1 .DivLogo div {
+.Footer .Main .Aside1 {
+  align-self: self-start;
+}
+.Footer .Main .Aside1 .DivLogo {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.Footer .Main .Aside1 .DivLogo span {
   font-weight: 400;
-  font-size: 12px;
+  color: #6b7280;
+  font-size: 0.8rem;
   line-height: 24px;
 }
 .Footer .Main .Aside1 .DivSocials {
@@ -332,29 +342,44 @@
   line-height: 24px;
 }
 .Footer .Main .Aside2 > div h1 {
+  font-size: 1.5rem;
   margin-bottom: 6px;
-  font-size: 16px;
   font-weight: 600;
   color: #8a8b8b;
 }
 .Footer .Main .Aside2 > div p {
   white-space: nowrap;
+  font-size: 1rem;
   font-weight: 500;
-  font-size: 16px;
-  line-height: 24px;
   color: #86898a;
+}
+@media (min-width: 1500px) {
+  .Footer .Main .Aside2 > div h1 {
+    font-size: 2.5rem;
+  }
+  .Footer .Main .Aside2 > div p {
+    font-size: 1.5rem;
+  }
 }
 .Footer .Main .Aside3 .DivText {
   font-weight: 500;
-  font-size: 16px;
   line-height: 24px;
   color: #86898a;
 }
 .Footer .Main .Aside3 .DivText div {
   font-weight: 600;
-  font-size: 23px;
+  font-size: 1.5rem;
   line-height: 52px;
   color: #dee3e4;
+}
+@media (min-width: 1500px) {
+  .Footer .Main .Aside3 .DivText div {
+    font-size: 2.5rem;
+  }
+}
+.Footer .Main .Aside3 .DivText span {
+  font-size: 0.8rem;
+  color: #6b7280;
 }
 .Footer .Main .Aside3 .DivInput {
   display: flex;
