@@ -317,6 +317,11 @@
   font-size: 0.8rem;
   line-height: 24px;
 }
+@media (min-width: 1500px) {
+  .Footer .Main .Aside1 .DivLogo span {
+    font-size: 1.25rem;
+  }
+}
 .Footer .Main .Aside1 .DivSocials {
   display: flex;
   justify-content: center;
@@ -380,6 +385,11 @@
 .Footer .Main .Aside3 .DivText span {
   font-size: 0.8rem;
   color: #6b7280;
+}
+@media (min-width: 1500px) {
+  .Footer .Main .Aside3 .DivText span {
+    font-size: 1.25rem;
+  }
 }
 .Footer .Main .Aside3 .DivInput {
   display: flex;
