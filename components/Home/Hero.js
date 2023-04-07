@@ -18,7 +18,7 @@ export default function Hero() {
   const imageUrl = `url(${bg})`;
 
   return (
-    <div className={styles.Hero} style={{ backgroundImage: imageUrl }}>
+    <div className={styles.Hero}>
       <div className={styles.HeroMain}>
         <Headers content="Payment Solutions you can trust" />
         <Paragraphs
