@@ -1,11 +1,18 @@
 import Link from "next/link";
 import styles from "./General.module.css";
-export default function Button({ content, style, action, oppose, link }) {
+export default function Button({
+  content,
+  style,
+  action,
+  oppose,
+  link,
+  aStyle,
+}) {
   return (
     <>
       {link ? (
         <Link href={link}>
-          <a>
+          <a style={aStyle}>
             <button
               style={style}
               className={`${styles.Button} ${

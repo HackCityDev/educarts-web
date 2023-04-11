@@ -1,18 +1,48 @@
-import styles from "../styles/sign.module.css";
-import HighlightHeader from "../components/General/HighlightHeader";
-import Input from "../components/General/Input";
-import Button from "../components/General/Button";
-import Span from "../components/General/Span";
-import Nigeria from "../assets/Nigeria";
+import styles from "../../styles/sign.module.css";
+import HighlightHeader from "../../components/General/HighlightHeader";
+import User from "../../assets/User";
+import Institution from "../../assets/Institution";
+import Span from "../../components/General/Span";
+import Input from "../../components/General/Input";
+import Button from "../../components/General/Button";
+import Link from "next/link";
+import Nigeria from "../../assets/Nigeria";
+
 export default function SignUp() {
   return (
     <main>
-      <SignUpPage />
-      {/* <ConfirmEmail /> */}
+      <SelectAccountType />
     </main>
   );
 }
-export function SignUpPage() {
+export function SelectAccountType() {
+  return (
+    <main className={styles.SignUp}>
+      <section className={styles.Main} style={{ width: "100%" }}>
+        <div className={styles.Header}>
+          <HighlightHeader content="Choose an Account Type to Get Started" />
+          <span className={styles.Eclipse}></span>
+        </div>
+        <aside className={styles.Selectors}>
+          <Link href="/signup/personal">
+            <a>
+              <User />
+              <Span content="Personal Account" />
+            </a>
+          </Link>
+          <Link href="/signup/institution">
+            <a>
+              <Institution />
+              <Span content="Institution Account" />
+            </a>
+          </Link>
+        </aside>
+      </section>
+    </main>
+  );
+}
+
+export function SignUpPage({ accountType }) {
   return (
     <main className={styles.SignUp}>
       <section className={styles.Main}>
@@ -26,6 +56,13 @@ export function SignUpPage() {
           labelAfter="*"
         />
         <Input placeholder="Enter Last Name" label="Last Name" labelAfter="*" />
+        {accountType && (
+          <Input
+            placeholder="Select Institution"
+            label="Institution"
+            labelAfter="*"
+          />
+        )}
         <Input
           label="Phone Number"
           type="number"
@@ -46,13 +83,18 @@ export function SignUpPage() {
           <Span
             content={
               <>
-                By clicking Next you agree with our Terms and Conditions and our{" "}
+                By clicking Next you agree with our Terms and Conditions and our
                 <a> Privacy Policy</a>
               </>
             }
           />
         </div>
-        <Button content="Next" />
+        <Button
+          content="Next"
+          link="/signup/confirmemail"
+          aStyle={{ width: "100%" }}
+          style={{ margin: "0 auto" }}
+        />
         <Span content="Forgot Password?" />
         <p>
           I remember my password <Span content="Log In" />
@@ -75,7 +117,7 @@ export function ConfirmEmail() {
         />
         <Input placeholder="Enter Code" />
 
-        <Button content="Next" />
+        <Button content="Complete" />
         <Span content="Forgot Password?" />
         <p>
           I remember my password <Span content="Log In" />

@@ -222,7 +222,7 @@
   gap: 30px;
   align-items: flex-start;
   align-items: center;
-  margin: 0 auto;
+  margin: 30px auto;
   width: min(100%, 400px);
 }
 @media (min-width: 1500px) {
@@ -261,6 +261,35 @@
 }
 .SignUp .Main .Checkbox span {
   margin-top: 0;
+}
+.SignUp .Main .Selectors {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 30px;
+  margin-top: 10px;
+}
+.SignUp .Main .Selectors a {
+  background: #f4f9fa;
+  cursor: pointer;
+  border: 4px solid #20466f;
+  border-radius: 15.9319px;
+  padding: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+  gap: 30px;
+  align-items: flex-start;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+@media (min-width: 1500px) {
+  .SignUp .Main .Selectors a {
+    gap: 60px;
+  }
 }
 .SignUp .Main button {
   width: 50%;
