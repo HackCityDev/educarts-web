@@ -17,11 +17,23 @@ $background-images: (
   position: relative;
   // background: url("../../public/bg1.png") no-repeat center center;
   // background-image: url("../../public/bg1.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  animation: bg-animation1 3s infinite;
+  // background-repeat: no-repeat;
+  // background-position: center center;
+  // background-size: cover;
+  // animation: bg-animation 3s infinite;
+  .ImageContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
   .HeroMain {
+    z-index: 3;
+    position: relative;
     background: linear-gradient(
       90deg,
       rgba(231, 227, 224, 0.99) 50.51%,
@@ -35,18 +47,21 @@ $background-images: (
     .dummy {
       display: flex;
       gap: 1rem;
+      .dummyActive {
+        background: #17324f;
+      }
+      .dummyActiveNext {
+        background: #6a839f;
+      }
+      .dummyInactive {
+        background: #e9edf1;
+      }
       span {
         width: 10px;
         height: 10px;
         background: #e9edf1;
         border: 1.13027px solid #98aabd;
         border-radius: 50%;
-        &:nth-child(2) {
-          background: #6a839f;
-        }
-        &:nth-child(3) {
-          background: #17324f;
-        }
       }
     }
     @media (max-width: 900px) {
@@ -283,14 +298,6 @@ $background-images: (
   }
   @include Mobile(max-content);
 }
-// &:before {
-//   background-image: url(nth($background-images, 1));
-// }
-// &:after {
-//   background-image: url(nth($background-images, 2));
-//   animation: slide 10s infinite;
-//   animation-delay: 5s;
-// }
 // @for $i from 3 through length($background-images) {
 //   &:nth-child(#{$i - 1}):after {
 //     background-image: url(nth($background-images, $i));
@@ -299,72 +306,37 @@ $background-images: (
 // }
 @keyframes bg-animation {
   0% {
-    opacity: 0;
-    background-image: url("../../public/bg1.png");
-  }
-  5% {
-    opacity: 0.5;
-  }
-  10% {
-    opacity: 1;
-  }
-  25% {
-    opacity: 0.5;
-  }
-  30% {
-    background-image: url("../../public/bg2.png");
-  }
-  33% {
-    opacity: 1;
-  }
-  45% {
-    opacity: 0.5;
-  }
-  66% {
-    opacity: 1;
-    background-image: url("../../public/bg1.png");
-  }
-  80% {
-    opacity: 0.5;
-  }
-  99% {
-    opacity: 1;
-    background-image: url("../../public/bg2.png");
-  }
-}
-@keyframes bg-animation1 {
-  0% {
     background-image: url("../../public/bg1.png");
     background-color: rgba(255, 255, 255, 0.5);
   }
   5% {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(255, 255, 255, 0.5);
   }
   10% {
     background-color: rgba(255, 255, 255, 0.5);
   }
   25% {
-    background-color: rgba(0, 255, 0, 0.5);
+    background-color: rgba(255, 255, 255, 0.5);
   }
   30% {
     background-image: url("../../public/bg2.png");
     background-color: rgba(255, 255, 255, 0.5);
   }
   33% {
-    background-color: rgba(255, 0, 0, 0.5);
+    background-color: rgba(255, 255, 255, 0.5);
   }
   45% {
-    background-color: rgba(0, 0, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.5);
   }
   66% {
     background-image: url("../../public/bg1.png");
     background-color: rgba(255, 255, 255, 0.5);
   }
   80% {
-    background-color: rgba(255, 0, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.5);
   }
   99% {
     background-image: url("../../public/bg2.png");
-    background-color: rgba(255, 255, 0, 0.5);
+    background-color: rgba(255, 255, 255, 0.5);
   }
 }

@@ -1,24 +1,22 @@
-import { useEffect, useRef, useState } from "react";
-import useInterval from "../../hooks/useInterval";
+import { useEffect, useState } from "react";
 import Button from "../General/Button";
 import Headers from "../General/Headers";
 import Paragraphs from "../General/Paragraphs";
 import styles from "./Home.module.css";
+import BackgroundImage from "./ImageCarosel";
 export default function Hero() {
-  const [bgValue, setBgValue] = useState(1);
+  const [currentSpan, setCurrentSpan] = useState(1);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      setBgValue((bgValue) => (bgValue === 1 ? 2 : 1));
-    }, 1000);
+      setCurrentSpan((prevSpan) => (prevSpan >= 3 ? 1 : prevSpan + 1));
+    }, 5000);
     return () => clearInterval(intervalId);
   }, []);
 
-  const bg = `bg${bgValue}.png`;
-  const imageUrl = `url(${bg})`;
-
   return (
     <div className={styles.Hero}>
+      <BackgroundImage />
       <div className={styles.HeroMain}>
         <Headers content="Payment Solutions you can trust" />
         <Paragraphs
@@ -29,7 +27,18 @@ export default function Hero() {
         <Button content="Make A Payment" />
         <aside className={styles.dummy}>
           {[1, 2, 3].map((num) => (
-            <span key={num}></span>
+            <span
+              key={num}
+              style={{
+                background:
+                  num === currentSpan
+                    ? "#17324f"
+                    : num === currentSpan + 1 ||
+                      (currentSpan === 3 && num === 1)
+                    ? "#6a839f"
+                    : "#e9edf1",
+              }}
+            ></span>
           ))}
         </aside>
       </div>
