@@ -114,3 +114,40 @@
     @include ButtonSpanAndParagraph(50%);
   }
 }
+.ResetPasswordModal {
+  position: fixed;
+  top: 110px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 20px;
+  background: #e1f6ff;
+  border: 3px solid #34bbff;
+  border-radius: 6px;
+  z-index: 10;
+  aside {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    div {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      font-family: "Inter";
+      font-style: normal;
+      justify-content: center;
+      p {
+        margin-top: 0 !important;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 24px;
+        color: #34bbff;
+      }
+      span {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 16px;
+        color: #424242;
+      }
+    }
+  }
+}
