@@ -15,12 +15,6 @@ $background-images: (
 }
 .Hero {
   position: relative;
-  // background: url("../../public/bg1.png") no-repeat center center;
-  // background-image: url("../../public/bg1.png");
-  // background-repeat: no-repeat;
-  // background-position: center center;
-  // background-size: cover;
-  // animation: bg-animation 3s infinite;
   .ImageContainer {
     position: absolute;
     top: 0;
@@ -43,7 +37,7 @@ $background-images: (
     @include General.BOX();
     width: 50%;
     min-height: 100vh;
-    padding: 10px 0 0 General.$leftRight;
+    padding: 10px 0 10px General.$leftRight;
     .dummy {
       display: flex;
       gap: 1rem;
@@ -63,6 +57,9 @@ $background-images: (
         border: 1.13027px solid #98aabd;
         border-radius: 50%;
       }
+    }
+    p {
+      font-weight: 500;
     }
     @media (max-width: 900px) {
       width: 80%;
@@ -139,6 +136,15 @@ $background-images: (
     @include General.Flex();
     flex-direction: column;
     gap: 2rem;
+    position: relative;
+    .Blob {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      padding-top: 100%;
+    }
     aside {
       @include General.Flex();
       gap: 1rem;
@@ -304,39 +310,3 @@ $background-images: (
 //     animation-delay: #{($i - 2) * 5}s;
 //   }
 // }
-@keyframes bg-animation {
-  0% {
-    background-image: url("../../public/bg1.png");
-    background-color: rgba(255, 255, 255, 0.5);
-  }
-  5% {
-    background-color: rgba(255, 255, 255, 0.5);
-  }
-  10% {
-    background-color: rgba(255, 255, 255, 0.5);
-  }
-  25% {
-    background-color: rgba(255, 255, 255, 0.5);
-  }
-  30% {
-    background-image: url("../../public/bg2.png");
-    background-color: rgba(255, 255, 255, 0.5);
-  }
-  33% {
-    background-color: rgba(255, 255, 255, 0.5);
-  }
-  45% {
-    background-color: rgba(255, 255, 255, 0.5);
-  }
-  66% {
-    background-image: url("../../public/bg1.png");
-    background-color: rgba(255, 255, 255, 0.5);
-  }
-  80% {
-    background-color: rgba(255, 255, 255, 0.5);
-  }
-  99% {
-    background-image: url("../../public/bg2.png");
-    background-color: rgba(255, 255, 255, 0.5);
-  }
-}

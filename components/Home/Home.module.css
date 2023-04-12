@@ -4,7 +4,13 @@
   line-height: 3.75rem;
   color: #12273d;
 }
-@media (min-width: 1500px) {
+@media (min-width: 1000px) {
+  .HighlightHeader {
+    font-size: 3.2rem;
+    line-height: 4rem;
+  }
+}
+@media (min-width: 1440px) {
   .HighlightHeader {
     font-size: 4rem;
     line-height: 4.4rem;
@@ -17,7 +23,13 @@
   line-height: 2.375rem;
   color: #17324f;
 }
-@media (min-width: 1500px) {
+@media (min-width: 1000px) {
+  .Headers {
+    font-size: 3rem;
+    line-height: 3.2rem;
+  }
+}
+@media (min-width: 1440px) {
   .Headers {
     font-size: 3.5rem;
     line-height: 4rem;
@@ -32,7 +44,13 @@
   letter-spacing: 0.03em;
   color: #6a839f;
 }
-@media (min-width: 1500px) {
+@media (min-width: 1000px) {
+  .Paragraphs {
+    font-size: 1.62rem;
+    line-height: 2.2rem;
+  }
+}
+@media (min-width: 1440px) {
   .Paragraphs {
     font-size: 2rem;
     line-height: 2.4rem;
@@ -58,7 +76,13 @@
   display: block;
   border: 2px solid #17324f;
 }
-@media (min-width: 1500px) {
+@media (min-width: 1000px) {
+  .Button {
+    font-size: 1.4rem;
+    padding: 20px 25px;
+  }
+}
+@media (min-width: 1440px) {
   .Button {
     font-size: 1.8rem;
     padding: 25px 30px;
@@ -130,7 +154,12 @@
   color: #17324f;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
 }
-@media (min-width: 1500px) {
+@media (min-width: 1000px) {
+  .Span {
+    font-size: 1.2rem;
+  }
+}
+@media (min-width: 1440px) {
   .Span {
     font-size: 1.5rem;
   }
@@ -166,9 +195,9 @@
   align-items: flex-start;
   width: 50%;
   min-height: 100vh;
-  padding: 10px 0 0 10%;
+  padding: 10px 0 10px 10%;
 }
-@media (min-width: 1500px) {
+@media (min-width: 1440px) {
   .Hero .HeroMain {
     gap: 60px;
   }
@@ -193,6 +222,9 @@
   border: 1.13027px solid #98aabd;
   border-radius: 50%;
 }
+.Hero .HeroMain p {
+  font-weight: 500;
+}
 @media (max-width: 900px) {
   .Hero .HeroMain {
     width: 80%;
@@ -211,12 +243,18 @@
   padding-top: 30px;
   padding-bottom: 30px;
 }
-@media (min-width: 1500px) {
+@media (min-width: 1440px) {
   .Service {
     gap: 60px;
   }
 }
-@media (min-width: 1500px) {
+@media (min-width: 1000px) {
+  .Service {
+    padding-top: 45px;
+    padding-bottom: 45px;
+  }
+}
+@media (min-width: 1440px) {
   .Service {
     padding-top: 60px;
     padding-bottom: 60px;
@@ -275,12 +313,18 @@
   padding-top: 30px;
   padding-bottom: 30px;
 }
-@media (min-width: 1500px) {
+@media (min-width: 1440px) {
   .Work {
     gap: 60px;
   }
 }
-@media (min-width: 1500px) {
+@media (min-width: 1000px) {
+  .Work {
+    padding-top: 45px;
+    padding-bottom: 45px;
+  }
+}
+@media (min-width: 1440px) {
   .Work {
     padding-top: 60px;
     padding-bottom: 60px;
@@ -316,6 +360,15 @@
   width: 100%;
   flex-direction: column;
   gap: 2rem;
+  position: relative;
+}
+.Work .WorkBody .Blob {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  padding-top: 100%;
 }
 .Work .WorkBody aside {
   display: flex;
@@ -333,7 +386,7 @@
     padding-right: 1rem;
   }
 }
-@media (min-width: 1500px) {
+@media (min-width: 1440px) {
   .Work .WorkBody aside:nth-child(even) {
     gap: 2rem;
   }
@@ -344,12 +397,12 @@
 .Work .WorkBody aside:nth-child(odd) {
   gap: 2rem;
 }
-@media (min-width: 1500px) {
+@media (min-width: 1440px) {
   .Work .WorkBody aside:nth-child(odd) {
     gap: 4rem;
   }
 }
-@media (min-width: 1500px) {
+@media (min-width: 1440px) {
   .Work .WorkBody aside {
     gap: 4rem;
   }
@@ -363,7 +416,7 @@
 .Work .WorkBody aside div p {
   margin: 15px 0;
 }
-@media (min-width: 1500px) {
+@media (min-width: 1440px) {
   .Work .WorkBody aside div p {
     margin: 30px 0;
   }
@@ -393,7 +446,7 @@
   background: #12273d;
   box-shadow: 0px 8px 20px rgba(23, 30, 37, 0.4);
 }
-@media (min-width: 1500px) {
+@media (min-width: 1440px) {
   .Testimony {
     gap: 60px;
   }
@@ -435,7 +488,7 @@
   gap: 30px;
   align-items: flex-start;
 }
-@media (min-width: 1500px) {
+@media (min-width: 1440px) {
   .Testimony .Main {
     gap: 60px;
   }
@@ -458,12 +511,18 @@
   align-items: center;
   background-color: #f4f9fa;
 }
-@media (min-width: 1500px) {
+@media (min-width: 1440px) {
   .Start {
     gap: 60px;
   }
 }
-@media (min-width: 1500px) {
+@media (min-width: 1000px) {
+  .Start {
+    padding-top: 45px;
+    padding-bottom: 45px;
+  }
+}
+@media (min-width: 1440px) {
   .Start {
     padding-top: 60px;
     padding-bottom: 60px;
@@ -489,7 +548,7 @@
   line-height: 38px;
   align-self: auto;
 }
-@media (min-width: 1500px) {
+@media (min-width: 1440px) {
   .Start .Steps .Step {
     gap: 60px;
   }
@@ -518,7 +577,7 @@
   padding: 0 10%;
   gap: 1rem;
 }
-@media (min-width: 1500px) {
+@media (min-width: 1440px) {
   .Download {
     gap: 2rem;
   }
@@ -537,7 +596,7 @@
   margin: 1rem 0;
   align-self: baseline;
 }
-@media (min-width: 1500px) {
+@media (min-width: 1440px) {
   .Download aside:nth-child(1) {
     gap: 60px;
   }
@@ -566,42 +625,5 @@
     flex-direction: column !important;
     max-width: -moz-max-content;
     max-width: max-content;
-  }
-}
-
-@keyframes bg-animation {
-  0% {
-    background-image: url("../../public/bg1.png");
-    background-color: rgba(255, 255, 255, 0.5);
-  }
-  5% {
-    background-color: rgba(255, 255, 255, 0.5);
-  }
-  10% {
-    background-color: rgba(255, 255, 255, 0.5);
-  }
-  25% {
-    background-color: rgba(255, 255, 255, 0.5);
-  }
-  30% {
-    background-image: url("../../public/bg2.png");
-    background-color: rgba(255, 255, 255, 0.5);
-  }
-  33% {
-    background-color: rgba(255, 255, 255, 0.5);
-  }
-  45% {
-    background-color: rgba(255, 255, 255, 0.5);
-  }
-  66% {
-    background-image: url("../../public/bg1.png");
-    background-color: rgba(255, 255, 255, 0.5);
-  }
-  80% {
-    background-color: rgba(255, 255, 255, 0.5);
-  }
-  99% {
-    background-image: url("../../public/bg2.png");
-    background-color: rgba(255, 255, 255, 0.5);
   }
 }/*# sourceMappingURL=Home.module.css.map */

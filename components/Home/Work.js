@@ -6,6 +6,7 @@ import Image1 from "../../assets/counting.png";
 import Image2 from "../../assets/smiling.png";
 import Image3 from "../../assets/support.png";
 import Image4 from "../../assets/typing.png";
+import BlobImage from "../../assets/blobMid.png";
 import styles from "./Home.module.css";
 import Image from "next/image";
 export default function Work() {
@@ -16,6 +17,9 @@ export default function Work() {
         <HighlightHeader content="Many People Trust us to" />
       </aside>
       <section className={styles.WorkBody}>
+        <div className={styles.Blob}>
+          <Image src={BlobImage} objectFit="contain" layout="fill" />
+        </div>
         {WorkContent.map((content) => (
           <aside key={content.header}>
             <div className="Image">

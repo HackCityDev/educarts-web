@@ -28,15 +28,16 @@
 .div1__2 {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .div1__2 img {
-  height: auto;
+  /* height: auto; */
   max-width: 100%;
   display: block;
 }
 .div1__2__img1 {
-  width: 2rem;
-  height: 2.75rem;
+  width: 1.5rem;
+  height: 1.5rem;
 }
 .div1__2__img2 {
   width: 2rem;
@@ -77,8 +78,8 @@
     margin-left: 0;
   }
   .div1__2__img1 {
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 2rem;
+    height: 2rem;
   }
   .div1__2__img2 {
     width: 4rem;
@@ -87,7 +88,7 @@
   .p {
     line-height: 38px;
     font-size: 1.5rem;
-    padding-left: 1.25rem;
+    /* padding-left: 1.25rem; */
     width: 368px;
     margin-top: 2.5rem;
     margin-right: 0;

@@ -45,6 +45,9 @@ export default function Navbar() {
     </nav>
   );
 }
+export function Sidebar() {
+  return <div></div>;
+}
 const webLinks = [
   { name: "Home", url: "/" },
   { name: "About", url: "/about" },
