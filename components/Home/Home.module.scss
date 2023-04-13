@@ -37,7 +37,8 @@ $background-images: (
     @include General.BOX();
     width: 70%;
     min-height: 100vh;
-    padding: 10px 0 10px General.$leftRight;
+    padding: General.$leftRight;
+    padding-right: 0;
     .dummy {
       display: flex;
       gap: 1rem;
@@ -62,17 +63,21 @@ $background-images: (
     p {
       width: 70%;
     }
-    h1 {
-      @media (min-width: General.$breakpoint-tablet) {
+    p {
+      font-weight: 500;
+    }
+    @media (min-width: General.$breakpoint-tablet) {
+      h1 {
         font-size: clamp(2.3rem, 3.5rem, 4rem);
         line-height: clamp(2.5rem, 3.2rem, 5.5rem);
       }
     }
-    p {
-      font-weight: 500;
-    }
     @media (max-width: 900px) {
       width: 80%;
+      h1,
+      p {
+        width: 100%;
+      }
     }
   }
 }

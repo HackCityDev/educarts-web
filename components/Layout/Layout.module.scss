@@ -1,9 +1,19 @@
 @use "../General/General.module.scss" as General;
 @mixin Mobile() {
-  @media (max-width: 900px) {
+  @media (max-width: 1150px) {
+    .Aside1,
+    .Aside2 {
+      width: fit-content;
+    }
+    .Aside3 {
+      align-items: center;
+    }
+  }
+  @media (max-width: 792px) {
     flex-direction: column !important;
     aside {
       align-items: center !important;
+      width: 100% !important;
     }
   }
   @media (max-width: 550px) {
@@ -140,13 +150,13 @@
     @include General.Flex();
     gap: 2rem;
     flex-wrap: wrap;
+    padding: 0;
     @media (min-width: 1150px) {
       flex-wrap: nowrap;
     }
     aside {
       align-self: baseline;
       @include General.BOX();
-      width: fit-content;
       color: #6b7280;
       flex: 1 1 auto;
     }
@@ -232,7 +242,6 @@
       }
       .DivInput {
         @include General.Flex();
-        justify-content: flex-start;
         gap: 10px;
         button {
           font-size: clamp(0.875rem, 1rem, 1.25rem);

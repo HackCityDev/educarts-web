@@ -4,7 +4,7 @@
   line-height: 3.75rem;
   color: #12273d;
 }
-@media (min-width: 1500px) {
+@media (min-width: 1440px) {
   .HighlightHeader {
     font-size: 4rem;
     line-height: 4.4rem;
@@ -17,7 +17,7 @@
   line-height: 2.375rem;
   color: #17324f;
 }
-@media (min-width: 1500px) {
+@media (min-width: 1440px) {
   .Headers {
     font-size: 3.5rem;
     line-height: 4rem;
@@ -32,7 +32,7 @@
   letter-spacing: 0.03em;
   color: #6a839f;
 }
-@media (min-width: 1500px) {
+@media (min-width: 1440px) {
   .Paragraphs {
     font-size: 2rem;
     line-height: 2.4rem;
@@ -58,7 +58,7 @@
   display: block;
   border: 2px solid #17324f;
 }
-@media (min-width: 1500px) {
+@media (min-width: 1440px) {
   .Button {
     font-size: 1.8rem;
     padding: 25px 30px;
@@ -130,7 +130,12 @@
   color: #17324f;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
 }
-@media (min-width: 1500px) {
+@media (min-width: 1000px) {
+  .Span {
+    font-size: 1.2rem;
+  }
+}
+@media (min-width: 1440px) {
   .Span {
     font-size: 1.5rem;
   }
@@ -140,7 +145,7 @@
   position: relative;
   padding-top: 80px;
 }
-@media (min-width: 1500px) {
+@media (min-width: 1440px) {
   .Layout {
     padding-top: 100px;
   }
@@ -163,7 +168,7 @@
   padding: 10px 10%;
   gap: 30px;
 }
-@media (min-width: 1500px) {
+@media (min-width: 1440px) {
   .Navbar {
     height: 100px;
   }
@@ -194,7 +199,7 @@
   padding: 4px;
   font-size: 15px;
 }
-@media (min-width: 1500px) {
+@media (min-width: 1440px) {
   .Navbar .Weblinks a,
   .Navbar .CallToActionButtons a {
     font-size: 25px;
@@ -208,7 +213,7 @@
   line-height: 16px;
   letter-spacing: -0.02em;
 }
-@media (min-width: 1500px) {
+@media (min-width: 1440px) {
   .Navbar .Weblinks button,
   .Navbar .CallToActionButtons button {
     font-size: 20px;
@@ -278,6 +283,7 @@
   width: 100%;
   gap: 2rem;
   flex-wrap: wrap;
+  padding: 0;
 }
 @media (min-width: 1150px) {
   .Footer .Main {
@@ -293,12 +299,10 @@
   flex-direction: column;
   gap: 30px;
   align-items: flex-start;
-  width: -moz-fit-content;
-  width: fit-content;
   color: #6b7280;
   flex: 1 1 auto;
 }
-@media (min-width: 1500px) {
+@media (min-width: 1440px) {
   .Footer .Main aside {
     gap: 60px;
   }
@@ -317,7 +321,7 @@
   font-size: 0.8rem;
   line-height: 24px;
 }
-@media (min-width: 1500px) {
+@media (min-width: 1440px) {
   .Footer .Main .Aside1 .DivLogo span {
     font-size: 1.25rem;
   }
@@ -358,7 +362,7 @@
   font-weight: 500;
   color: #86898a;
 }
-@media (min-width: 1500px) {
+@media (min-width: 1440px) {
   .Footer .Main .Aside2 > div h1 {
     font-size: 2.5rem;
   }
@@ -377,7 +381,7 @@
   line-height: 52px;
   color: #dee3e4;
 }
-@media (min-width: 1500px) {
+@media (min-width: 1440px) {
   .Footer .Main .Aside3 .DivText div {
     font-size: 2.5rem;
   }
@@ -386,7 +390,7 @@
   font-size: 0.8rem;
   color: #6b7280;
 }
-@media (min-width: 1500px) {
+@media (min-width: 1440px) {
   .Footer .Main .Aside3 .DivText span {
     font-size: 1.25rem;
   }
@@ -396,7 +400,6 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  justify-content: flex-start;
   gap: 10px;
 }
 .Footer .Main .Aside3 .DivInput button {
@@ -404,12 +407,23 @@
   line-height: 0.875rem;
   padding: 15px 20px;
 }
-@media (max-width: 900px) {
+@media (max-width: 1150px) {
+  .Footer .Main .Aside1,
+  .Footer .Main .Aside2 {
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  .Footer .Main .Aside3 {
+    align-items: center;
+  }
+}
+@media (max-width: 792px) {
   .Footer .Main {
     flex-direction: column !important;
   }
   .Footer .Main aside {
     align-items: center !important;
+    width: 100% !important;
   }
 }
 @media (max-width: 550px) {

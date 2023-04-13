@@ -4,7 +4,7 @@
   line-height: 3.75rem;
   color: #12273d;
 }
-@media (min-width: 1500px) {
+@media (min-width: 1440px) {
   .HighlightHeader {
     font-size: 4rem;
     line-height: 4.4rem;
@@ -17,7 +17,7 @@
   line-height: 2.375rem;
   color: #17324f;
 }
-@media (min-width: 1500px) {
+@media (min-width: 1440px) {
   .Headers {
     font-size: 3.5rem;
     line-height: 4rem;
@@ -32,7 +32,7 @@
   letter-spacing: 0.03em;
   color: #6a839f;
 }
-@media (min-width: 1500px) {
+@media (min-width: 1440px) {
   .Paragraphs {
     font-size: 2rem;
     line-height: 2.4rem;
@@ -58,7 +58,7 @@
   display: block;
   border: 2px solid #17324f;
 }
-@media (min-width: 1500px) {
+@media (min-width: 1440px) {
   .Button {
     font-size: 1.8rem;
     padding: 25px 30px;
@@ -130,7 +130,12 @@
   color: #17324f;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
 }
-@media (min-width: 1500px) {
+@media (min-width: 1000px) {
+  .Span {
+    font-size: 1.2rem;
+  }
+}
+@media (min-width: 1440px) {
   .Span {
     font-size: 1.5rem;
   }
@@ -167,7 +172,7 @@
   align-items: flex-start;
   width: 50%;
 }
-@media (min-width: 1500px) {
+@media (min-width: 1440px) {
   .SignIn .SignInCover {
     gap: 60px;
   }
@@ -191,7 +196,7 @@
   align-items: center;
   z-index: 5;
 }
-@media (min-width: 1500px) {
+@media (min-width: 1440px) {
   .SignIn .Main {
     gap: 60px;
   }
@@ -225,7 +230,7 @@
   margin: 30px auto;
   width: min(100%, 400px);
 }
-@media (min-width: 1500px) {
+@media (min-width: 1440px) {
   .SignUp .Main {
     gap: 60px;
   }
@@ -286,7 +291,7 @@
   width: -moz-fit-content;
   width: fit-content;
 }
-@media (min-width: 1500px) {
+@media (min-width: 1440px) {
   .SignUp .Main .Selectors a {
     gap: 60px;
   }

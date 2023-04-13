@@ -171,7 +171,8 @@
   align-items: flex-start;
   width: 70%;
   min-height: 100vh;
-  padding: 10px 0 10px 10%;
+  padding: 10%;
+  padding-right: 0;
 }
 @media (min-width: 1440px) {
   .Hero .HeroMain {
@@ -202,18 +203,22 @@
 .Hero .HeroMain p {
   width: 70%;
 }
+.Hero .HeroMain p {
+  font-weight: 500;
+}
 @media (min-width: 1000px) {
   .Hero .HeroMain h1 {
     font-size: 3.5rem;
     line-height: 3.2rem;
   }
 }
-.Hero .HeroMain p {
-  font-weight: 500;
-}
 @media (max-width: 900px) {
   .Hero .HeroMain {
     width: 80%;
+  }
+  .Hero .HeroMain h1,
+  .Hero .HeroMain p {
+    width: 100%;
   }
 }
 
