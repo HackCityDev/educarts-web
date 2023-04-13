@@ -1,17 +1,22 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
-import image1 from "../../public/bg1.png";
+import image1 from "../../public/bg3.png";
 import image2 from "../../public/bg2.png";
+import image3 from "../../public/bg1.png";
 import Image from "next/image";
 import styles from "./Home.module.css";
-const Imagearray = [image1, image2];
+import useMQ from "../../hooks/useMQ";
+
 export default function BackgroundImage() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const bgImageMobile = useMQ("(max-width: 500px)");
+  let bg1 = bgImageMobile ? image3 : image1;
+  const Imagearray = [bg1, image2];
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((currentImageIndex + 1) % Imagearray.length);
-    }, 5000);
+    }, 500000);
 
     return () => clearInterval(interval);
   }, [currentImageIndex, Imagearray.length]);
@@ -28,8 +33,8 @@ export default function BackgroundImage() {
         <Image
           src={Imagearray[currentImageIndex]}
           layout="fill"
-          objectFit="contain"
-          objectPosition="center right"
+          objectFit="cover"
+          // objectPosition="center right"
           alt="Background"
         />
       </motion.div>
