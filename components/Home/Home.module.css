@@ -402,7 +402,12 @@
   width: 50%;
 }
 .Work .WorkBody aside div:nth-child(1) {
-  padding-top: 40%;
+  padding-top: 70%;
+}
+@media (min-width: 700px) {
+  .Work .WorkBody aside div:nth-child(1) {
+    padding-top: 50%;
+  }
 }
 .Work .WorkBody aside div p {
   margin: 15px 0;

@@ -190,7 +190,10 @@ $background-images: (
       div {
         width: 50%;
         &:nth-child(1) {
-          padding-top: 40%;
+          padding-top: 70%;
+          @media (min-width: 700px) {
+            padding-top: 50%;
+          }
         }
         p {
           margin: calc(General.$globalGap / 2) 0;
