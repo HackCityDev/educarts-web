@@ -28,7 +28,8 @@ export default function BackgroundImage() {
         <Image
           src={Imagearray[currentImageIndex]}
           layout="fill"
-          objectFit="cover"
+          objectFit="contain"
+          objectPosition="center right"
           alt="Background"
         />
       </motion.div>

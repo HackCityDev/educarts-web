@@ -169,7 +169,7 @@
   flex-direction: column;
   gap: 30px;
   align-items: flex-start;
-  width: 70%;
+  width: 65%;
   min-height: 100vh;
   padding: 10%;
   padding-right: 0;
@@ -201,7 +201,7 @@
 }
 .Hero .HeroMain h1,
 .Hero .HeroMain p {
-  width: 70%;
+  width: 80%;
 }
 .Hero .HeroMain p {
   font-weight: 500;

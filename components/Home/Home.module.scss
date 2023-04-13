@@ -35,7 +35,7 @@ $background-images: (
       rgba(231, 227, 224, 0.01) 101.57%
     );
     @include General.BOX();
-    width: 70%;
+    width: 65%;
     min-height: 100vh;
     padding: General.$leftRight;
     padding-right: 0;
@@ -61,7 +61,7 @@ $background-images: (
     }
     h1,
     p {
-      width: 70%;
+      width: 80%;
     }
     p {
       font-weight: 500;
