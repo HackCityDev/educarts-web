@@ -25,16 +25,21 @@ export default function Navbar() {
       ) : (
         <>
           <aside className={styles.Weblinks}>
-            {webLinks.map((link) => (
-              <Link href={link.url} key={link.url}>
-                <a
-                  className={styles.Weblink}
-                  style={router.route === link.url ? isPath : {}}
-                >
-                  {link.name}
+            {webLinks.map((link) =>
+              link.url === "null" ? (
+                <a key={link.url}>
+                  <span>{link.name} </span>
+
+                  {/* {dropDown.map({name, link} => )} */}
                 </a>
-              </Link>
-            ))}
+              ) : (
+                <Link href={link.url} key={link.url}>
+                  <a style={router.route === link.url ? isPath : {}}>
+                    {link.name}
+                  </a>
+                </Link>
+              )
+            )}
           </aside>
           <aside className={styles.CallToActionButtons}>
             <Button oppose={true} content="Log In" link="/signin" />
@@ -52,7 +57,7 @@ const webLinks = [
   { name: "Home", url: "/" },
   { name: "About", url: "/about" },
   { name: "Services", url: "/services" },
-  { name: "Payments", url: "/payments" },
+  { name: "Payments", url: "null" },
   { name: "How it works", url: "/how-it-works" },
   { name: "Contact us", url: "/contact" },
 ];
