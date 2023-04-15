@@ -145,7 +145,7 @@
   position: relative;
   padding: 10px 10%;
   min-height: 100vh;
-  background: url("../public/bg1.png") no-repeat center center;
+  background: url("../public/bg1_mobile.png") no-repeat center center;
   background-size: cover;
 }
 .SignIn .Logo {
@@ -263,6 +263,7 @@
 }
 .SignUp .Main .Checkbox input {
   align-self: baseline;
+  cursor: pointer;
 }
 .SignUp .Main .Checkbox span {
   margin-top: 0;
@@ -288,6 +289,7 @@
   flex-direction: column;
   gap: 30px;
   align-items: flex-start;
+  align-items: center;
   width: -moz-fit-content;
   width: fit-content;
 }
