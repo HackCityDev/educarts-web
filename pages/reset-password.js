@@ -3,12 +3,27 @@ import HighlightHeader from "../components/General/HighlightHeader";
 import Input from "../components/General/Input";
 import Button from "../components/General/Button";
 import Span from "../components/General/Span";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import InfoModal from "../assets/InfoModal";
+import useFooterInView from "../hooks/useFooterInView";
+import ChatSupport from "../assets/ChatSupport";
 export default function ResetPassword() {
   const [recoveryStage, setRecoveryStage] = useState(0);
+  let bottom = useFooterInView();
+  let supportRef = useRef(null);
+  function removeFixedPosition() {
+    if (supportRef.current && bottom) {
+      supportRef.current.style.position = "absolute";
+    } else {
+      supportRef.current.style.position = "fixed";
+    }
+  }
+  useEffect(removeFixedPosition, [bottom]);
   return (
-    <>
+    <main className={styles.ResetPassword}>
+      <section className="Support" ref={supportRef}>
+        <ChatSupport /> Help
+      </section>
       {recoveryStage === 0 ? (
         <AccountRecovery setStage={setRecoveryStage} />
       ) : recoveryStage === 1 ? (
@@ -16,7 +31,7 @@ export default function ResetPassword() {
       ) : (
         <UpdatePassword />
       )}
-    </>
+    </main>
   );
 }
 export function AccountRecovery({ setStage }) {

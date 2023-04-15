@@ -32,9 +32,9 @@ export default function SignIn() {
         <Input placeholder="Email" />
         <Input placeholder="Enter Password" />
         <Button content="Sign In" />
-        <Span content="Forgot Password?" />
+        <Span content="Forgot Password?" link="/reset-password" />
         <p>
-          Dont have an account? <Span content="Sign Up" />
+          Dont have an account? <Span content="Sign Up" link="/signup" />
         </p>
       </section>
     </main>
