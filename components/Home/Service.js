@@ -24,6 +24,6 @@ export default function Service() {
 }
 let Services = [
   { image: "/grad.png", header: "Educational Payments" },
-  { image: "/grad.png", header: "Consultation" },
+  { image: "/service2.png", header: "Consultation" },
   { image: "/student.png", header: "Funds Transfer" },
 ];

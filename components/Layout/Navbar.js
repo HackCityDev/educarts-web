@@ -60,3 +60,12 @@ let isPath = {
   fontWeight: "600",
   borderBottom: "2px solid #17324f",
 };
+const dropDown = [
+  { name: "Visa Payments", link: "/visa_payments" },
+  { name: "Application Fee", link: "/application_fee" },
+  { name: "Credential", link: "/credentials" },
+  { name: "Admission doc", link: "/admission_doc" },
+  { name: "SEVIS Fee", link: "/sevis" },
+  { name: "Track Payment", link: "/track_payment" },
+  { name: "Others", link: "/others" },
+];

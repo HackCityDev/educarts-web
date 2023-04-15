@@ -13,7 +13,10 @@ export default function Start() {
       <div className={styles.Steps}>
         {Starters.map(({ icon, header, text }, i) => (
           <div className={styles.Step} key={i}>
-            {icon}
+            <span className={styles.Icon}>
+              {icon}
+              {i === 1 && <span className={styles.Eclipse}></span>}
+            </span>
             <Headers content={header} />
             <Paragraphs content={text} />
           </div>
