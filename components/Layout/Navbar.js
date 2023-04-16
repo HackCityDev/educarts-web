@@ -7,8 +7,28 @@ import styles from "./Layout.module.css";
 import { useRouter } from "next/router";
 import { useEffect, useRef, useState } from "react";
 
-export default function Navbar() {
+export default function Navbar({ setOpenHamburger }) {
   const isMobile = useMQ("(max-width: 900px)");
+  return (
+    <nav className={styles.Navbar}>
+      <aside className={styles.Logo}>
+        <Link href="/">
+          <a>
+            <Logo width="150px" />
+          </a>
+        </Link>
+      </aside>
+      {isMobile ? (
+        <aside className={styles.Hamburger}>
+          <RxHamburgerMenu onClick={() => setOpenHamburger(true)} />
+        </aside>
+      ) : (
+        <Links />
+      )}
+    </nav>
+  );
+}
+export function Links() {
   const [openDropdown, setOpenDropdown] = useState(false);
   let router = useRouter();
   let dropdownRef = useRef(null);
@@ -28,60 +48,40 @@ export default function Navbar() {
     };
   });
   return (
-    <nav className={styles.Navbar}>
-      <aside className={styles.Logo}>
-        <Link href="/">
-          <a>
-            <Logo width="150px" />
-          </a>
-        </Link>
+    <>
+      <aside className={styles.Weblinks}>
+        {webLinks.map((link) =>
+          link.url === "null" ? (
+            <a key={link.url}>
+              <span onClick={() => setOpenDropdown(true)}>
+                {link.name}
+                {"||"}
+                {openDropdown && (
+                  <div className={styles.dropDown}>
+                    {dropDown.map((drop) => (
+                      <Link href={drop.link} key={drop.link}>
+                        <a>{drop.name}</a>
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </span>
+            </a>
+          ) : (
+            <Link href={link.url} key={link.url}>
+              <a style={router.route === link.url ? isPath : {}}>{link.name}</a>
+            </Link>
+          )
+        )}
       </aside>
-      {isMobile ? (
-        <aside className={styles.Hamburger}>
-          <RxHamburgerMenu />
-        </aside>
-      ) : (
-        <>
-          <aside className={styles.Weblinks}>
-            {webLinks.map((link) =>
-              link.url === "null" ? (
-                <a key={link.url}>
-                  <span onClick={() => setOpenDropdown(true)}>
-                    {link.name}
-                    {"||"}
-                    {openDropdown && (
-                      <div className={styles.dropDown}>
-                        {dropDown.map((drop) => (
-                          <Link href={drop.link} key={drop.link}>
-                            <a>{drop.name}</a>
-                          </Link>
-                        ))}
-                      </div>
-                    )}
-                  </span>
-                </a>
-              ) : (
-                <Link href={link.url} key={link.url}>
-                  <a style={router.route === link.url ? isPath : {}}>
-                    {link.name}
-                  </a>
-                </Link>
-              )
-            )}
-          </aside>
-          <aside className={styles.CallToActionButtons}>
-            <Button oppose={true} content="Log In" link="/signin" />
-            <Button content="Sign Up" link="/signup" />
-          </aside>
-        </>
-      )}
-    </nav>
+      <aside className={styles.CallToActionButtons}>
+        <Button oppose={true} content="Log In" link="/signin" />
+        <Button content="Sign Up" link="/signup" />
+      </aside>
+    </>
   );
 }
-export function Sidebar() {
-  return <div></div>;
-}
-const webLinks = [
+export const webLinks = [
   { name: "Home", url: "/" },
   { name: "About", url: "/about" },
   { name: "Services", url: "/services" },
@@ -89,11 +89,11 @@ const webLinks = [
   { name: "How it works", url: "/how-it-works" },
   { name: "Contact us", url: "/contact" },
 ];
-let isPath = {
+export let isPath = {
   fontWeight: "600",
   borderBottom: "2px solid #17324f",
 };
-const dropDown = [
+export const dropDown = [
   { name: "Visa Payments", link: "/visa_payments" },
   { name: "Application Fee", link: "/application_fee" },
   { name: "Credential", link: "/credentials" },
