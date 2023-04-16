@@ -5,10 +5,28 @@ import useMQ from "../../hooks/useMQ";
 import Button from "../General/Button";
 import styles from "./Layout.module.css";
 import { useRouter } from "next/router";
+import { useEffect, useRef, useState } from "react";
 
 export default function Navbar() {
   const isMobile = useMQ("(max-width: 900px)");
+  const [openDropdown, setOpenDropdown] = useState(false);
   let router = useRouter();
+  let dropdownRef = useRef(null);
+  useEffect(() => {
+    let handler = (e) => {
+      try {
+        if (!dropdownRef.current?.contains(e.target)) {
+          setOpenDropdown(false);
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    document.addEventListener("mousedown", handler);
+    return () => {
+      document.removeEventListener("mousedown", handler);
+    };
+  });
   return (
     <nav className={styles.Navbar}>
       <aside className={styles.Logo}>
@@ -28,9 +46,19 @@ export default function Navbar() {
             {webLinks.map((link) =>
               link.url === "null" ? (
                 <a key={link.url}>
-                  <span>{link.name} </span>
-
-                  {/* {dropDown.map({name, link} => )} */}
+                  <span onClick={() => setOpenDropdown(true)}>
+                    {link.name}
+                    {"||"}
+                    {openDropdown && (
+                      <div className={styles.dropDown}>
+                        {dropDown.map((drop) => (
+                          <Link href={drop.link} key={drop.link}>
+                            <a>{drop.name}</a>
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </span>
                 </a>
               ) : (
                 <Link href={link.url} key={link.url}>

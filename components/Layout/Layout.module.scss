@@ -77,12 +77,26 @@
     white-space: nowrap;
     font-weight: 500;
     a {
+      position: relative;
       cursor: pointer;
       color: #20466f;
       padding: 4px;
       font-size: clamp(14px, 15px, 18px);
+      div {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        padding: 16px;
+        position: absolute;
+        top: 53px;
+        left: -35%;
+        background-color: #0d1d2f;
+      }
       @media (min-width: General.$breakpoint-desktop) {
         font-size: clamp(20px, 25px, 30px);
+        div {
+          top: 68px;
+        }
       }
     }
     button {
