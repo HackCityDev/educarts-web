@@ -1,11 +1,13 @@
 import Link from "next/link";
 import Logo from "../../assets/Logo";
 import { RxHamburgerMenu } from "react-icons/rx";
+import { GrFormDown } from "react-icons/gr";
 import useMQ from "../../hooks/useMQ";
 import Button from "../General/Button";
 import styles from "./Layout.module.css";
 import { useRouter } from "next/router";
 import { useEffect, useRef, useState } from "react";
+import Down from "../../assets/ArrowDown";
 
 export default function Navbar({ setOpenHamburger }) {
   const isMobile = useMQ("(max-width: 900px)");
@@ -55,7 +57,7 @@ export function Links() {
             <a key={link.url}>
               <span onClick={() => setOpenDropdown(true)}>
                 {link.name}
-                {"||"}
+                <Down />
                 {openDropdown && (
                   <div className={styles.dropDown}>
                     {dropDown.map((drop) => (

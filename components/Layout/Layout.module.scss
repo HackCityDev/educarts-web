@@ -39,11 +39,15 @@
   }
 }
 .Sidebar {
-  position: absolute;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 100%;
   width: 100%;
   z-index: 11;
-  background-color: #6b7280;
+  background-color: #0d1d2f;
+  color: #f4f9fa !important;
   .Weblinks,
   .CallToActionButtons {
     flex-direction: column;
@@ -247,6 +251,10 @@
     color: #20466f;
     padding: 4px;
     font-size: clamp(14px, 15px, 18px);
+    span {
+      display: flex;
+      align-items: center;
+    }
     div {
       display: flex;
       flex-direction: column;

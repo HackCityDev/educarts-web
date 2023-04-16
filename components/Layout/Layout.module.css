@@ -152,11 +152,15 @@
 }
 
 .Sidebar {
-  position: absolute;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 100%;
   width: 100%;
   z-index: 11;
-  background-color: #6b7280;
+  background-color: #0d1d2f;
+  color: #f4f9fa !important;
 }
 .Sidebar .Weblinks,
 .Sidebar .CallToActionButtons {
@@ -432,6 +436,11 @@
   color: #20466f;
   padding: 4px;
   font-size: 15px;
+}
+.Weblinks a span,
+.CallToActionButtons a span {
+  display: flex;
+  align-items: center;
 }
 .Weblinks a div,
 .CallToActionButtons a div {
