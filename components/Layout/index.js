@@ -1,22 +1,13 @@
-import { useState } from "react";
 import Footer from "./Footer";
 import styles from "./Layout.module.css";
-import Navbar, { Links } from "./Navbar";
+import Navbar from "./Navbar";
 export default function Layout({ children }) {
-  const [openHamburger, setOpenHamburger] = useState(false);
   return (
     <main className={styles.Layout}>
-      <Navbar setOpenHamburger={setOpenHamburger} />
-      {openHamburger && <Sidebar />}
+      <Navbar />
+
       {children}
       <Footer />
     </main>
-  );
-}
-export function Sidebar() {
-  return (
-    <div className={styles.Sidebar}>
-      <Links />
-    </div>
   );
 }

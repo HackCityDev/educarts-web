@@ -52,29 +52,11 @@ export function Links() {
   return (
     <>
       <aside className={styles.Weblinks}>
-        {webLinks.map((link) =>
-          link.url === "null" ? (
-            <a key={link.url}>
-              <span onClick={() => setOpenDropdown(true)}>
-                {link.name}
-                <Down />
-                {openDropdown && (
-                  <div className={styles.dropDown}>
-                    {dropDown.map((drop) => (
-                      <Link href={drop.link} key={drop.link}>
-                        <a>{drop.name}</a>
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </span>
-            </a>
-          ) : (
-            <Link href={link.url} key={link.url}>
-              <a style={router.route === link.url ? isPath : {}}>{link.name}</a>
-            </Link>
-          )
-        )}
+        {webLinks.map((link) => (
+          <Link href={link.url} key={link.url}>
+            <a style={router.route === link.url ? isPath : {}}>{link.name}</a>
+          </Link>
+        ))}
       </aside>
       <aside className={styles.CallToActionButtons}>
         <Button oppose={true} content="Log In" link="/signin" />
@@ -87,7 +69,7 @@ export const webLinks = [
   { name: "Home", url: "/" },
   { name: "About", url: "/about" },
   { name: "Services", url: "/services" },
-  { name: "Payments", url: "null" },
+  { name: "Payments", url: "payments" },
   { name: "How it works", url: "/how-it-works" },
   { name: "Contact us", url: "/contact" },
 ];

@@ -9,6 +9,20 @@ import Start from "./Start";
 import Work from "./Work";
 import Testimony from "./Testimony";
 export default function Index() {
+  return (
+    <div className={styles.Index}>
+      <ChatSupportBox />
+      <Hero />
+      <Service />
+      <Work />
+      <Testimony />
+      <Start />
+      <Download />
+    </div>
+  );
+}
+
+export function ChatSupportBox() {
   let bottom = useFooterInView();
   let supportRef = useRef(null);
   function removeFixedPosition() {
@@ -22,16 +36,8 @@ export default function Index() {
   }
   useEffect(removeFixedPosition, [bottom]);
   return (
-    <div className={styles.Index}>
-      <section className="Support" ref={supportRef}>
-        <ChatSupport /> Help
-      </section>
-      <Hero />
-      <Service />
-      <Work />
-      <Testimony />
-      <Start />
-      <Download />
-    </div>
+    <section className="Support" ref={supportRef}>
+      <ChatSupport /> Help
+    </section>
   );
 }

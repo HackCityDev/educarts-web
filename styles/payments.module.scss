@@ -1,0 +1,58 @@
+@use "../components/General/General.module.scss" as General;
+
+.Payments {
+  display: flex;
+  gap: 20px;
+  position: relative;
+  .Background {
+    flex: 2;
+    position: relative;
+    width: 100%;
+    div {
+      background-image: url("../assets/paymentsBG.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      height: 100%;
+      width: 100%;
+    }
+  }
+  .Main {
+    flex: 3;
+    padding-left: General.$leftRight;
+    margin: 1rem 0;
+    .Grid {
+      margin: 30px 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(1fr, 200px));
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      grid-template-rows: auto;
+      .Item {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        border: 1.83466px solid #bac6d2;
+        border-radius: 8px;
+        padding: 16px;
+        .top {
+          display: flex;
+          gap: 10px;
+          align-items: center;
+          p {
+            color: #12273d;
+            font-weight: 600;
+            font-size: 14.9057px;
+            line-height: 17px;
+          }
+        }
+        span {
+          color: #1d4065;
+          font-weight: 500;
+          font-size: 12px;
+          line-height: 18px;
+        }
+      }
+    }
+  }
+}
