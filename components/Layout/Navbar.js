@@ -1,15 +1,14 @@
 import Link from "next/link";
 import Logo from "../../assets/Logo";
 import { RxHamburgerMenu } from "react-icons/rx";
-import { GrFormDown } from "react-icons/gr";
+import { VscChromeClose } from "react-icons/vsc";
 import useMQ from "../../hooks/useMQ";
 import Button from "../General/Button";
 import styles from "./Layout.module.css";
 import { useRouter } from "next/router";
-import { useEffect, useRef, useState } from "react";
-import Down from "../../assets/ArrowDown";
+import { useEffect } from "react";
 
-export default function Navbar({ setOpenHamburger }) {
+export default function Navbar({ setOpenHamburger, openHamburger }) {
   const isMobile = useMQ("(max-width: 900px)");
   return (
     <nav className={styles.Navbar}>
@@ -22,33 +21,33 @@ export default function Navbar({ setOpenHamburger }) {
       </aside>
       {isMobile ? (
         <aside className={styles.Hamburger}>
-          <RxHamburgerMenu onClick={() => setOpenHamburger(true)} />
+          {openHamburger ? (
+            <VscChromeClose onClick={() => setOpenHamburger(false)} />
+          ) : (
+            <RxHamburgerMenu onClick={() => setOpenHamburger(true)} />
+          )}
         </aside>
       ) : (
-        <Links />
+        <Links setOpenHamburger={setOpenHamburger} />
       )}
     </nav>
   );
 }
-export function Links() {
-  const [openDropdown, setOpenDropdown] = useState(false);
+export function Links({ setOpenHamburger }) {
   let router = useRouter();
-  let dropdownRef = useRef(null);
   useEffect(() => {
-    let handler = (e) => {
-      try {
-        if (!dropdownRef.current?.contains(e.target)) {
-          setOpenDropdown(false);
-        }
-      } catch (error) {
-        console.log(error);
-      }
+    const handleRouteChange = () => {
+      console.log(setOpenHamburger);
+      if (setOpenHamburger) setOpenHamburger(false);
     };
-    document.addEventListener("mousedown", handler);
+
+    router.events.on("routeChangeStart", handleRouteChange);
+
     return () => {
-      document.removeEventListener("mousedown", handler);
+      router.events.off("routeChangeStart", handleRouteChange);
     };
-  });
+  }, [router]);
+
   return (
     <>
       <aside className={styles.Weblinks}>
@@ -77,12 +76,3 @@ export let isPath = {
   fontWeight: "600",
   borderBottom: "2px solid #17324f",
 };
-export const dropDown = [
-  { name: "Visa Payments", link: "/visa_payments" },
-  { name: "Application Fee", link: "/application_fee" },
-  { name: "Credential", link: "/credentials" },
-  { name: "Admission doc", link: "/admission_doc" },
-  { name: "SEVIS Fee", link: "/sevis" },
-  { name: "Track Payment", link: "/track_payment" },
-  { name: "Others", link: "/others" },
-];

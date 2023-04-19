@@ -48,6 +48,8 @@
   z-index: 11;
   background-color: #0d1d2f;
   color: #f4f9fa !important;
+  flex-direction: column;
+  gap: 10px;
   .Weblinks,
   .CallToActionButtons {
     flex-direction: column;

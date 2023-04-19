@@ -1,7 +1,5 @@
 import Headers from "../../components/General/Headers";
 import useMQ from "../../hooks/useMQ";
-import bg from "../../assets/paymentsBG.png";
-import Image from "next/image";
 import Paragraphs from "../../components/General/Paragraphs";
 import Span from "../../components/General/Span";
 import styles from "../../styles/payments.module.css";
@@ -30,7 +28,7 @@ export default function Payments() {
         />
         <aside className={styles.Grid}>
           {paymentMethods.map(({ icon, header, content, link }, i) => (
-            <Link key={i} href={`/payments/${link}`}>
+            <Link key={i} href={`/payments${link}`}>
               <a className={styles.Item}>
                 <div className={styles.top}>
                   {icon}
