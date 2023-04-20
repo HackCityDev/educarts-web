@@ -85,6 +85,12 @@ export function SignUpPage({ accountType }) {
           labelAfter="*"
         />
         <Input placeholder="Enter Last Name" label="Last Name" labelAfter="*" />
+        <Input
+          placeholder="Enter Email"
+          label="email"
+          type="email"
+          labelAfter="*"
+        />
         {accountType && (
           <Input
             placeholder="Select Institution"

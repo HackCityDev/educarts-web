@@ -141,6 +141,32 @@
   }
 }
 
+.Radio {
+  all: unset;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+}
+.Radio .radio {
+  background: rgba(233, 237, 241, 0.2);
+  padding: 10px 15px;
+  border: 1.41644px solid #bac6d2;
+  border-radius: 5.24918px;
+  max-width: 250px;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  cursor: pointer;
+  transition: all 300ms ease-out;
+}
+.Radio .radio:hover {
+  background: rgba(233, 237, 241, 0.4);
+}
+.Radio .radio label {
+  cursor: pointer;
+}
+
 .Payments {
   display: flex;
   gap: 20px;
@@ -164,15 +190,174 @@
   padding-left: 10%;
   margin: 1rem 0;
 }
-.Payments .Main .Grid {
+
+.SevisPage {
+  position: relative;
+}
+.SevisPage .Header {
+  background-image: url("../assets/sevis.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  padding: 40px 10%;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.SevisPage .Header div,
+.SevisPage .Header p {
+  color: #fff;
+  max-width: calc(400px - 10%);
+}
+.SevisPage .Header p {
+  font-size: 18px;
+}
+.SevisPage .Options {
+  padding: 0 10%;
+  margin: 1rem 0 4rem;
+}
+.SevisPage .StartSevisPayment .Body {
+  margin: 2rem 0 4rem;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 0 10%;
+}
+.SevisPage .StartSevisPayment button {
+  margin: 3rem auto;
+}
+.SevisPage .Head {
+  padding: 10px 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #17324f;
+}
+.SevisPage .Head div {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.SevisPage .Head div h1,
+.SevisPage .Head div span {
+  color: #fff;
+}
+.SevisPage .Head div h1 {
+  font-size: 18px;
+  font-weight: 600;
+}
+.SevisPage .Head div span {
+  font-size: 12px;
+  opacity: 0.9;
+}
+@media (max-width: 700px) {
+  .SevisPage .Head div {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+  .SevisPage .Head div h1 {
+    font-size: 15px;
+    line-height: 1.1;
+  }
+  .SevisPage .Head div span {
+    font-size: 11px;
+  }
+}
+.SevisPage .SevisValidation {
+  padding: 0 10%;
+}
+.SevisPage .SevisValidation .Sevis {
+  display: flex;
+  gap: 3rem;
+}
+.SevisPage .SevisValidation .Info {
+  flex: 3;
+}
+.SevisPage .SevisValidation .Aside {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  padding-top: 10%;
+  gap: 10%;
+  align-items: center;
+}
+.SevisPage .SevisValidation .Aside .document div {
+  border-radius: 230px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.SevisPage .SevisValidation .Aside .document .doc1 {
+  background: #e7f2fe;
+  width: 300px;
+  height: 300px;
+}
+.SevisPage .SevisValidation .Aside .document .doc1 .doc2 {
+  background: #d5e9fd;
+  width: 250px;
+  height: 250px;
+}
+.SevisPage .SevisValidation .Aside .document .doc1 .doc2 .doc3 {
+  background: #cbe4fd;
+  width: 180px;
+  height: 180px;
+}
+.SevisPage .SevisValidation .ValidationInfo .header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  justify-content: start;
+  gap: 10px;
+  border-bottom: 1px solid;
+  padding-bottom: 8px;
+  margin: 2rem 0 1rem;
+}
+.SevisPage .SevisValidation .ValidationInfo .header p {
+  font-size: 17px;
+  font-weight: 600;
+  color: #151a1d;
+}
+.SevisPage .SevisValidation .ValidationInfo .formType {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 1rem;
+  justify-content: space-between;
+}
+.SevisPage .SevisValidation .ValidationInfo .formType p {
+  color: #17324f;
+}
+@media (max-width: 680px) {
+  .SevisPage .SevisValidation .ValidationInfo .formType {
+    flex-direction: column;
+  }
+}
+.SevisPage .SevisValidation .ValidationInfo .form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+  gap: 30px;
+  align-items: flex-start;
+  margin: 7px 0;
+  align-items: center;
+}
+@media (min-width: 1440px) {
+  .SevisPage .SevisValidation .ValidationInfo .form {
+    gap: 60px;
+  }
+}
+
+.Grid {
   margin: 30px 0;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(1fr, 200px));
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
   grid-template-rows: auto;
 }
-.Payments .Main .Grid .Item {
+.Grid .Item {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -180,20 +365,114 @@
   border-radius: 8px;
   padding: 16px;
 }
-.Payments .Main .Grid .Item .top {
+.Grid .Item .top {
   display: flex;
   gap: 10px;
   align-items: center;
 }
-.Payments .Main .Grid .Item .top p {
+.Grid .Item .top p {
   color: #12273d;
   font-weight: 600;
   font-size: 14.9057px;
   line-height: 17px;
 }
-.Payments .Main .Grid .Item span {
+.Grid .Item span {
   color: #1d4065;
   font-weight: 500;
   font-size: 12px;
   line-height: 18px;
+}
+
+.Pointer {
+  display: flex;
+  margin-top: 30px;
+  width: 100%;
+  position: relative;
+}
+.Pointer .Point {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  align-self: self-start;
+}
+.Pointer .MainPointer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  color: #fff;
+}
+.Pointer .MainPointer .OuterCircle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border-radius: 50%;
+  width: 35px;
+  overflow: hidden;
+  z-index: 3;
+  height: 35px;
+  position: relative;
+  background: linear-gradient(192.7deg, #152a47 14.55%, #032555 91.2%);
+}
+.Pointer .MainPointer .OuterCircle .InnerCircle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  outline: 2px solid #fff;
+  background: linear-gradient(192.7deg, #152a47 14.55%, #032555 91.2%);
+}
+.Pointer .MainPointer p {
+  font-size: 13px;
+  text-align: center;
+  font-weight: 600;
+  color: #12273d;
+  line-height: 1.4;
+}
+.Pointer .PointerLine {
+  width: 220px;
+  height: 1px;
+  background: #1d4065;
+  top: 25%;
+  left: 50%;
+  position: absolute;
+}
+
+.Note {
+  padding: 20px 10px 40px;
+  display: flex;
+  flex-direction: column;
+  background: #f6fafb;
+  border: 2.5px solid #bac6d2;
+  border-radius: 8px;
+}
+.Note .top {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.Note .top h1 {
+  color: #666969;
+}
+.Note p {
+  font-size: 17px;
+  line-height: 1.5;
+  color: #696a6a;
+  font-weight: 500;
+}
+@media (max-width: 700px) {
+  .Note {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .Note .top h1 {
+    font-size: 23px;
+  }
 }/*# sourceMappingURL=payments.module.css.map */

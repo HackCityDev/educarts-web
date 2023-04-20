@@ -21,37 +21,271 @@
     flex: 3;
     padding-left: General.$leftRight;
     margin: 1rem 0;
-    .Grid {
-      margin: 30px 0;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(1fr, 200px));
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      grid-template-rows: auto;
-      .Item {
-        display: flex;
+  }
+}
+.SevisPage {
+  position: relative;
+  .Header {
+    background-image: url("../assets/sevis.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    padding: 40px General.$leftRight;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    div,
+    p {
+      color: #fff;
+      max-width: calc(400px - General.$leftRight);
+    }
+    p {
+      font-size: clamp(14px, 18px, 20px);
+    }
+  }
+  .Options {
+    padding: 0 General.$leftRight;
+    margin: 1rem 0 4rem;
+  }
+  .StartSevisPayment {
+    .Body {
+      margin: 2rem 0 4rem;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      padding: 0 General.$leftRight;
+    }
+    button {
+      margin: 3rem auto;
+    }
+  }
+  .Head {
+    padding: 10px General.$leftRight;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #17324f;
+    div {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      h1,
+      span {
+        color: #fff;
+      }
+      h1 {
+        font-size: 18px;
+        font-weight: 600;
+      }
+      span {
+        font-size: 12px;
+        opacity: 0.9;
+      }
+      @media (max-width: 700px) {
         flex-direction: column;
-        gap: 10px;
-        border: 1.83466px solid #bac6d2;
-        border-radius: 8px;
-        padding: 16px;
-        .top {
-          display: flex;
-          gap: 10px;
-          align-items: center;
-          p {
-            color: #12273d;
-            font-weight: 600;
-            font-size: 14.9057px;
-            line-height: 17px;
-          }
+        gap: 0.5rem;
+        text-align: center;
+        h1 {
+          font-size: 15px;
+          line-height: 1.1;
         }
         span {
-          color: #1d4065;
-          font-weight: 500;
-          font-size: 12px;
-          line-height: 18px;
+          font-size: 11px;
         }
+      }
+    }
+  }
+  .SevisValidation {
+    padding: 0 General.$leftRight;
+    .Sevis {
+      display: flex;
+      gap: 3rem;
+    }
+    .Info {
+      flex: 3;
+    }
+    .Aside {
+      flex: 2;
+      display: flex;
+      flex-direction: column;
+      padding-top: 10%;
+      gap: 10%;
+      align-items: center;
+      .document {
+        div {
+          border-radius: 230px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .doc1 {
+          background: #e7f2fe;
+          width: 300px;
+          height: 300px;
+          .doc2 {
+            background: #d5e9fd;
+            width: 250px;
+            height: 250px;
+            .doc3 {
+              background: #cbe4fd;
+              width: 180px;
+              height: 180px;
+            }
+          }
+        }
+      }
+    }
+    .ValidationInfo {
+      .header {
+        @include General.Flex;
+        justify-content: start;
+        gap: 10px;
+        border-bottom: 1px solid;
+        padding-bottom: 8px;
+        margin: 2rem 0 1rem;
+        p {
+          font-size: 17px;
+          font-weight: 600;
+          color: #151a1d;
+        }
+      }
+      .formType {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 1rem;
+        p {
+          color: #17324f;
+        }
+        justify-content: space-between;
+        @media (max-width: 680px) {
+          flex-direction: column;
+        }
+      }
+      .form {
+        @include General.BOX;
+        margin: 7px 0;
+        align-items: center;
+      }
+    }
+  }
+}
+
+.Grid {
+  margin: 30px 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  grid-template-rows: auto;
+  .Item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 1.83466px solid #bac6d2;
+    border-radius: 8px;
+    padding: 16px;
+    .top {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      p {
+        color: #12273d;
+        font-weight: 600;
+        font-size: 14.9057px;
+        line-height: 17px;
+      }
+    }
+    span {
+      color: #1d4065;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 18px;
+    }
+  }
+}
+
+.Pointer {
+  display: flex;
+  margin-top: 30px;
+  width: 100%;
+  position: relative;
+  .Point {
+    position: relative;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    align-self: self-start;
+  }
+  .MainPointer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    color: #fff;
+    .OuterCircle {
+      @include General.Flex;
+      border-radius: 50%;
+      width: 35px;
+      overflow: hidden;
+      z-index: 3;
+      height: 35px;
+      position: relative;
+      background: linear-gradient(192.7deg, #152a47 14.55%, #032555 91.2%);
+      .InnerCircle {
+        @include General.Flex;
+        border-radius: 50%;
+        width: 25px;
+        height: 25px;
+        outline: 2px solid #fff;
+        background: linear-gradient(192.7deg, #152a47 14.55%, #032555 91.2%);
+      }
+    }
+    p {
+      font-size: 13px;
+      text-align: center;
+      font-weight: 600;
+      color: #12273d;
+      line-height: 1.4;
+    }
+  }
+  .PointerLine {
+    width: 220px;
+    height: 1px;
+    background: #1d4065;
+    top: 25%;
+    left: 50%;
+    position: absolute;
+  }
+}
+
+.Note {
+  padding: 20px 10px 40px;
+  display: flex;
+  flex-direction: column;
+  background: #f6fafb;
+  border: 2.5px solid #bac6d2;
+  border-radius: 8px;
+  .top {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    h1 {
+      color: #666969;
+    }
+  }
+  p {
+    font-size: 17px;
+    line-height: 1.5;
+    color: #696a6a;
+    font-weight: 500;
+  }
+  @media (max-width: 700px) {
+    flex-direction: column;
+    gap: 10px;
+    .top {
+      h1 {
+        font-size: 23px;
       }
     }
   }
