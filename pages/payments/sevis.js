@@ -301,7 +301,7 @@ export function Pointer({ position }) {
   return (
     <div className={styles.Pointer}>
       {position.map((point, i) => (
-        <div className={styles.Point}>
+        <div className={styles.Point} key={i}>
           <div className={styles.MainPointer} style={{ gap: i != 0 ? 0 : "" }}>
             <div
               className={styles.OuterCircle}
