@@ -141,6 +141,32 @@
   }
 }
 
+.Radio {
+  all: unset;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+}
+.Radio .radio {
+  background: rgba(233, 237, 241, 0.2);
+  padding: 10px 15px;
+  border: 1.41644px solid #bac6d2;
+  border-radius: 5.24918px;
+  max-width: 250px;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  cursor: pointer;
+  transition: all 300ms ease-out;
+}
+.Radio .radio:hover {
+  background: rgba(233, 237, 241, 0.4);
+}
+.Radio .radio label {
+  cursor: pointer;
+}
+
 .SignIn {
   position: relative;
   padding: 10px 10%;

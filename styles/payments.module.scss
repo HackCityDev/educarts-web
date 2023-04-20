@@ -138,7 +138,7 @@
     .ValidationInfo {
       .header {
         @include General.Flex;
-        justify-content: start;
+        justify-content: flex-start;
         gap: 10px;
         border-bottom: 1px solid;
         padding-bottom: 8px;
@@ -153,6 +153,7 @@
         display: flex;
         gap: 10px;
         margin-bottom: 1rem;
+
         p {
           color: #17324f;
         }
@@ -208,14 +209,29 @@
   margin-top: 30px;
   width: 100%;
   position: relative;
-  .Point {
+  .PointerLine {
+    width: 220px;
+    height: 1px;
+    background: #1d4065;
+    top: -25%;
+    // left: 50%;
     position: relative;
-    flex: 1;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-    align-self: self-start;
   }
+}
+.MobilePointer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  width: 100%;
+  position: relative;
+}
+.Point {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   .MainPointer {
     position: relative;
     display: flex;
@@ -224,6 +240,7 @@
     gap: 10px;
     color: #fff;
     .OuterCircle {
+      overflow: hidden;
       @include General.Flex;
       border-radius: 50%;
       width: 35px;
@@ -248,14 +265,6 @@
       color: #12273d;
       line-height: 1.4;
     }
-  }
-  .PointerLine {
-    width: 220px;
-    height: 1px;
-    background: #1d4065;
-    top: 25%;
-    left: 50%;
-    position: absolute;
   }
 }
 

@@ -165,7 +165,6 @@ $boxShadow: 4.5px 4.5px 3.1px rgba(0, 0, 0, 0.024),
     display: inline-block;
     padding-left: 100px;
   }
-
   input {
     all: unset;
     box-sizing: border-box;
@@ -176,6 +175,12 @@ $boxShadow: 4.5px 4.5px 3.1px rgba(0, 0, 0, 0.024),
     position: relative;
     width: 100%;
     height: 100%;
+  }
+  .file {
+    @include Flex();
+    border: 2.5px solid #e9edf1;
+    border-radius: 14px;
+    padding: 10px 1rem;
   }
 }
 .Span {
@@ -211,7 +216,6 @@ $boxShadow: 4.5px 4.5px 3.1px rgba(0, 0, 0, 0.024),
     &:hover {
       background: rgba(233, 237, 241, 0.4);
     }
-
     label {
       cursor: pointer;
     }

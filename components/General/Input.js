@@ -40,12 +40,13 @@ export default function Input({
         placeholder={placeholder}
         onChange={(e) => func(e.target)}
         type={type ? type : "text"}
-        style={inputStyle}
+        style={type == "file" ? { ...inputStyle, display: "none" } : inputStyle}
         id={label}
         name={name}
         value={value}
         ref={inputRef}
       />
+      {type == "file" && <span className={styles.file}>{placeholder}</span>}
       {before && (
         <span className={styles.before} ref={beforeRef}>
           {before}

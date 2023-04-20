@@ -37,7 +37,6 @@ export function Links({ setOpenHamburger }) {
   let router = useRouter();
   useEffect(() => {
     const handleRouteChange = () => {
-      console.log(setOpenHamburger);
       if (setOpenHamburger) setOpenHamburger(false);
     };
 
@@ -47,7 +46,6 @@ export function Links({ setOpenHamburger }) {
       router.events.off("routeChangeStart", handleRouteChange);
     };
   }, [router]);
-
   return (
     <>
       <aside className={styles.Weblinks}>
@@ -68,7 +66,7 @@ export const webLinks = [
   { name: "Home", url: "/" },
   { name: "About", url: "/about" },
   { name: "Services", url: "/services" },
-  { name: "Payments", url: "payments" },
+  { name: "Payments", url: "/payments" },
   { name: "How it works", url: "/how-it-works" },
   { name: "Contact us", url: "/contact" },
 ];
