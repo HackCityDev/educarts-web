@@ -46,12 +46,24 @@ export function Links({ setOpenHamburger }) {
       router.events.off("routeChangeStart", handleRouteChange);
     };
   }, [router]);
+  function activeLink(link) {
+    let isActive = false;
+    if (link.length > 1) {
+      isActive = router.route === link || router.pathname.startsWith(link);
+    }
+    console.log(router.route, link);
+    if (isActive) {
+      return isPath;
+    } else {
+      return {};
+    }
+  }
   return (
     <>
       <aside className={styles.Weblinks}>
         {webLinks.map((link) => (
           <Link href={link.url} key={link.url}>
-            <a style={router.route === link.url ? isPath : {}}>{link.name}</a>
+            <a style={activeLink(link.url)}>{link.name}</a>
           </Link>
         ))}
       </aside>

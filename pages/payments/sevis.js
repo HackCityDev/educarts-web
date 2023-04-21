@@ -551,7 +551,7 @@ function CompleteCardPayment({ isMobile }) {
         </div>
         <div className={styles.Details}>
           {PaymentSummary.map(({ header, content }) => (
-            <div className={styles.Detail}>
+            <div className={styles.Detail} key={header}>
               <Span content={header} style={{ color: "#A6A6A8" }} />{" "}
               <span>|</span> <Span content={content} />
             </div>
@@ -584,7 +584,7 @@ function BankPayment({ isMobile }) {
           </div>
           <div className={styles.Details}>
             {Details.map(({ header, detail }) => (
-              <div className={styles.Detail}>
+              <div className={styles.Detail} key={header}>
                 <Span content={header} style={{ color: "#A6A6A8" }} />{" "}
                 <span>|</span> <Span content={detail} />
               </div>
