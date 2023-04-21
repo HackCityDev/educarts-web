@@ -81,13 +81,18 @@
         font-size: 12px;
         opacity: 0.9;
       }
-      @media (max-width: 700px) {
-        flex-direction: column;
-        gap: 0.5rem;
-        text-align: center;
+      svg {
+        width: 30px;
+      }
+    }
+    @media (max-width: 700px) {
+      flex-direction: column;
+      text-align: center;
+      div {
         h1 {
           font-size: 15px;
           line-height: 1.1;
+          font-weight: 500;
         }
         span {
           font-size: 11px;
@@ -103,6 +108,7 @@
     }
     .Info {
       flex: 3;
+      width: 100%;
     }
     .Aside {
       flex: 2;
@@ -164,8 +170,190 @@
       }
       .form {
         @include General.BOX;
-        margin: 7px 0;
+        margin: 1rem 0;
         align-items: center;
+      }
+    }
+  }
+  .PaymentMethod {
+    padding: 0 General.$leftRight;
+    .paymentId {
+      @include General.Flex;
+      justify-content: space-between;
+      margin: 0.7rem 0;
+      @media (min-width: 500px) {
+        gap: 3rem;
+        justify-content: flex-start;
+      }
+      i {
+        color: #20466f;
+        font-style: normal;
+        // font-family: "Raleway";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+    }
+    .paymentBox {
+      background: #fafcfd;
+      border: 1px solid #e9edf1;
+      border-radius: 12px;
+      padding: 20px;
+      margin: 0 0 1rem;
+      .CardPayment,
+      .BankPayment,
+      .CompleteCardPayment {
+        margin: 1rem 0;
+        @include General.BOX;
+        align-items: center;
+        .Svg {
+          @include General.Flex;
+          justify-content: flex-start;
+          gap: 1rem;
+        }
+        .cardForm {
+          @include General.BOX;
+          justify-content: flex-start;
+          div {
+            display: flex;
+            gap: 12px;
+            width: min(100%, 300px);
+          }
+          .sensitiveCardInfo {
+            white-space: nowrap;
+            gap: 20px;
+            .expiry {
+              flex: 3.5;
+            }
+            & > label {
+              flex: 2;
+            }
+            @media (max-width: 600px) {
+              flex-direction: column;
+            }
+          }
+        }
+        .InfoModal {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          color: #b2b4b4;
+          svg {
+            width: 25px;
+          }
+        }
+        .accountBox {
+          border: 2.5px solid #e9edf1;
+          border-radius: 24px;
+          padding: 20px;
+          @include General.Flex;
+          .box {
+            max-width: 400px;
+            @include General.BOX;
+            gap: 12px;
+            span {
+              color: #8a8b8b;
+            }
+            & > span {
+              text-align: center;
+              width: 100%;
+            }
+            .Bank {
+              display: flex;
+              width: fit-content;
+              gap: 10px;
+              align-items: center;
+              div {
+                font-size: 28px;
+                color: #656568;
+              }
+              svg {
+                width: 45.5px;
+                height: 45.5px;
+              }
+            }
+          }
+        }
+        .Details {
+          @include General.Flex;
+          flex-direction: column;
+          gap: 10px;
+          div {
+            @include General.Flex;
+            span {
+              flex: 1;
+              // white-space: nowrap;
+              &:nth-child(2) {
+                text-align: center;
+              }
+            }
+          }
+        }
+        .PaymentDetails,
+        .PaymentSummary {
+          width: min(400px, 100%);
+          border: 2.5px solid #e9edf1;
+          border-radius: 24px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          gap: 1.3rem;
+          padding: 1rem 1.2rem;
+          i {
+            font-style: normal;
+          }
+          span {
+            color: #7e7e80;
+          }
+          .top,
+          .bottom {
+            @include General.Flex;
+            justify-content: space-between;
+          }
+          .top {
+            span {
+              display: flex;
+              align-items: center;
+              gap: 5px;
+            }
+            i {
+              text-decoration: underline;
+              color: #20466f;
+              font-weight: 500;
+            }
+          }
+          .bottom {
+            .cardDetails {
+              width: fit-content;
+              display: flex;
+              gap: 10px;
+              align-items: center;
+              svg {
+                width: 50px;
+                height: 30px;
+              }
+              aside {
+                display: flex;
+                gap: 7px;
+                align-items: center;
+                .Dots {
+                  display: flex;
+                  align-items: center;
+                  gap: 3px;
+                  .dot {
+                    width: 5px;
+                    height: 5px;
+                    background: #86898a;
+                    border-radius: 1000px;
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     }
   }
@@ -279,6 +467,14 @@
     display: flex;
     gap: 10px;
     align-items: center;
+    .lock {
+      width: max-content;
+      align-self: flex-start;
+      svg {
+        width: 50px;
+        height: 50px;
+      }
+    }
     h1 {
       color: #666969;
     }

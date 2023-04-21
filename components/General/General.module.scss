@@ -181,6 +181,18 @@ $boxShadow: 4.5px 4.5px 3.1px rgba(0, 0, 0, 0.024),
     border: 2.5px solid #e9edf1;
     border-radius: 14px;
     padding: 10px 1rem;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 4px;
+    span {
+      width: 70%;
+    }
+    i {
+      line-height: 1.4;
+      font-style: normal;
+      text-decoration: underline;
+      font-weight: 700;
+    }
   }
 }
 .Span {
@@ -213,11 +225,15 @@ $boxShadow: 4.5px 4.5px 3.1px rgba(0, 0, 0, 0.024),
     gap: 10px;
     cursor: pointer;
     transition: all 300ms ease-out;
+    width: 100%;
     &:hover {
       background: rgba(233, 237, 241, 0.4);
     }
     label {
       cursor: pointer;
     }
+  }
+  @media (max-width: 700px) {
+    flex-direction: column;
   }
 }
