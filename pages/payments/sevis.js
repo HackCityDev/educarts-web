@@ -11,7 +11,7 @@ import HighlightHeader from "../../components/General/HighlightHeader";
 import Button from "../../components/General/Button";
 import { useEffect, useState } from "react";
 import RadioGroup from "../../components/General/Radio";
-import { GrValidate } from "react-icons/gr";
+import { GrValidate, GrDocumentUpload } from "react-icons/gr";
 import { CiLocationOn } from "react-icons/ci";
 import { RxCopy, RxPerson } from "react-icons/rx";
 import Input from "../../components/General/Input";
@@ -27,6 +27,7 @@ import Lock from "../../assets/Lock";
 import InfoModal from "../../assets/InfoModal";
 import Timer from "../../assets/Timer";
 import GTBankLogo from "../../assets/GTBank";
+import Modal from "../../components/Modals/TransactionModal";
 let gloablButtonStyle = {
   height: "auto",
   margin: "0 auto 2rem",
@@ -35,7 +36,16 @@ let gloablButtonStyle = {
 };
 export default function SevisPage() {
   const [state, setState] = useState(0);
+  const [success, setSuccess] = useState(false);
   let isMobile = useMQ("(max-width: 700px)");
+  useEffect(() => {
+    if (state === 4) {
+      let timeOut = setTimeout(() => {
+        setSuccess(true);
+        return clearTimeout(timeOut);
+      }, 5000);
+    }
+  }, [state]);
   return (
     <main className={styles.SevisPage}>
       <ChatSupportBox />
@@ -47,6 +57,7 @@ export default function SevisPage() {
         <SevisValidation isMobile={isMobile} setState={setState} />
       )}
       {state === 3 && <PaymentMethod isMobile={isMobile} setState={setState} />}
+      {state === 4 && <Modal receipt={success} />}
     </main>
   );
 }
@@ -230,9 +241,9 @@ function PaymentMethod({ setState, isMobile }) {
     <section className={styles.PaymentMethod}>
       {" "}
       {isMobile ? (
-        <MobilePointer position={position} index={1} />
+        <MobilePointer position={position} index={localState ? 2 : 1} />
       ) : (
-        <Pointer position={position} index={1} />
+        <Pointer position={position} index={localState ? 2 : 1} />
       )}
       <div className={styles.paymentId}>
         <Span content="Payment ID - EDU2349856" style={{ color: "#7E7E80" }} />
@@ -250,12 +261,12 @@ function PaymentMethod({ setState, isMobile }) {
         )}
         {selectedOption === "card" ? (
           localState ? (
-            <CompleteCardPayment isMobile={isMobile} />
+            <CompleteCardPayment isMobile={isMobile} setState={setState} />
           ) : (
             <CardPayment isMobile={isMobile} setLocalState={setLocalState} />
           )
         ) : (
-          <BankPayment isMobile={isMobile} />
+          <BankPayment isMobile={isMobile} setState={setState} />
         )}
       </aside>
     </section>
@@ -369,7 +380,7 @@ function Form2({ isMobile }) {
       </aside>
       <aside className={styles.ValidationInfo}>
         <div className={styles.header}>
-          <GrValidate />
+          <GrDocumentUpload />
           <Paragraphs content="Documents Upload" />
         </div>
         <div className={styles.form} style={{ margin: "3rem 0 1.5rem" }}>
@@ -502,7 +513,7 @@ function CardPayment({ isMobile, setLocalState }) {
     </div>
   );
 }
-function CompleteCardPayment({ isMobile }) {
+function CompleteCardPayment({ isMobile, setState }) {
   let PaymentSummary = [
     { header: "Paying For", content: "SEVIS FEE(1-90)" },
     { header: "Form Fee", content: "$450.00" },
@@ -560,11 +571,15 @@ function CompleteCardPayment({ isMobile }) {
           ))}
         </div>
       </div>
-      <Button content="Pay" style={gloablButtonStyle} />
+      <Button
+        content="Pay"
+        style={gloablButtonStyle}
+        action={() => setState(4)}
+      />
     </div>
   );
 }
-function BankPayment({ isMobile }) {
+function BankPayment({ isMobile, setState }) {
   let Details = [
     { header: "Account Name", detail: "Educarts LLC" },
     { header: "Account Number", detail: "1234567890" },
@@ -594,7 +609,11 @@ function BankPayment({ isMobile }) {
           </div>
         </div>
       </div>
-      <Button content="I Have Made Payments" style={gloablButtonStyle} />
+      <Button
+        content="I Have Made Payments"
+        style={gloablButtonStyle}
+        action={() => setState(4)}
+      />
     </div>
   );
 }

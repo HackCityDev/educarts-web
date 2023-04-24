@@ -92,3 +92,30 @@ i {
     display: block;
   }
 }
+
+.Modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 3rem 0;
+}
+.Modal div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  flex-direction: column;
+  gap: 2rem;
+}
+.SuccessModal div {
+  flex-direction: row;
+}
+
+.ModalImage {
+  width: 50%;
+  height: 300px !important;
+  position: relative;
+}
