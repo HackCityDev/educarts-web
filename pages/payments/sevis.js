@@ -12,7 +12,8 @@ import Button from "../../components/General/Button";
 import { useEffect, useState } from "react";
 import RadioGroup from "../../components/General/Radio";
 import { GrValidate } from "react-icons/gr";
-import { RxCopy } from "react-icons/rx";
+import { CiLocationOn } from "react-icons/ci";
+import { RxCopy, RxPerson } from "react-icons/rx";
 import Input from "../../components/General/Input";
 import Nigeria from "../../assets/Nigeria";
 import Idea from "../../assets/Idea";
@@ -302,7 +303,7 @@ function Form1({ isMobile, radioOptions, selectedOption, handleOptionChange }) {
       </aside>
       <aside className={styles.ValidationInfo}>
         <div className={styles.header}>
-          <GrValidate />
+          <RxPerson />
           <Paragraphs content="Personal Information" />
         </div>
         <div className={styles.form} style={{ margin: "3rem 0 1.5rem" }}>
@@ -346,7 +347,7 @@ function Form2({ isMobile }) {
     <aside className={styles.Info}>
       <aside className={styles.ValidationInfo}>
         <div className={styles.header}>
-          <GrValidate />
+          <CiLocationOn />
           <Paragraphs content="Address Information" />
         </div>
         {isMobile ? <Note /> : null}
@@ -513,6 +514,7 @@ function CompleteCardPayment({ isMobile }) {
       <PaymentsNote
         content="Kindly Double Check The Details Below Before You Click Pay"
         isMobile={isMobile}
+        width={true}
       />
       <div className={styles.PaymentDetails}>
         <div className={styles.top}>
@@ -596,11 +598,14 @@ function BankPayment({ isMobile }) {
     </div>
   );
 }
-function PaymentsNote({ content, isMobile }) {
+function PaymentsNote({ content, isMobile, width }) {
   return (
     <div
       className={styles.Note}
-      style={{ padding: isMobile ? "12px" : "20px", width: "min(400px, 100%)" }}
+      style={{
+        padding: isMobile ? "12px" : "20px",
+        width: width ? "min(400px, 100%)" : "",
+      }}
     >
       <div className={styles.top}>
         <div className={styles.lock}>

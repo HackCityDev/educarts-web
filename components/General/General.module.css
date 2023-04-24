@@ -84,16 +84,19 @@
   width: min(100%, 300px);
   position: relative;
 }
+.Input i {
+  width: -moz-fit-content;
+  width: fit-content;
+}
 .Input::after {
   content: attr(data-after);
   position: absolute;
-  left: 80px;
+  left: var(--left-offset);
   font-size: x-large;
   color: red;
 }
 .Input span.before {
-  margin: 0 !important;
-  padding-top: 26px;
+  margin-top: 12px;
   position: absolute;
   top: 50%;
   left: 10px;
@@ -101,7 +104,9 @@
   width: -moz-fit-content;
   width: fit-content;
   color: rgb(178, 180, 180);
-  height: 100%;
+  height: 40px;
+  border-right: 1px solid black;
+  padding-right: 3px;
   display: flex;
   align-items: center;
   cursor: pointer;

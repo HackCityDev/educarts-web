@@ -1,5 +1,6 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import styles from "./General.module.css";
+
 export default function Input({
   type,
   labelStyle,
@@ -10,32 +11,33 @@ export default function Input({
   name,
   value,
   before,
-  after,
   labelAfter,
 }) {
   const beforeRef = useRef(null);
-  const afterRef = useRef(null);
   const inputRef = useRef(null);
+  const labelRef = useRef(null);
+  const [leftOffset, setLeftOffset] = useState(80);
 
   useEffect(() => {
-    let width;
     if (beforeRef.current) {
-      width = beforeRef.current.clientWidth;
+      let width = beforeRef.current.clientWidth;
       let padding = 20 + width + "px";
       inputRef.current.style.paddingLeft = padding;
     }
-    if (afterRef.current) {
-      console.log(afterRef.current.clientWidth);
+    if (labelRef.current) {
+      let _width = labelRef.current.clientWidth;
+      setLeftOffset(_width);
     }
   }, []);
+
   return (
     <label
       htmlFor={label}
       className={styles.Input}
-      style={labelStyle}
+      style={{ ...labelStyle, "--left-offset": `${leftOffset}px` }}
       data-after={labelAfter}
     >
-      {label}
+      <i ref={labelRef}>{label}</i>
       <input
         placeholder={placeholder}
         onChange={(e) => func(e.target)}
@@ -52,7 +54,6 @@ export default function Input({
           {before}
         </span>
       )}
-      {after && <span className={styles.after} ref={afterRef}></span>}
     </label>
   );
 }

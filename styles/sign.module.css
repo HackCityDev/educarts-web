@@ -84,6 +84,10 @@
   width: min(100%, 300px);
   position: relative;
 }
+.Input i {
+  width: -moz-fit-content;
+  width: fit-content;
+}
 .Input::after {
   content: attr(data-after);
   position: absolute;
@@ -131,6 +135,17 @@
   border-radius: 14px;
   padding: 10px 1rem;
   cursor: pointer;
+  flex-direction: column;
+  gap: 4px;
+}
+.Input .file span {
+  width: 70%;
+}
+.Input .file i {
+  line-height: 1.4;
+  font-style: normal;
+  text-decoration: underline;
+  font-weight: 700;
 }
 
 .Span {
@@ -169,12 +184,18 @@
   gap: 10px;
   cursor: pointer;
   transition: all 300ms ease-out;
+  width: 100%;
 }
 .Radio .radio:hover {
   background: rgba(233, 237, 241, 0.4);
 }
 .Radio .radio label {
   cursor: pointer;
+}
+@media (max-width: 700px) {
+  .Radio {
+    flex-direction: column;
+  }
 }
 
 .SignIn {

@@ -49,9 +49,8 @@ export function Links({ setOpenHamburger }) {
   function activeLink(link) {
     let isActive = false;
     if (link.length > 1) {
-      isActive = router.route === link || router.pathname.startsWith(link);
-    }
-    console.log(router.route, link);
+      isActive = router.pathname.startsWith(link);
+    } else if (router.route === link) isActive = true;
     if (isActive) {
       return isPath;
     } else {

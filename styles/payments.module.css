@@ -84,6 +84,10 @@
   width: min(100%, 300px);
   position: relative;
 }
+.Input i {
+  width: -moz-fit-content;
+  width: fit-content;
+}
 .Input::after {
   content: attr(data-after);
   position: absolute;
