@@ -33,7 +33,7 @@ export default function Navbar({ setOpenHamburger, openHamburger }) {
     </nav>
   );
 }
-export function Links({ setOpenHamburger }) {
+export function Links({ setOpenHamburger, side }) {
   let router = useRouter();
   useEffect(() => {
     const handleRouteChange = () => {
@@ -62,7 +62,9 @@ export function Links({ setOpenHamburger }) {
       <aside className={styles.Weblinks}>
         {webLinks.map((link) => (
           <Link href={link.url} key={link.url}>
-            <a style={activeLink(link.url)}>{link.name}</a>
+            <a style={{ ...activeLink(link.url), color: "white" }}>
+              {link.name}
+            </a>
           </Link>
         ))}
       </aside>

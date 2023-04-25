@@ -84,10 +84,6 @@
   width: min(100%, 300px);
   position: relative;
 }
-.Input i {
-  width: -moz-fit-content;
-  width: fit-content;
-}
 .Input::after {
   content: attr(data-after);
   position: absolute;
@@ -197,4 +193,88 @@
   .Radio {
     flex-direction: column;
   }
+}
+
+.Selector {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.3125rem;
+  letter-spacing: 0.03em;
+  color: #3a3a3a;
+  width: min(100%, 300px);
+  position: relative;
+}
+.Selector .Filters {
+  background: none;
+  position: relative;
+}
+.Selector .Filters .filterCurrent {
+  cursor: pointer;
+  border-radius: 7px;
+  width: 100%;
+  padding: 0.2rem 0.5rem;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: none;
+  border: 1px solid rgba(0, 0, 0, 0.9);
+}
+.Selector .Filters .filter {
+  height: 300px;
+  overflow-y: auto;
+  border-radius: 7px;
+  position: absolute;
+  top: 0;
+  z-index: 5;
+  padding: 0.2rem 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background: none;
+  background-color: rgba(13, 13, 13, 0.8);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 0, 0, 0.9);
+  opacity: 1;
+  gap: 0.5rem;
+  width: 100%;
+  /* Style for the scrollbar */
+  /* Style for the scrollbar thumb */
+  /* Style for the scrollbar track */
+}
+.Selector .Filters .filter div {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  opacity: 0.8;
+  background: none;
+  cursor: pointer;
+  padding: 0.5rem 0.6rem;
+  transition: opacity 200ms ease-in;
+}
+.Selector .Filters .filter div:hover {
+  opacity: 1;
+  background-color: rgb(13, 13, 13);
+}
+.Selector .Filters .filter::-webkit-scrollbar {
+  width: 5px;
+}
+.Selector .Filters .filter::-webkit-scrollbar-thumb {
+  background-color: #f2f2f2;
+  border-radius: 5px;
+}
+.Selector .Filters .filter::-webkit-scrollbar-track {
+  background-color: #1f202e;
+}
+
+.active {
+  background-color: #1f202e !important;
+  color: white;
+  opacity: 1 !important;
 }/*# sourceMappingURL=General.module.css.map */

@@ -1,20 +1,9 @@
-import Headers from "../../components/General/Headers";
-import useMQ from "../../hooks/useMQ";
-import Paragraphs from "../../components/General/Paragraphs";
-import Span from "../../components/General/Span";
-import styles from "../../styles/payments.module.css";
-import Sevis from "../../assets/Sevis";
-import ViewStatus from "../../assets/ViewStatus";
-import LearnMore from "../../assets/SevisLearnmore";
-import { ChatSupportBox } from "../../components/Home";
-import HighlightHeader from "../../components/General/HighlightHeader";
-import Button from "../../components/General/Button";
 import { useEffect, useState } from "react";
-import RadioGroup from "../../components/General/Radio";
+import RadioGroup from "../General/Radio";
 import { GrValidate, GrDocumentUpload } from "react-icons/gr";
 import { CiLocationOn } from "react-icons/ci";
 import { RxCopy, RxPerson } from "react-icons/rx";
-import Input from "../../components/General/Input";
+import Input from "../General/Input";
 import Nigeria from "../../assets/Nigeria";
 import Idea from "../../assets/Idea";
 import Document from "../../assets/Document";
@@ -27,108 +16,25 @@ import Lock from "../../assets/Lock";
 import InfoModal from "../../assets/InfoModal";
 import Timer from "../../assets/Timer";
 import GTBankLogo from "../../assets/GTBank";
-import Modal from "../../components/Modals/TransactionModal";
-let gloablButtonStyle = {
-  height: "auto",
-  margin: "0 auto 2rem",
-  padding: "10px 50px",
-  width: "min(100%, 300px)",
-};
-export default function SevisPage() {
-  const [state, setState] = useState(0);
-  const [success, setSuccess] = useState(false);
-  let isMobile = useMQ("(max-width: 700px)");
-  useEffect(() => {
-    if (state === 4) {
-      let timeOut = setTimeout(() => {
-        setSuccess(true);
-        return clearTimeout(timeOut);
-      }, 5000);
-    }
-  }, [state]);
-  return (
-    <main className={styles.SevisPage}>
-      <ChatSupportBox />
-      {(state === 0 || state === 1) && <HeaderElement />}
-      {state === 0 && <OptionsElement setState={setState} />}
-      {state === 1 && <StartSevisPayment setState={setState} />}
-      {state === 2 || (state === 3 && <SevisHeader />)}
-      {state === 2 && (
-        <SevisValidation isMobile={isMobile} setState={setState} />
-      )}
-      {state === 3 && <PaymentMethod isMobile={isMobile} setState={setState} />}
-      {state === 4 && <Modal receipt={success} />}
-    </main>
-  );
-}
-
-function HeaderElement() {
-  return (
-    <section className={styles.Header}>
-      <HighlightHeader content="SEVIS FEE" />
-      <Paragraphs content="We carry out Sevis fee payments to help you focus on other Important school runs" />
-    </section>
-  );
-}
-
-function OptionsElement({ setState }) {
-  let Options = [
-    {
-      icon: <Sevis />,
-      button: "Pay I-901 Fee",
-      header: " I-901 Fee Payments",
-      content:
-        "Click here if you have or have not Completed the Form I-20 or DS-2019 and want to pay the Sevis Fee",
-    },
-    {
-      icon: <ViewStatus />,
-      button: "View Status",
-      header: "View Payment Status",
-      content:
-        "If you have already made a payment on Educarts previously, Click view to track your payments Status",
-    },
-    {
-      icon: <LearnMore />,
-      button: "Learn More",
-      header: "Learn About SEVIS Fees",
-      content: "Obtain More Clarity on SEVIS-1901 Payments and Procedure",
-    },
-  ];
-  return (
-    <section className={styles.Options}>
-      <Headers content="Sevis Payment Options" />
-      <aside className={styles.Grid}>
-        {Options.map(({ icon, button, header, content }, i) => (
-          <div key={i} className={styles.Item}>
-            <div
-              className={styles.top}
-              style={{ justifyContent: "space-between" }}
-            >
-              {icon}
-              <Button
-                content={button}
-                style={{
-                  fontSize: "14px",
-                  lineHeight: "0px",
-                  letterSpacing: "-0.02em",
-                  height: "auto",
-                }}
-                action={() => setState(1)}
-              />
-            </div>
-            <Headers
-              content={header}
-              style={{ fontSize: "18px", lineHeight: "28px" }}
-            />
-            <Span content={content} />
-          </div>
-        ))}
-      </aside>
-    </section>
-  );
-}
-
-function StartSevisPayment({ setState }) {
+import Headers from "../General/Headers";
+import Paragraphs from "../General/Paragraphs";
+import Span from "../General/Span";
+import styles from "../../styles/payments.module.css";
+import Sevis from "../../assets/Sevis";
+import HighlightHeader from "../General/HighlightHeader";
+import Button from "../General/Button";
+import Select from "../General/Options";
+import {
+  states,
+  cities,
+  countries,
+  daysOfMonth,
+  monthsOfYear,
+  years,
+  gloablButtonStyle,
+} from "./variables";
+import { SevisHeader } from "../../pages/payments/sevis";
+export function StartSevisPayment({ setState }) {
   const [selectedOption, setSelectedOption] = useState("");
   const handleOptionChange = (value) => {
     setSelectedOption(value);
@@ -143,7 +49,12 @@ function StartSevisPayment({ setState }) {
   ];
   return (
     <section className={styles.StartSevisPayment}>
-      <SevisHeader />
+      <SevisHeader
+        headers="I-901 Service Fee Payment"
+        span="View Payment Status"
+        spanLink="/payments/sevis/status"
+        icon={<Sevis />}
+      />
       <aside className={styles.Body}>
         <RadioGroup
           options={radioOptions}
@@ -155,24 +66,13 @@ function StartSevisPayment({ setState }) {
   );
 }
 
-function SevisHeader() {
-  return (
-    <aside className={styles.Head}>
-      <div className={styles.contentLeft}>
-        <Sevis />
-        <Headers content="I-901 Service Fee Payment" />
-      </div>
-      <div className={styles.contentRight}>
-        <Span content="View Payment Status" />
-        <Span content="Learn About SEVIS" />
-      </div>
-    </aside>
-  );
-}
+export let position = [
+  "Applicants Information",
+  "Payment Method",
+  "Confirm Payment",
+];
 
-let position = ["Applicants Information", "Payment Method", "Confirm Payment"];
-
-function SevisValidation({ setState, isMobile }) {
+export function SevisValidation({ setState, isMobile }) {
   const [selectedOption, setSelectedOption] = useState("DS 2019 J-1");
   const [localState, setLocalState] = useState(false);
   const handleOptionChange = (value) => {
@@ -227,7 +127,7 @@ function SevisValidation({ setState, isMobile }) {
   );
 }
 
-function PaymentMethod({ setState, isMobile }) {
+export function PaymentMethod({ setState, isMobile }) {
   const [selectedOption, setSelectedOption] = useState("card");
   const [localState, setLocalState] = useState(false);
   const handleOptionChange = (value) => {
@@ -273,8 +173,14 @@ function PaymentMethod({ setState, isMobile }) {
   );
 }
 
-// Start of Sevis Validation Components
-function Form1({ isMobile, radioOptions, selectedOption, handleOptionChange }) {
+let CategoryOptions = ["MSU", "Oxford", "Cambridge"];
+// Start of Sevis Vali
+export function Form1({
+  isMobile,
+  radioOptions,
+  selectedOption,
+  handleOptionChange,
+}) {
   return (
     <aside className={styles.Info}>
       <aside className={styles.ValidationInfo}>
@@ -296,11 +202,7 @@ function Form1({ isMobile, radioOptions, selectedOption, handleOptionChange }) {
         </div>
         <div className={styles.form}>
           {selectedOption == "DS 2019 J-1" && (
-            <Input
-              placeholder="Select Category"
-              label="Category"
-              labelAfter="*"
-            />
+            <Select filters={CategoryOptions} label="Category" labelAfter="*" />
           )}
           <Input placeholder="Enter Sevis ID" label="Sevis ID" labelAfter="*" />
           <Input
@@ -309,7 +211,18 @@ function Form1({ isMobile, radioOptions, selectedOption, handleOptionChange }) {
             labelAfter="*"
           />
           <Input placeholder="Enter First & Second Name" label="Given Names" />
-          <Input placeholder="" label="Date of Birth" labelAfter="*" />
+          <div className={styles.DOB}>
+            <Input
+              label="Date of Birth"
+              labelAfter="*"
+              inputStyle={{ display: "none" }}
+            />
+            <div className={styles.options}>
+              <Select filters={daysOfMonth} filterState="Day" />
+              <Select filters={monthsOfYear} filterState="Month" />
+              <Select filters={years} filterState="Year" />
+            </div>
+          </div>
         </div>
       </aside>
       <aside className={styles.ValidationInfo}>
@@ -338,22 +251,24 @@ function Form1({ isMobile, radioOptions, selectedOption, handleOptionChange }) {
               </>
             }
           />
-          <Input
-            placeholder="Select country"
+          <Select
+            filters={countries}
             label="Country of residence"
             labelAfter="*"
+            filterState="Select country"
           />
-          <Input
-            placeholder="Select country"
+          <Select
+            filters={countries}
             label="Country of Birth"
             labelAfter="*"
+            filterState="Select country"
           />
         </div>
       </aside>
     </aside>
   );
 }
-function Form2({ isMobile }) {
+export function Form2({ isMobile }) {
   return (
     <aside className={styles.Info}>
       <aside className={styles.ValidationInfo}>
@@ -373,9 +288,24 @@ function Form2({ isMobile }) {
             label="Address 2"
             labelAfter="*"
           />
-          <Input placeholder="State" label="Select State" labelAfter="*" />
-          <Input placeholder="Select City" label="City" labelAfter="*" />
-          <Input placeholder="Select Country" label="Country" labelAfter="*" />
+          <Select
+            filters={states}
+            label="State"
+            labelAfter="*"
+            filterState="Select State"
+          />
+          <Select
+            filters={cities}
+            label="City"
+            labelAfter="*"
+            filterState="Select City"
+          />
+          <Select
+            filters={countries}
+            label="Country"
+            labelAfter="*"
+            filterState="Select Country"
+          />
         </div>
       </aside>
       <aside className={styles.ValidationInfo}>
@@ -429,7 +359,7 @@ function Form2({ isMobile }) {
     </aside>
   );
 }
-function Aside({ state }) {
+export function Aside({ state }) {
   return (
     <div className={styles.Aside}>
       <Note />
@@ -445,7 +375,7 @@ function Aside({ state }) {
     </div>
   );
 }
-function Note() {
+export function Note() {
   return (
     <div className={styles.Note}>
       <div className={styles.top}>
@@ -457,10 +387,10 @@ function Note() {
     </div>
   );
 }
-// End of Sevis Validation Components
+// End of Sevis Vali
 
-// Start of PaymentMethod components
-function CardPayment({ isMobile, setLocalState }) {
+// Start of Payment
+export function CardPayment({ isMobile, setLocalState }) {
   return (
     <div className={styles.CardPayment}>
       <div className={styles.Svg}>
@@ -513,7 +443,7 @@ function CardPayment({ isMobile, setLocalState }) {
     </div>
   );
 }
-function CompleteCardPayment({ isMobile, setState }) {
+export function CompleteCardPayment({ isMobile, setState }) {
   let PaymentSummary = [
     { header: "Paying For", content: "SEVIS FEE(1-90)" },
     { header: "Form Fee", content: "$450.00" },
@@ -579,7 +509,7 @@ function CompleteCardPayment({ isMobile, setState }) {
     </div>
   );
 }
-function BankPayment({ isMobile, setState }) {
+export function BankPayment({ isMobile, setState }) {
   let Details = [
     { header: "Account Name", detail: "Educarts LLC" },
     { header: "Account Number", detail: "1234567890" },
@@ -617,7 +547,7 @@ function BankPayment({ isMobile, setState }) {
     </div>
   );
 }
-function PaymentsNote({ content, isMobile, width }) {
+export function PaymentsNote({ content, isMobile, width }) {
   return (
     <div
       className={styles.Note}
@@ -639,7 +569,7 @@ function PaymentsNote({ content, isMobile, width }) {
   );
 }
 
-function Pointer({ position, index }) {
+export function Pointer({ position, index }) {
   let CircleStyle = { background: "#696A6A" };
   let scale = { scale: 0.7 };
   return (
@@ -668,7 +598,7 @@ function Pointer({ position, index }) {
     </div>
   );
 }
-function MobilePointer({ position, index }) {
+export function MobilePointer({ position, index }) {
   return (
     <div className={styles.MobilePointer}>
       <div className={styles.Point}>

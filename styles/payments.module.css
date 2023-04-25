@@ -84,20 +84,15 @@
   width: min(100%, 300px);
   position: relative;
 }
-.Input i {
-  width: -moz-fit-content;
-  width: fit-content;
-}
 .Input::after {
   content: attr(data-after);
   position: absolute;
-  left: 80px;
+  left: var(--left-offset);
   font-size: x-large;
   color: red;
 }
 .Input span.before {
-  margin: 0 !important;
-  padding-top: 26px;
+  margin-top: 12px;
   position: absolute;
   top: 50%;
   left: 10px;
@@ -105,7 +100,9 @@
   width: -moz-fit-content;
   width: fit-content;
   color: rgb(178, 180, 180);
-  height: 100%;
+  height: 40px;
+  border-right: 1px solid black;
+  padding-right: 3px;
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -196,6 +193,90 @@
   .Radio {
     flex-direction: column;
   }
+}
+
+.Selector {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.3125rem;
+  letter-spacing: 0.03em;
+  color: #3a3a3a;
+  width: min(100%, 300px);
+  position: relative;
+}
+.Selector .Filters {
+  background: none;
+  position: relative;
+}
+.Selector .Filters .filterCurrent {
+  cursor: pointer;
+  border-radius: 7px;
+  width: 100%;
+  padding: 0.2rem 0.5rem;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: none;
+  border: 1px solid rgba(0, 0, 0, 0.9);
+}
+.Selector .Filters .filter {
+  height: 300px;
+  overflow-y: auto;
+  border-radius: 7px;
+  position: absolute;
+  top: 0;
+  z-index: 5;
+  padding: 0.2rem 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background: none;
+  background-color: rgba(13, 13, 13, 0.8);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 0, 0, 0.9);
+  opacity: 1;
+  gap: 0.5rem;
+  width: 100%;
+  /* Style for the scrollbar */
+  /* Style for the scrollbar thumb */
+  /* Style for the scrollbar track */
+}
+.Selector .Filters .filter div {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  opacity: 0.8;
+  background: none;
+  cursor: pointer;
+  padding: 0.5rem 0.6rem;
+  transition: opacity 200ms ease-in;
+}
+.Selector .Filters .filter div:hover {
+  opacity: 1;
+  background-color: rgb(13, 13, 13);
+}
+.Selector .Filters .filter::-webkit-scrollbar {
+  width: 5px;
+}
+.Selector .Filters .filter::-webkit-scrollbar-thumb {
+  background-color: #f2f2f2;
+  border-radius: 5px;
+}
+.Selector .Filters .filter::-webkit-scrollbar-track {
+  background-color: #1f202e;
+}
+
+.active {
+  background-color: #1f202e !important;
+  color: white;
+  opacity: 1 !important;
 }
 
 .Payments {
@@ -383,6 +464,22 @@
   .SevisPage .SevisValidation .ValidationInfo .form {
     gap: 60px;
   }
+}
+.SevisPage .SevisValidation .ValidationInfo .form .DOB {
+  width: min(300px, 100%);
+}
+.SevisPage .SevisValidation .ValidationInfo .form .DOB .options {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.3125rem;
+  letter-spacing: 0.03em;
+  color: #3a3a3a;
+  width: min(100%, 300px);
+  position: relative;
+  flex-direction: row;
 }
 .SevisPage .PaymentMethod {
   padding: 0 10%;
@@ -721,6 +818,66 @@
   height: 5px;
   background: #86898a;
   border-radius: 1000px;
+}
+
+.StatusPage {
+  margin: 2rem 0 5rem;
+  padding: 0 10%;
+}
+.StatusPage .IdBox {
+  background: #fafcfd;
+  border: 4px solid #e9edf1;
+  border-radius: 16px;
+  padding: 2rem;
+}
+.StatusPage .IdBox h1 {
+  color: #7e7e80;
+  border-bottom: 1px solid black;
+  margin-bottom: 3rem;
+  padding-bottom: 10px;
+  font-weight: 500;
+  font-size: 1.8rem;
+}
+.StatusPage .IdBox .InputBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 2rem;
+  justify-content: unset;
+}
+.StatusPage .IdBox .InputBox input {
+  height: unset;
+}
+.StatusPage .IdBox .table {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.StatusPage .IdBox .table div {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  align-items: center;
+}
+.StatusPage .IdBox .table p,
+.StatusPage .IdBox .table span {
+  font-size: 1rem;
+}
+@media (max-width: 900px) {
+  .StatusPage .IdBox .table {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+@media (max-width: 700px) {
+  .StatusPage .IdBox h1 {
+    font-size: 1.2rem;
+    padding-bottom: 4px;
+  }
+  .StatusPage .IdBox .InputBox {
+    flex-direction: column;
+  }
 }
 
 .Grid {

@@ -138,9 +138,6 @@ $boxShadow: 4.5px 4.5px 3.1px rgba(0, 0, 0, 0.024),
   position: relative;
 }
 .Input {
-  i {
-    width: fit-content;
-  }
   &::after {
     content: attr(data-after);
     position: absolute;
@@ -243,4 +240,79 @@ $boxShadow: 4.5px 4.5px 3.1px rgba(0, 0, 0, 0.024),
   @media (max-width: 700px) {
     flex-direction: column;
   }
+}
+
+.Selector {
+  @include Label();
+  .Filters {
+    background: none;
+    position: relative;
+    .filterCurrent {
+      cursor: pointer;
+      border-radius: 7px;
+      width: 100%;
+      padding: 0.2rem 0.5rem;
+      height: 40px;
+      // height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: none;
+      border: 1px solid rgb(0, 0, 0, 0.9);
+    }
+    .filter {
+      height: 300px;
+      overflow-y: auto;
+      border-radius: 7px;
+      position: absolute;
+      top: 0;
+      z-index: 5;
+      padding: 0.2rem 0;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      background: none;
+      background-color: rgba(13, 13, 13, 0.8);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgb(0, 0, 0, 0.9);
+      opacity: 1;
+      gap: 0.5rem;
+      width: 100%;
+      div {
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        // width: 200px;
+        width: 100%;
+        opacity: 0.8;
+        background: none;
+        cursor: pointer;
+        padding: 0.5rem 0.6rem;
+        transition: opacity 200ms ease-in;
+        &:hover {
+          opacity: 1;
+          background-color: rgba(13, 13, 13);
+        }
+      } /* Style for the scrollbar */
+      &::-webkit-scrollbar {
+        width: 5px;
+      }
+      /* Style for the scrollbar thumb */
+      &::-webkit-scrollbar-thumb {
+        background-color: #f2f2f2;
+        border-radius: 5px;
+      }
+      /* Style for the scrollbar track */
+      &::-webkit-scrollbar-track {
+        background-color: #1f202e;
+      }
+    }
+  }
+}
+
+.active {
+  background-color: #1f202e !important;
+  color: white;
+  opacity: 1 !important;
 }

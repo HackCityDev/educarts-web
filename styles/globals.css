@@ -64,6 +64,7 @@ input[type="number"]::-webkit-inner-spin-button {
 
 i {
   font-style: normal;
+  width: fit-content;
 }
 
 .Support {

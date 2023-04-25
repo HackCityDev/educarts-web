@@ -19,7 +19,7 @@ export default function Layout({ children }) {
 export function Sidebar({ setOpenHamburger }) {
   return (
     <div className={styles.Sidebar}>
-      <Links setOpenHamburger={setOpenHamburger} />
+      <Links setOpenHamburger={setOpenHamburger} side={true} />
     </div>
   );
 }

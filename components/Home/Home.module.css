@@ -91,13 +91,12 @@
 .Input::after {
   content: attr(data-after);
   position: absolute;
-  left: 80px;
+  left: var(--left-offset);
   font-size: x-large;
   color: red;
 }
 .Input span.before {
-  margin: 0 !important;
-  padding-top: 26px;
+  margin-top: 12px;
   position: absolute;
   top: 50%;
   left: 10px;
@@ -105,7 +104,9 @@
   width: -moz-fit-content;
   width: fit-content;
   color: rgb(178, 180, 180);
-  height: 100%;
+  height: 40px;
+  border-right: 1px solid black;
+  padding-right: 3px;
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -196,6 +197,63 @@
   .Radio {
     flex-direction: column;
   }
+}
+
+.Filters {
+  background: none;
+  position: relative;
+}
+.Filters .filterCurrent {
+  cursor: pointer;
+  border-radius: 7px;
+  width: 100%;
+  padding: 0.2rem 0.5rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: none;
+  border: 1px solid rgba(0, 0, 0, 0.9);
+}
+.Filters .filter {
+  border-radius: 7px;
+  position: absolute;
+  top: 0;
+  z-index: 5;
+  padding: 0.2rem 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background: none;
+  background-color: rgba(13, 13, 13, 0.8);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 0, 0, 0.9);
+  opacity: 1;
+  gap: 0.5rem;
+  width: 100%;
+}
+.Filters .filter div {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  opacity: 0.8;
+  background: none;
+  cursor: pointer;
+  padding: 0.5rem 0.6rem;
+  transition: opacity 200ms ease-in;
+}
+.Filters .filter div:hover {
+  opacity: 1;
+  background-color: rgb(13, 13, 13);
+}
+
+.active {
+  background-color: #1f202e !important;
+  color: white;
+  opacity: 1 !important;
 }
 
 .Index {
