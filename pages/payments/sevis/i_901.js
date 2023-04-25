@@ -11,7 +11,7 @@ import Modal from "../../../components/Modals/TransactionModal";
 import { HeaderElement, SevisHeader } from ".";
 import Sevis from "../../../assets/Sevis";
 
-export default function i_901() {
+export default function I_901() {
   const [state, setState] = useState(1);
   const [success, setSuccess] = useState(false);
   let isMobile = useMQ("(max-width: 700px)");
