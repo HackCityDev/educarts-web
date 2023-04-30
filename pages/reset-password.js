@@ -43,7 +43,7 @@ export function AccountRecovery({ setStage }) {
           <span className={styles.Eclipse}></span>
         </div>
         <Span content="Please enter your registered Email" />
-        <Input placeholder="Enter Email" />
+        <Input placeholder="Enter Email" type="email" />
         <Button content="Next" action={() => setStage(1)} />
         <p>
           I remember my password <Span content="Log In" link="/signin" />
@@ -68,7 +68,7 @@ export function ForgotPassword({ setStage }) {
             </>
           }
         />
-        <Input placeholder="Enter Code" />
+        <Input placeholder="Enter Code" type="password" />
         <Button content="Next" action={() => setStage(2)} />
         <Span content="Forgot Password?" link="/reset-password" />
         <p>
@@ -89,9 +89,9 @@ export function UpdatePassword() {
         </div>
         {complete && <SuccessfulResetModal />}
         <Span content="Create a new password you would easily remember" />
-        <Input placeholder="Old Password" />
-        <Input placeholder="Create New Password" />
-        <Input placeholder="Re-enter New Password" />
+        <Input placeholder="Old Password" type="password" />
+        <Input placeholder="Create New Password" type="password" />
+        <Input placeholder="Re-enter New Password" type="password" />
         {complete ? (
           <Button
             content="Sign In"

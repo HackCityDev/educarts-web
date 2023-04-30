@@ -29,8 +29,8 @@ export default function SignIn() {
       </section>
       <section className={styles.Main}>
         <HighlightHeader content="Sign In" />
-        <Input placeholder="Email" />
-        <Input placeholder="Enter Password" />
+        <Input placeholder="Email" type="email" />
+        <Input placeholder="Enter Password" type="password" />
         <Button content="Sign In" />
         <Span content="Forgot Password?" link="/reset-password" />
         <p>

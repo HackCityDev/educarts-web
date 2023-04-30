@@ -100,7 +100,7 @@ export function SignUpPage({ accountType }) {
         )}
         <Input
           label="Phone Number"
-          type="number"
+          type="tel"
           before={
             <>
               <Nigeria /> <i>+234</i>
@@ -163,7 +163,7 @@ export function ConfirmEmail() {
           content="We have sent a code to the email you provided, Please Input the code below"
           style={{ textAlign: "center" }}
         />
-        <Input placeholder="Enter Code" />
+        <Input placeholder="Enter Code" type="password" />
 
         <Button content="Complete" />
         <Span content="Forgot Password?" link="/reset-password" />

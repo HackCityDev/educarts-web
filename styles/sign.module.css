@@ -416,6 +416,11 @@
   gap: 30px;
   margin-top: 10px;
 }
+@media (max-width: 550px) {
+  .SignUp .Main .Selectors {
+    flex-direction: column;
+  }
+}
 .SignUp .Main .Selectors a {
   background: #f4f9fa;
   cursor: pointer;

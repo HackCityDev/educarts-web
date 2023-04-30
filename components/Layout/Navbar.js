@@ -52,7 +52,7 @@ export function Links({ setOpenHamburger, side }) {
       isActive = router.pathname.startsWith(link);
     } else if (router.route === link) isActive = true;
     if (isActive) {
-      return isPath;
+      return side ? { ...isPath, borderBottom: "2px solid white" } : isPath;
     } else {
       return {};
     }
