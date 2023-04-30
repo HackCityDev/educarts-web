@@ -174,7 +174,7 @@ export function PaymentMethod({ setState, isMobile }) {
 }
 
 let CategoryOptions = ["MSU", "Oxford", "Cambridge"];
-// Start of Sevis Vali
+// Start of Sevis Validation component
 export function Form1({
   isMobile,
   radioOptions,
