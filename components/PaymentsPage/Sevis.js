@@ -21,6 +21,11 @@ import Paragraphs from "../General/Paragraphs";
 import Span from "../General/Span";
 import styles from "../../styles/payments.module.css";
 import Sevis from "../../assets/Sevis";
+import IdeaSVG from "../../assets/SVGs/idea.svg";
+import VisaSVG from "../../assets/SVGs/visa.svg";
+import MasterCardSVG from "../../assets/SVGs/masterCard.svg";
+import PaypalSVG from "../../assets/SVGs/paypal.svg";
+import GTCO_SVG from "../../assets/SVGs/gtco.svg";
 import HighlightHeader from "../General/HighlightHeader";
 import Button from "../General/Button";
 import Select from "../General/Options";
@@ -34,6 +39,7 @@ import {
   gloablButtonStyle,
 } from "./variables";
 import { SevisHeader } from "../../pages/payments/sevis";
+import ImageComponent from "../../assets/SVGs/SVGImageComponent";
 export function StartSevisPayment({ setState }) {
   const [selectedOption, setSelectedOption] = useState("");
   const handleOptionChange = (value) => {
@@ -379,7 +385,7 @@ export function Note() {
   return (
     <div className={styles.Note}>
       <div className={styles.top}>
-        <Idea />
+        <ImageComponent src={IdeaSVG} />
         <Headers content="Please Note" />
       </div>
       <Paragraphs content=">Ensure you have a complete and accurate Form I-20 or DS-2019." />
@@ -394,9 +400,18 @@ export function CardPayment({ isMobile, setLocalState }) {
   return (
     <div className={styles.CardPayment}>
       <div className={styles.Svg}>
-        <MasterCard />
-        <Visa />
-        <Paypal />
+        <ImageComponent
+          src={MasterCardSVG}
+          style={{ width: "90px", height: "50px" }}
+        />
+        <ImageComponent
+          src={VisaSVG}
+          style={{ width: "150px", height: "100px" }}
+        />
+        <ImageComponent
+          src={PaypalSVG}
+          style={{ width: "150px", height: "150px" }}
+        />
       </div>
       <div
         className={styles.Note}
@@ -471,7 +486,7 @@ export function CompleteCardPayment({ isMobile, setState }) {
         </div>
         <div className={styles.bottom}>
           <div className={styles.cardDetails}>
-            <MasterCard />
+            <ImageComponent src={MasterCardSVG} />
             <aside>
               {[1, 2, 3].map((Dots) => (
                 <span className={styles.Dots} key={Dots}>
@@ -526,7 +541,7 @@ export function BankPayment({ isMobile, setState }) {
         <div className={styles.box}>
           <Span content="Make a transfer to the account details below" />
           <div className={styles.Bank}>
-            <GTBankLogo />
+            <ImageComponent src={GTCO_SVG} />
             <HighlightHeader content="Educarts LLC" />
           </div>
           <div className={styles.Details}>

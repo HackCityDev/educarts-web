@@ -11,6 +11,14 @@ import ApplicationEmail from "../../assets/ApplicationEmail";
 import AdmissionDoc from "../../assets/AdmissionDocument";
 import PaymentTracker from "../../assets/PaymentTracker";
 import { ChatSupportBox } from "../../components/Home";
+import ImageComponent from "../../assets/SVGs/SVGImageComponent";
+import SevisSVG from "../../assets/SVGs/sevis.svg";
+import CertificateSVG from "../../assets/SVGs/certificate.svg";
+import EmailSVG from "../../assets/SVGs/email.svg";
+import RoadmapSVG from "../../assets/SVGs/roadmap.svg";
+import LetterSVG from "../../assets/SVGs/letter.svg";
+import PlaneSVG from "../../assets/SVGs/plane.svg";
+import MoreSVG from "../../assets/SVGs/more.svg";
 import Link from "next/link";
 
 export default function Payments() {
@@ -27,11 +35,11 @@ export default function Payments() {
           style={{ fontSize: "24px", lineHeight: "38px", color: "#3E3E42" }}
         />
         <aside className={styles.Grid}>
-          {paymentMethods.map(({ icon, header, content, link }, i) => (
+          {paymentMethods.map(({ header, content, link, svg }, i) => (
             <Link key={i} href={`/payments${link}`}>
               <a className={styles.Item}>
                 <div className={styles.top}>
-                  {icon}
+                  <ImageComponent src={svg} />
                   <Paragraphs content={header} />
                 </div>
                 <Span content={content} />
@@ -51,49 +59,49 @@ export default function Payments() {
 
 let paymentMethods = [
   {
-    icon: <Sevis />,
     header: "SEVIS Fee",
     content:
       "Click here if you have or have not Completed the Form I-20 or DS-2019 and want to pay the Sevis Fee",
     link: "/sevis",
+    svg: SevisSVG,
   },
   {
-    icon: <Certificate />,
     header: "Credential Evaluation",
     content:
       "If you have already made a payment on Educarts previously, Click view to track your payments Status",
     link: "/certificate_eval",
+    svg: CertificateSVG,
   },
   {
-    icon: <ApplicationEmail />,
     header: "Application Fee",
     content:
       "Click here if you have or have not Completed the Form I-20 or DS-2019 and want to pay the Sevis Fee",
     link: "/application_fee",
+    svg: EmailSVG,
   },
   {
-    icon: <PaymentTracker />,
     header: "Track Payment",
     content:
       "If you have already made a payment on Educarts previously, Click here to track your payments Status",
     link: "/track_payment",
+    svg: RoadmapSVG,
   },
   {
-    icon: <AdmissionDoc />,
     header: "Admission Doc. Shipment",
     content: "Obatain your admission doc for less stress",
     link: "/admission_document",
+    svg: LetterSVG,
   },
   {
-    icon: <Plane />,
     header: "Visa Payments",
     content: "Pay for visa fees with our Agents",
     link: "/visa_payments",
+    svg: PlaneSVG,
   },
   {
-    icon: <More />,
     header: "Others",
     content: "Perform other seaamless transactions on educarts",
     link: "/others",
+    svg: MoreSVG,
   },
 ];

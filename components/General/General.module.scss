@@ -261,7 +261,8 @@ $boxShadow: 4.5px 4.5px 3.1px rgba(0, 0, 0, 0.024),
       border: 1px solid rgb(0, 0, 0, 0.9);
     }
     .filter {
-      height: 300px;
+      height: fit-content;
+      max-height: 300px;
       overflow-y: auto;
       border-radius: 7px;
       position: absolute;

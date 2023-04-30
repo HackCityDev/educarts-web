@@ -5,9 +5,13 @@ import styles from "../../../styles/payments.module.css";
 import Sevis from "../../../assets/Sevis";
 import ViewStatus from "../../../assets/ViewStatus";
 import LearnMore from "../../../assets/SevisLearnmore";
+import SevisSVG from "../../../assets/SVGs/sevis.svg";
+import SearchSVG from "../../../assets/SVGs/search.svg";
+import BookSVG from "../../../assets/SVGs/book.svg";
 import { ChatSupportBox } from "../../../components/Home";
 import HighlightHeader from "../../../components/General/HighlightHeader";
 import Button from "../../../components/General/Button";
+import ImageComponent from "../../../assets/SVGs/SVGImageComponent";
 
 export default function SevisPage() {
   return (
@@ -29,31 +33,6 @@ export function HeaderElement() {
 }
 
 function OptionsElement() {
-  let Options = [
-    {
-      icon: <Sevis />,
-      button: "Pay I-901 Fee",
-      header: " I-901 Fee Payments",
-      content:
-        "Click here if you have or have not Completed the Form I-20 or DS-2019 and want to pay the Sevis Fee",
-      link: "/payments/sevis/i_901",
-    },
-    {
-      icon: <ViewStatus />,
-      button: "View Status",
-      header: "View Payment Status",
-      content:
-        "If you have already made a payment on Educarts previously, Click view to track your payments Status",
-      link: "/payments/sevis/status",
-    },
-    {
-      icon: <LearnMore />,
-      button: "Learn More",
-      header: "Learn About SEVIS Fees",
-      content: "Obtain More Clarity on SEVIS-1901 Payments and Procedure",
-      link: "/payments/sevis/learn_more",
-    },
-  ];
   return (
     <section className={styles.Options}>
       <Headers content="Sevis Payment Options" />
@@ -64,7 +43,7 @@ function OptionsElement() {
               className={styles.top}
               style={{ justifyContent: "space-between" }}
             >
-              {icon}
+              <ImageComponent src={icon} />
               <Button
                 content={button}
                 style={{
@@ -101,3 +80,28 @@ export function SevisHeader({ headers, span, spanLink, icon }) {
     </aside>
   );
 }
+let Options = [
+  {
+    icon: SevisSVG,
+    button: "Pay I-901 Fee",
+    header: " I-901 Fee Payments",
+    content:
+      "Click here if you have or have not Completed the Form I-20 or DS-2019 and want to pay the Sevis Fee",
+    link: "/payments/sevis/i_901",
+  },
+  {
+    icon: SearchSVG,
+    button: "View Status",
+    header: "View Payment Status",
+    content:
+      "If you have already made a payment on Educarts previously, Click view to track your payments Status",
+    link: "/payments/sevis/status",
+  },
+  {
+    icon: BookSVG,
+    button: "Learn More",
+    header: "Learn About SEVIS Fees",
+    content: "Obtain More Clarity on SEVIS-1901 Payments and Procedure",
+    link: "/payments/sevis/learn_more",
+  },
+];

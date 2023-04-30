@@ -62,9 +62,7 @@ export function Links({ setOpenHamburger, side }) {
       <aside className={styles.Weblinks}>
         {webLinks.map((link) => (
           <Link href={link.url} key={link.url}>
-            <a style={{ ...activeLink(link.url), color: "white" }}>
-              {link.name}
-            </a>
+            <a style={activeLink(link.url)}>{link.name}</a>
           </Link>
         ))}
       </aside>

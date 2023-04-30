@@ -25,7 +25,6 @@ export default function I_901() {
   }, [state]);
 
   useEffect(() => {
-    console.log(state, "Changes");
     const scrollAnimate = setInterval(() => {
       window.scrollTo(0, window.scrollY - 10);
       if (window.scrollY == 0) clearInterval(scrollAnimate);
